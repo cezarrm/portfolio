@@ -49,7 +49,10 @@
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-
+ 
+  .highlight {
+  color: var(--text-ter);
+}
   .nav-logo {
     font-family: var(--serif);
     font-size: 1rem;
@@ -439,8 +442,8 @@
 <section class="hero">
   
   <h1 class="hero-title fade-in">
-    I’m <b>Cezar Miranda</b> digital design based in Brazil.<br>
-    I’m currently at <b>Veeam Software</b>.
+    I’m <span class="highlight">Cezar Miranda</span> digital design based in Brazil.<br>
+    I’m currently at <span class="highlight">Veeam Software</span>.
   </h1>
   <button class="hero-scroll fade-in" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">
     <span>Ver trabalhos</span>
