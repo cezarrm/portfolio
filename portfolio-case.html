@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nome do Projeto — Seu Nome</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0e0e0e;
+    --white: #f5f4f0;
+    --gray: #888;
+    --light: #e8e6e0;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── NAV ─────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 2.5rem;
+  }
+
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--gray);
+    transition: color 0.2s, gap 0.2s;
+  }
+
+  .nav-back:hover {
+    color: var(--black);
+    gap: 0.8rem;
+  }
+
+  .nav-back svg {
+    width: 14px; height: 14px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; }
+
+  /* ─── CASE HEADER ─────────────────────── */
+  .case-header {
+    padding: 10rem 2.5rem 4rem;
+    max-width: 860px;
+  }
+
+  .case-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+
+  .case-client {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.6rem;
+  }
+
+  .case-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-intro {
+    font-size: 1.1rem;
+    color: var(--gray);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* ─── CASE META BAR ───────────────────── */
+  .case-meta {
+    display: flex;
+    gap: 4rem;
+    padding: 2rem 2.5rem;
+    border-top: 1px solid var(--light);
+    border-bottom: 1px solid var(--light);
+    font-size: 0.8rem;
+  }
+
+  .meta-item label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.65rem;
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+  }
+
+  .meta-item span {
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* ─── CONTENT GALLERY ─────────────────── */
+  .case-content {
+    padding: 0;
+  }
+
+  /* Full-width image */
+  .media-full {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .media-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .media-full-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .media-full-placeholder span,
+  .media-half-placeholder span,
+  .media-tall-placeholder span {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    opacity: 0.5;
+  }
+
+  /* Two column images */
+  .media-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+  }
+
+  .media-half-placeholder {
+    aspect-ratio: 4/3;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Alternate: text + image */
+  .media-text-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--light);
+  }
+
+  .media-tall-placeholder {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+  }
+
+  .case-text-block {
+    background: var(--white);
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .case-text-block h3 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.2rem;
+  }
+
+  .case-text-block p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    line-height: 1.75;
+    max-width: 400px;
+  }
+
+  /* Three column images */
+  .media-thirds {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--light);
+  }
+
+  .media-third-placeholder {
+    aspect-ratio: 3/4;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Padded gallery section */
+  .gallery-section {
+    padding: 0 2.5rem;
+    margin: 4rem 0;
+  }
+
+  .gallery-section .media-row {
+    gap: 1.5rem;
+    background: transparent;
+  }
+
+  .gallery-section .media-half-placeholder {
+    background: var(--light);
+  }
+
+  /* ─── TEXT SECTION ────────────────────── */
+  .text-section {
+    padding: 5rem 2.5rem;
+    max-width: 680px;
+  }
+
+  .text-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+
+  .text-section p {
+    font-size: 1rem;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  /* ─── CREDITS ─────────────────────────── */
+  .credits {
+    padding: 4rem 2.5rem;
+    border-top: 1px solid var(--light);
+    display: flex;
+    gap: 6rem;
+  }
+
+  .credits h4 {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+
+  .credit-item {
+    margin-bottom: 1rem;
+  }
+
+  .credit-item label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .credit-item span {
+    font-size: 0.9rem;
+  }
+
+  /* ─── NEXT PROJECT ────────────────────── */
+  .next-project {
+    display: block;
+    padding: 4rem 2.5rem;
+    border-top: 1px solid var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+
+  .next-project:hover { opacity: 0.6; }
+
+  .next-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gray);
+    margin-bottom: 0.6rem;
+  }
+
+  .next-title {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .next-arrow {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gray);
+    transition: transform 0.3s;
+  }
+
+  .next-project:hover .next-arrow {
+    transform: translateX(8px);
+  }
+
+  /* ─── FOOTER ──────────────────────────── */
+  footer {
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--light);
+    font-size: 0.72rem;
+    color: var(--gray);
+    letter-spacing: 0.04em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .footer-links a:hover { color: var(--black); }
+
+  /* ─── FADE IN ON SCROLL ───────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ──────────────────────── */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .case-header { padding: 8rem 1.5rem 3rem; }
+    .case-meta { flex-wrap: wrap; gap: 2rem; padding: 1.5rem; }
+    .media-row, .media-text-row, .media-thirds { grid-template-columns: 1fr; }
+    .gallery-section, .text-section, .credits, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .credits { flex-direction: column; gap: 2rem; }
+    .next-project { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+    </svg>
+    Home
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Work</a></li>
+    <li><a href="about.html">Information</a></li>
+    <li><a href="mailto:seuemail@email.com">Email</a></li>
+  </ul>
+</nav>
+
+<!-- HEADER -->
+<header class="case-header">
+  <div class="case-icon">✦</div>
+  <p class="case-client">Nome do Cliente</p>
+  <h1 class="case-title">Marca & Site para<br>uma Startup em Crescimento</h1>
+  <p class="case-intro">
+    Como design lead, evoluí a identidade e o site conforme a empresa cresceu de seed até Série B. Ao longo do tempo, definimos uma estética mais sofisticada para posicionar a marca como ferramenta de negócios poderosa.
+  </p>
+</header>
+
+<!-- META BAR -->
+<div class="case-meta">
+  <div class="meta-item">
+    <label>Ano</label>
+    <span>2024</span>
+  </div>
+  <div class="meta-item">
+    <label>Escopo</label>
+    <span>Branding, Web, Motion</span>
+  </div>
+  <div class="meta-item">
+    <label>Duração</label>
+    <span>8 meses</span>
+  </div>
+  <div class="meta-item">
+    <label>Papel</label>
+    <span>Design Lead</span>
+  </div>
+</div>
+
+<!-- ─── GALLERY ──────────────────────────── -->
+<section class="case-content">
+
+  <!-- 1. Full width hero image -->
+  <div class="reveal">
+    <div class="media-full-placeholder" style="aspect-ratio:21/9">
+      <span>Imagem Hero — Substitua com sua imagem principal</span>
+    </div>
+  </div>
+
+  <!-- 2. Two columns -->
+  <div class="reveal" style="margin-top:1px">
+    <div class="media-row">
+      <div class="media-half-placeholder"><span>Detalhe da marca</span></div>
+      <div class="media-half-placeholder"><span>Aplicação tipográfica</span></div>
+    </div>
+  </div>
+
+  <!-- 3. Text intro section -->
+  <div class="text-section reveal">
+    <h2>Construindo uma identidade que acompanha o crescimento</h2>
+    <p>
+      O desafio era criar uma linguagem visual flexível o suficiente para evoluir junto com a empresa, sem perder coerência. Começamos definindo os pilares de marca antes de qualquer decisão visual.
+    </p>
+    <p>
+      Cada elemento — da paleta tipográfica aos ícones — foi pensado para funcionar em escala, desde um slide de pitch até um billboard urbano.
+    </p>
+  </div>
+
+  <!-- 4. Full width image -->
+  <div class="reveal">
+    <div class="media-full-placeholder">
+      <span>Imagem full-width — sistema de cores e tipografia</span>
+    </div>
+  </div>
+
+  <!-- 5. Text + tall image -->
+  <div class="reveal" style="margin-top:1px">
+    <div class="media-text-row">
+      <div class="case-text-block">
+        <h3>Definindo a voz visual da marca</h3>
+        <p>
+          A identidade nasceu da interseção entre precisão técnica e calor humano. Optamos por uma paleta neutra com um acento forte — vermelho carmesim — que aparece com parcimônia mas com impacto.
+        </p>
+        <p style="margin-top:1rem">
+          A tipografia combina uma serif editorial para headlines com uma sans-serif de alta legibilidade para o corpo do texto.
+        </p>
+      </div>
+      <div class="media-tall-placeholder"><span>Aplicação de marca / mockup</span></div>
+    </div>
+  </div>
+
+  <!-- 6. Three columns -->
+  <div class="reveal" style="margin-top:1px">
+    <div class="media-thirds">
+      <div class="media-third-placeholder"><span>Variação 1</span></div>
+      <div class="media-third-placeholder"><span>Variação 2</span></div>
+      <div class="media-third-placeholder"><span>Variação 3</span></div>
+    </div>
+  </div>
+
+  <!-- 7. Full width image -->
+  <div class="reveal">
+    <div class="media-full-placeholder" style="margin-top:1px">
+      <span>Imagem do website — homepage</span>
+    </div>
+  </div>
+
+  <!-- 8. Reversed text + image -->
+  <div class="reveal" style="margin-top:1px">
+    <div class="media-text-row">
+      <div class="media-tall-placeholder"><span>Tela do produto</span></div>
+      <div class="case-text-block">
+        <h3>O site como extensão da marca</h3>
+        <p>
+          Trabalhamos o site como uma publicação viva — conteúdo dinâmico, animações sutis e uma navegação intuitiva que guia o usuário sem esforço.
+        </p>
+        <p style="margin-top:1rem">
+          O resultado foi um aumento de 62% no tempo de sessão e uma queda de 30% na taxa de rejeição nas primeiras semanas após o lançamento.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Full width image -->
+  <div class="reveal">
+    <div class="media-full-placeholder" style="margin-top:1px">
+      <span>Imagem — detalhe do design system</span>
+    </div>
+  </div>
+
+  <!-- 10. Two columns padded -->
+  <div class="gallery-section reveal">
+    <div class="media-row">
+      <div class="media-half-placeholder"><span>Material de marketing</span></div>
+      <div class="media-half-placeholder"><span>Assets para redes sociais</span></div>
+    </div>
+  </div>
+
+  <!-- 11. Final full image -->
+  <div class="reveal">
+    <div class="media-full-placeholder" style="aspect-ratio:21/9">
+      <span>Imagem de encerramento — visão geral do sistema</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- CREDITS -->
+<div class="credits reveal">
+  <div>
+    <h4>Equipe</h4>
+    <div class="credit-item">
+      <label>Motion</label>
+      <span>Nome do Colaborador</span>
+    </div>
+    <div class="credit-item">
+      <label>Ilustração</label>
+      <span>Nome do Ilustrador</span>
+    </div>
+    <div class="credit-item">
+      <label>Desenvolvimento</label>
+      <span>Nome do Dev</span>
+    </div>
+  </div>
+  <div>
+    <h4>Reconhecimentos</h4>
+    <div class="credit-item">
+      <label>Premiação</label>
+      <span>Nome do Prêmio, Ano</span>
+    </div>
+    <div class="credit-item">
+      <label>Publicação</label>
+      <span>Onde foi publicado</span>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT PROJECT -->
+<a href="case.html" class="next-project reveal">
+  <div>
+    <p class="next-label">Próximo projeto</p>
+    <h2 class="next-title">Redesign de Produto</h2>
+  </div>
+  <span class="next-arrow">→</span>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <p>CONTEÚDO © SEU NOME — TODOS OS DIREITOS RESERVADOS</p>
+  <ul class="footer-links">
+    <li><a href="#">Instagram</a></li>
+    <li><a href="#">LinkedIn</a></li>
+    <li><a href="#">Behance</a></li>
+  </ul>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
