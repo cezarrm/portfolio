@@ -81,3 +81,38 @@ function loopTyping() {
 }
 
 loopTyping();
+
+const cards = document.querySelectorAll('.feed__cell');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+
+    const image = card.querySelector('img');
+
+    if (!image) return;
+
+    lightboxImg.src = image.src;
+
+    lightbox.classList.add('active');
+
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+/* fechar clicando fora */
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+
+  document.body.style.overflow = '';
+});
+
+/* fechar ESC */
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow = '';
+  }
+});

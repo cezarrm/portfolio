@@ -170,26 +170,319 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: background 0.2s;
+
+  transition:
+    background 0.35s ease,
+    transform 0.6s cubic-bezier(.19, 1, .22, 1);
 }
 
-.feed__cell:hover {
-  background: var(--bg-subtle);
+/* =========================
+   CARD
+========================= */
+
+.feed__cell {
+  background: var(--bg);
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 0.75rem;
+
+  position: relative;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  isolation: isolate;
+
+  transition:
+    transform .7s cubic-bezier(.19, 1, .22, 1),
+    opacity .4s ease;
 }
+
+/* =========================
+   IMAGE
+========================= */
 
 .feed__cell-bg {
   position: absolute;
   inset: 0;
-  background: var(--bg-subtle);
-  z-index: 0;
 }
+
+.feed__cell-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1);
+
+  transition:
+    transform 1.2s cubic-bezier(.19, 1, .22, 1),
+    filter .8s ease;
+}
+
+/* =========================
+   GLASS OVERLAY
+========================= */
+
+.feed__cell::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  opacity: 0;
+
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.02));
+
+  transition:
+    opacity .6s ease,
+    backdrop-filter .6s ease;
+}
+
+/* light reflection */
+.feed__cell::after {
+  content: "";
+
+  position: absolute;
+
+  width: 140%;
+  height: 140%;
+
+  top: -120%;
+  left: -120%;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(115deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.14) 45%,
+      transparent 70%);
+
+  transform: rotate(8deg);
+
+  transition:
+    top 1.2s cubic-bezier(.19, 1, .22, 1),
+    left 1.2s cubic-bezier(.19, 1, .22, 1);
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.feed__grid:hover .feed__cell {
+  filter:
+    blur(2px) saturate(.7) contrast(.9);
+
+  opacity: .55;
+
+  transform: scale(.985);
+
+  transition:
+    filter .7s cubic-bezier(.19, 1, .22, 1),
+    opacity .5s ease,
+    transform .7s cubic-bezier(.19, 1, .22, 1);
+}
+
+/* =========================
+   ACTIVE CARD
+========================= */
+
+.feed__grid .feed__cell:hover {
+  filter:
+    blur(0px) saturate(1) contrast(1);
+
+  opacity: 1;
+
+  transform: scale(1.02);
+
+  z-index: 20;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.feed__cell {
+  position: relative;
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+.feed__cell-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    transform 1.2s cubic-bezier(.19, 1, .22, 1),
+    filter .8s ease;
+}
+
+/* imagem ativa */
+.feed__cell:hover .feed__cell-bg img {
+  transform: scale(1.06);
+}
+
+/* =========================
+   GLASS OVERLAY
+========================= */
+
+.feed__cell::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  opacity: 0;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  background:
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.10),
+      rgba(255, 255, 255, 0.02));
+
+  transition:
+    opacity .6s ease;
+}
+
+/* glass em TODOS */
+.feed__grid:hover .feed__cell::before {
+  opacity: 1;
+}
+
+/* remove glass do ativo */
+.feed__grid .feed__cell:hover::before {
+  opacity: 0;
+}
+
+/* =========================
+   LABEL
+========================= */
 
 .feed__cell-label {
   position: relative;
-  font-size: 0.66rem;
-  letter-spacing: 0.05em;
-  color: var(--text-ter);
-  z-index: 1;
+  z-index: 5;
+
+  font-size: .66rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: white;
+
+  opacity: .8;
+
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
+}
+
+.feed__cell:hover .feed__cell-label {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.feed__cell-label {
+  position: relative;
+  z-index: 2;
+
+  font-size: .66rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: white;
+
+  opacity: .75;
+
+  transition:
+    opacity .4s ease,
+    transform .4s ease;
+}
+
+.feed__cell:hover .feed__cell-label {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   GRID FOCUS
+========================= */
+
+.feed__grid:hover .feed__cell:not(:hover) {
+  opacity: .38;
+}
+
+
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.92);
+
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 9999;
+
+  transition:
+    opacity 0.45s ease,
+    backdrop-filter 0.45s ease;
+
+  backdrop-filter: blur(0px);
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+
+  backdrop-filter: blur(10px);
+}
+
+.lightbox img {
+  width: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+
+  object-fit: contain;
+
+  transform: scale(0.92);
+  opacity: 0;
+
+  transition:
+    transform 0.6s cubic-bezier(.19, 1, .22, 1),
+    opacity 0.4s ease;
+
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox.active img {
+  transform: scale(1);
+  opacity: 1;
 }
 
 /* ─── ANIMATIONS ─────────────────────────────────────────── */
