@@ -323,6 +323,13 @@ img {
   transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+  .placeholder {
+    aspect-ratio: 1 / 1;
+    height: auto;
+  }
+}
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav {
