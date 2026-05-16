@@ -1,11 +1,4 @@
-# Portfolio Template
-
-Inspirado em [tparkes.com](https://www.tparkes.com)
-
----
-
-## Estrutura
-
+g
 ```
 portfolio/
 ├── index.html              ← Página inicial (Work)
