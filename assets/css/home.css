@@ -108,6 +108,14 @@
   transition: opacity 0.22s;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    /* ou flex-start */
+    padding-top: 120px;
+  }
+}
+
 .project-item:hover {
   opacity: 0.55;
 }
