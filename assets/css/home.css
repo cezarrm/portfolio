@@ -74,9 +74,10 @@
 }
 
 @media (max-width: 768px) {
-  .hero-content {
-    margin-top: 0;
-    padding-top: 0;
+  .hero {
+    justify-content: center;
+    /* ou flex-start */
+    padding-top: 120px;
   }
 }
 
