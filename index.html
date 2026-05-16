@@ -1,577 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Seu Nome — Designer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seu Nome — Designer</title>
 
-  :root {
-    --bg:        #FFFFFF;
-    --bg-subtle: #F7F7F7;
-    --bg-muted:  #EFEFEF;
-    --border:    #E4E4E4;
-    --text:      #111111;
-    --text-sec:  #6B6B6B;
-    --text-ter:  #A0A0A0;
-    --serif: 'Cabin', sans-serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-  }
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
 
-  html { font-size: 16px; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  /* ─── NAV ─────────────────────────────── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 2.5rem;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: none;
-  }
- 
-  .highlight {
-  color: var(--text-ter);
-}
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1rem;
-    letter-spacing: -0.01em;
-    color: var(--text);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-  .project-thumb-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-  .nav-links a {
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--text-sec);
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--text); }
-
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-    background: none;
-    border: none;
-  }
-
-  .nav-hamburger span {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background: var(--text);
-    transition: transform 0.3s, opacity 0.3s;
-  }
-
-  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-  .nav-mobile-menu {
-    display: none;
-    position: fixed;
-    top: 57px; left: 0; right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 1.25rem;
-    z-index: 99;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  .nav-mobile-menu.open { display: flex; }
-  .nav-mobile-menu a { font-size: 1rem; color: var(--text-sec); }
-
-  /* ─── HERO ────────────────────────────── */
-  .hero {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 2.5rem 5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-tagline {
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-ter);
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-title {
-    font-family: var(--serif);
-    font-size: clamp(2.6rem, 5.5vw, 5.2rem);
-    line-height: 1.06;
-    letter-spacing: -0.02em;
-    max-width: 860px;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--text-ter);
-  }
-
-  .hero-scroll {
-    margin-top: 3rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-ter);
-    cursor: pointer;
-    transition: gap 0.3s, color 0.2s;
-    background: none;
-    border: none;
-    font-family: var(--sans);
-  }
-
-  .hero-scroll:hover { gap: 1rem; color: var(--text-sec); }
-
-  .hero-scroll svg {
-    width: 16px; height: 16px;
-    animation: bounce 2.2s ease-in-out infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(5px); }
-  }
-
-  /* ─── SECTION LABEL ───────────────────── */
-  .section-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    border: none;
-    padding: 2rem 2.5rem 0.6rem;
-  }
-
-  /* ─── PROJECTS ────────────────────────── */
-  .projects {
-    padding: 0 2.5rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .project-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    padding: 3.5rem 0;
-    border-bottom: none;
-    align-items: center;
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.22s;
-   
-  }
-
-  .project-item:hover { opacity: 0.55; }
-
-  .project-item.featured {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .project-item.featured .project-meta {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .project-number {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    color: var(--text-ter);
-    margin-bottom: 0.5rem;
-  }
-
-  .project-title {
-    font-family: var(--serif);
-    font-size: clamp(1.7rem, 3vw, 2.8rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.015em;
-    color: var(--text);
-  }
-
-  .project-desc {
-    font-size: 0.9rem;
-    color: var(--text-sec);
-    max-width: 340px;
-    line-height: 1.7;
-    margin-top: 0.6rem;
-  }
-
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1rem;
-  }
-
-  .tag {
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.28rem 0.75rem;
-    border: 1px solid var(--border);
-    color: var(--text-ter);
-    border-radius: 100px;
-  }
-
-  .project-thumb-placeholder {
-    width: 100%;
-    background: var(--bg-subtle);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 16/10;
-    border-radius: 14px;
-    overflow: hidden;
-  }
-
-  .project-item.featured .project-thumb-placeholder {
-    aspect-ratio: 21/9;
-  }
-
-  .project-thumb-placeholder span {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-ter);
-  }
-
-  /* ─── VISUAL FEED ─────────────────────── */
-  .visual-feed {
-    padding: 2rem 2.5rem 4rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .feed-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border);
-    margin-top: 1.5rem;
-    border: 1px solid var(--border);
-  }
-
-  .feed-cell {
-    background: var(--bg);
-    aspect-ratio: 1;
-    display: flex;
-    align-items: flex-end;
-    padding: 0.75rem;
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .feed-cell:hover { background: var(--bg-subtle); }
-
-  .feed-cell-bg {
-    position: absolute;
-    inset: 0;
-    background: var(--bg-subtle);
-    z-index: 0;
-  }
-
-  .feed-cell-label {
-    position: relative;
-    font-size: 0.66rem;
-    letter-spacing: 0.05em;
-    color: var(--text-ter);
-    z-index: 1;
-  }
-
-  /* ─── FOOTER ──────────────────────────── */
-  footer {
-    padding: 2rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid var(--border);
-    font-size: 0.72rem;
-    color: var(--text-ter);
-    letter-spacing: 0.04em;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .footer-links a { transition: color 0.2s; }
-  .footer-links a:hover { color: var(--text); }
-
-  /* ─── FADE IN ─────────────────────────── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(18px);
-    animation: fadeUp 0.7s ease forwards;
-  }
-
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .fade-in:nth-child(1) { animation-delay: 0.1s; }
-  .fade-in:nth-child(2) { animation-delay: 0.22s; }
-  .fade-in:nth-child(3) { animation-delay: 0.36s; }
-
-  /* ─── TABLET ──────────────────────────── */
-  @media (max-width: 900px) {
-    nav { padding: 1.1rem 1.75rem; }
-    .hero { padding: 0 1.75rem 4rem; }
-    .section-label { padding-left: 1.75rem; padding-right: 1.75rem; }
-    .projects { padding: 0 1.75rem; }
-    .project-item { gap: 2rem; }
-    .project-item.featured .project-meta { flex-direction: column; gap: 0.5rem; }
-    .visual-feed { padding: 2rem 1.75rem 3rem; }
-    .feed-grid { grid-template-columns: repeat(3, 1fr); }
-    footer { padding: 1.75rem; }
-  }
-
-  /* ─── MOBILE ──────────────────────────── */
-  @media (max-width: 600px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-
-    .hero { padding: 0 1.25rem 3.5rem; }
-    .hero-title { font-size: clamp(2rem, 10vw, 3rem); }
-
-    .section-label { padding: 1.5rem 1.25rem 0.5rem; }
-    .projects { padding: 0 1.25rem; }
-
-    .project-item {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      padding: 2.5rem 0;
-    }
-
-    .project-item.featured .project-meta { flex-direction: column; gap: 0.5rem; }
-    .project-desc { max-width: 100%; }
-
-    .project-item.img-first .project-thumb-placeholder { order: -1; }
-
-    .visual-feed { padding: 1.5rem 1.25rem 3rem; }
-    .feed-grid { grid-template-columns: repeat(2, 1fr); }
-
-    footer {
-      padding: 1.5rem 1.25rem;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .hero-title { font-size: 1.85rem; }
-  }
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
+
 <body>
 
-<nav>
+  <!-- ─── NAV ──────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo"></a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="is-active">Work</a></li>
+      <li><a href="about.html">Information</a></li>
+      <li><a href="mailto:seuemail@email.com">Email</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Work</a></li>
-    <li><a href="about.html">Information</a></li>
-    <li><a href="mailto:seuemail@email.com">Email</a></li>
-  </ul>
-  <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu(this)">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<div class="nav-mobile-menu" id="mobileMenu">
-  <a href="index.html">Work</a>
-  <a href="about.html">Information</a>
-  <a href="mailto:seuemail@email.com">Email</a>
-</div>
-
-<section class="hero">
-  
-  <h1 class="hero-title fade-in">
-    I’m <span class="highlight">Cezar Miranda</span> digital design based in Brazil.<br>
-    I’m currently at <span class="highlight">Veeam Software</span>.
-  </h1>
-  <button class="hero-scroll fade-in" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">
-    <span>Explore my work</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 5v14M5 12l7 7 7-7"/>
-    </svg>
-  </button>
-</section>
-<section class="projects">
-
-  <a href="portfolio-case.html" class="project-item featured">
-    <div class="project-meta">
-      <div>
-        <p class="project-number">01</p>
-        <h2 class="project-title">Marca & Site<br>para Startup</h2>
-      </div>
-      <p class="project-desc">Identidade visual e presença digital completa para uma empresa de tecnologia em fase de crescimento.</p>
-    </div>
-   <div class="project-tags">
-        <span class="tag">UX</span>
-        <span class="tag">Interface</span>
-        <span class="tag">Research</span>
-      </div>
-    <div class="project-thumb-placeholder">
-  <img src="image_header.png" alt="Projeto">
-</div>
-  </a>
-
-  <a href="portfolio-case.html" class="project-item">
-    <div class="project-meta">
-      <p class="project-number">02</p>
-      <h2 class="project-title">Redesign de Produto</h2>
-      <p class="project-desc">Repensamos o fluxo de onboarding aumentando a retenção em 40% no primeiro mês.</p>
-      <div class="project-tags">
-        <span class="tag">UX</span>
-        <span class="tag">Interface</span>
-        <span class="tag">Research</span>
-      </div>
-    </div>
-    <div class="project-thumb-placeholder"><span>Imagem do Projeto</span></div>
-  </a>
-
-  <a href="portfolio-case.html" class="project-item img-first">
-    <div class="project-thumb-placeholder"><span>Imagem do Projeto</span></div>
-    <div class="project-meta">
-      <p class="project-number">03</p>
-      <h2 class="project-title">Identidade Visual</h2>
-      <p class="project-desc">Sistema de marca criado do zero para uma empresa de serviços financeiros.</p>
-      <div class="project-tags">
-        <span class="tag">Branding</span>
-        <span class="tag">Motion</span>
-      </div>
-    </div>
-  </a>
-
-  <a href="portfolio-case.html" class="project-item featured">
-    <div class="project-meta">
-      <div>
-        <p class="project-number">04</p>
-        <h2 class="project-title">App de Mobilidade</h2>
-      </div>
-      <p class="project-desc">Design system e app para plataforma de mobilidade urbana com mais de 500k usuários ativos.</p>
-    </div>
-    <div class="project-thumb-placeholder"><span>Imagem do Projeto</span></div>
-  </a>
-
-  <a href="portfolio-case.html" class="project-item">
-    <div class="project-meta">
-      <p class="project-number">05</p>
-      <h2 class="project-title">Dashboard B2B</h2>
-      <p class="project-desc">Painel de analytics para gestores com visualização de dados em tempo real.</p>
-      <div class="project-tags">
-        <span class="tag">Data Viz</span>
-        <span class="tag">Design System</span>
-      </div>
-    </div>
-    <div class="project-thumb-placeholder"><span>Imagem do Projeto</span></div>
-  </a>
-
-  <a href="portfolio-case.html" class="project-item img-first">
-    <div class="project-thumb-placeholder"><span>Imagem do Projeto</span></div>
-    <div class="project-meta">
-      <p class="project-number">06</p>
-      <h2 class="project-title">Campanha Digital</h2>
-      <p class="project-desc">Direção de arte e materiais digitais para campanha de lançamento de produto.</p>
-      <div class="project-tags">
-        <span class="tag">Art Direction</span>
-        <span class="tag">Social</span>
-      </div>
-    </div>
-  </a>
-
-</section>
-
-<p class="section-label">Feed visual</p>
-<section class="visual-feed">
-  <div class="feed-grid">
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Exploração tipográfica</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Estudo de gradiente</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Composição 3D</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Ícone de marca</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Paleta de cores</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Layout editorial</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Motion experiment</span></div>
-    <div class="feed-cell"><div class="feed-cell-bg"></div><span class="feed-cell-label">Infográfico</span></div>
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="index.html">Work</a>
+    <a href="about.html">Information</a>
+    <a href="mailto:seuemail@email.com">Email</a>
   </div>
-</section>
 
-<footer>
-  <p>CONTEÚDO © SEU NOME — TODOS OS DIREITOS RESERVADOS</p>
-  <ul class="footer-links">
-    <li><a href="#">Instagram</a></li>
-    <li><a href="#">LinkedIn</a></li>
-    <li><a href="#">Behance</a></li>
-  </ul>
-</footer>
+  <!-- ─── HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <h1 class="hero__title t-serif-xl">
+      I’m Cezar Miranda,<br> a
+      <span id="typing" class="highlight">Brand Designer</span>
+      <br>based in Brazil.
+      I’m currently designing at Veeam Software.
+    </h1>
+    <button class="hero__scroll" aria-label="Ver trabalhos">
+      <span>Explore my works</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </button>
+  </section>
 
-<script>
-  function toggleMenu(btn) {
-    btn.classList.toggle('open');
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-  document.querySelectorAll('.nav-mobile-menu a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.querySelector('.nav-hamburger').classList.remove('open');
-      document.getElementById('mobileMenu').classList.remove('open');
-    });
-  });
-</script>
+  <!-- ─── PROJECTS ──────────────────────────────────────── -->
+  <p class="section-label" id="work"></p>
+  <section class="projects">
+
+    <!-- 01 — destaque full width -->
+    <a href="pages/case.html" class="project-item project-item--featured reveal">
+      <div class="project-item__meta">
+        <div>
+          <h2 class="project-item__title t-serif-md">EasyLaser<br><span class='highlight'>E-commerce </span></h2>
+
+        </div>
+
+        <p class="project-item__desc">
+          Improving the user flow to
+          buy and schedule an apointment.
+        </p>
+
+      </div>
+      <div class="project-item__tags">
+        <span class="tag">UX</span>
+        <span class="tag">Interface</span>
+        <span class="tag">Research</span>
+        <span class="tag">2023</span>
+      </div>
+      <div class="placeholder">
+        <img src="/portfolio/assets/img/image_header.png" alt="Projeto">
+      </div>
+    </a>
+
+    <!-- 02 -->
+    <a href="pages/case.html" class="project-item reveal">
+      <div class="project-item__meta">
+        <p class="project-item__number">02</p>
+        <h2 class="project-item__title t-serif-md">Redesign de Produto</h2>
+        <p class="project-item__desc">Repensamos o fluxo de onboarding aumentando a retenção em 40% no primeiro mês.</p>
+        <div class="project-item__tags">
+          <span class="tag">UX</span>
+          <span class="tag">Interface</span>
+          <span class="tag">Research</span>
+        </div>
+      </div>
+      <div class="placeholder project-item__thumb">
+        <span>Imagem do Projeto — 16:10</span>
+      </div>
+    </a>
+
+    <!-- 03 — imagem à esquerda -->
+    <a href="pages/case.html" class="project-item project-item--img-first reveal">
+      <div class="placeholder project-item__thumb">
+        <span>Imagem do Projeto — 16:10</span>
+      </div>
+      <div class="project-item__meta">
+        <p class="project-item__number">03</p>
+        <h2 class="project-item__title t-serif-md">Identidade Visual</h2>
+        <p class="project-item__desc">Sistema de marca criado do zero para uma empresa de serviços financeiros.</p>
+        <div class="project-item__tags">
+          <span class="tag">Branding</span>
+          <span class="tag">Motion</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- 04 — destaque full width -->
+    <a href="pages/case.html" class="project-item project-item--featured reveal">
+      <div class="project-item__meta">
+        <div>
+          <p class="project-item__number">04</p>
+          <h2 class="project-item__title t-serif-md">App de Mobilidade</h2>
+        </div>
+        <p class="project-item__desc">Design system e app para plataforma de mobilidade urbana com mais de 500k usuários
+          ativos.</p>
+      </div>
+      <div class="placeholder project-item__thumb project-item__thumb--wide">
+        <span>Imagem do Projeto — 21:9</span>
+      </div>
+    </a>
+
+    <!-- 05 -->
+    <a href="pages/case.html" class="project-item reveal">
+      <div class="project-item__meta">
+        <p class="project-item__number">05</p>
+        <h2 class="project-item__title t-serif-md">Dashboard B2B</h2>
+        <p class="project-item__desc">Painel de analytics para gestores com visualização de dados em tempo real.</p>
+        <div class="project-item__tags">
+          <span class="tag">Data Viz</span>
+          <span class="tag">Design System</span>
+        </div>
+      </div>
+      <div class="placeholder project-item__thumb">
+        <span>Imagem do Projeto — 16:10</span>
+      </div>
+    </a>
+
+    <!-- 06 — imagem à esquerda -->
+    <a href="pages/case.html" class="project-item project-item--img-first reveal">
+      <div class="placeholder project-item__thumb">
+        <span>Imagem do Projeto — 16:10</span>
+      </div>
+      <div class="project-item__meta">
+        <p class="project-item__number">06</p>
+        <h2 class="project-item__title t-serif-md">Campanha Digital</h2>
+        <p class="project-item__desc">Direção de arte e materiais digitais para campanha de lançamento de produto.</p>
+        <div class="project-item__tags">
+          <span class="tag">Art Direction</span>
+          <span class="tag">Social</span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- ─── VISUAL FEED ────────────────────────────────────── -->
+  <p class="section-label">Feed visual</p>
+  <section class="feed reveal">
+    <div class="feed__grid">
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Exploração tipográfica</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Estudo de gradiente</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Composição 3D</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Ícone de marca</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Paleta de cores</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Layout editorial</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Motion experiment</span>
+      </div>
+      <div class="feed__cell">
+        <div class="feed__cell-bg"></div><span class="feed__cell-label">Infográfico</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>CONTEÚDO © SEU NOME — TODOS OS DIREITOS RESERVADOS</p>
+    <ul class="footer__links">
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Behance</a></li>
+    </ul>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>

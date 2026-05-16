@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informações — Seu Nome</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="index.html" class="nav__back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+      </svg>
+      Home
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Work</a></li>
+      <li><a href="about.html" class="is-active">Information</a></li>
+      <li><a href="mailto:seuemail@email.com">Email</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="index.html">Work</a>
+    <a href="about.html">Information</a>
+    <a href="mailto:seuemail@email.com">Email</a>
+  </div>
+
+  <!-- ─── PAGE HEADER ──────────────────────────────────── -->
+  <div class="about-header reveal">
+    <div>
+      <p class="about-header__eyebrow t-eyebrow">Informações</p>
+      <h1 class="about-header__title t-serif-lg">Mais sobre mim<br>e meu processo</h1>
+      <p class="about-header__subtitle">
+        Designer com foco em branding digital e produto. Ajudo empresas a construir presenças online com identidade própria.
+      </p>
+    </div>
+    <!--
+      Substitua pelo caminho da sua foto:
+      <img class="about-header__photo" src="assets/images/profile/profile.jpg" alt="Foto de Seu Nome">
+    -->
+    <div class="placeholder about-header__photo">
+      <span>Sua foto aqui<br>aspect-ratio 3:4</span>
+    </div>
+  </div>
+
+  <!-- ─── ABOUT TEXT ────────────────────────────────────── -->
+  <div class="about-cols">
+    <div class="about-cols__col reveal">
+      <h2>Sobre mim</h2>
+      <div class="about-cols__body">
+        <p>Desde que comecei meus estudos em comunicação visual, desenvolvi uma compreensão profunda de como a web se parece e se comporta.</p>
+        <p>Conforme a publicação digital se torna mais acessível com no-code e IA, criar marcas verdadeiramente distintas ficou mais difícil — e mais necessário.</p>
+        <p>Meu processo de design busca descobrir o que torna cada empresa única e investir o tempo de design para fazer esses valores brilharem.</p>
+      </div>
+    </div>
+    <div class="about-cols__col reveal">
+      <h2>Processo</h2>
+      <div class="about-cols__body">
+        <p>Cada projeto começa com escuta. Antes de qualquer decisão visual, entendo o negócio, o público e o que diferencia aquela marca das demais.</p>
+        <p>Da estratégia ao pixel final, trabalho de forma colaborativa e iterativa — mantendo clareza em cada etapa para que o resultado seja ao mesmo tempo bonito e funcional.</p>
+        <p>Especializo em identidade de marca, design de produto digital e direção de arte para web.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── PHOTO STRIP ───────────────────────────────────── -->
+  <!--
+    Substitua os placeholders por imagens reais:
+    <img class="photo-strip__cell" src="assets/images/profile/foto-1.jpg" alt="">
+  -->
+  <div class="photo-strip reveal">
+    <div class="placeholder photo-strip__cell"><span>Foto / Imagem 1 — 4:3</span></div>
+    <div class="placeholder photo-strip__cell"><span>Foto / Imagem 2 — 4:3</span></div>
+    <div class="placeholder photo-strip__cell"><span>Foto / Imagem 3 — 4:3</span></div>
+  </div>
+
+  <!-- ─── SKILLS / RECOGNITION / AVAILABILITY ──────────── -->
+  <div class="info-grid">
+    <div class="info-grid__col reveal">
+      <h3>Habilidades</h3>
+      <ul class="skills-list">
+        <li>Design Visual</li>
+        <li>Web Design</li>
+        <li>Branding</li>
+        <li>Wireframing</li>
+        <li>Design de Produto</li>
+        <li>Ilustração</li>
+        <li>Animação UI</li>
+        <li>Design System</li>
+      </ul>
+    </div>
+    <div class="info-grid__col reveal">
+      <h3>Reconhecimentos</h3>
+      <p class="info-text">
+        Awwwards SOTD (3×), CSS Design Awards, Behance Featured, Lapa Ninja (5×), Minimal Gallery, Site Inspire (4×), Case Study Club
+      </p>
+    </div>
+    <div class="info-grid__col reveal">
+      <h3>Disponibilidade</h3>
+      <p class="info-text">
+        Atualmente disponível para projetos freelance e posições full-time. Baseado em São Paulo, trabalho com clientes globalmente.
+      </p>
+      <a href="mailto:seuemail@email.com" class="info-cta">Entre em contato →</a>
+    </div>
+  </div>
+
+  <!-- ─── CLIENTS ───────────────────────────────────────── -->
+  <div class="clients reveal">
+    <h3>Clientes e Agências</h3>
+    <div class="clients__grid">
+      <!--
+        Para logos reais use:
+        <div class="clients__cell">
+          <img src="assets/images/clients/cliente-a.svg" alt="Cliente A">
+        </div>
+      -->
+      <div class="clients__cell"><span>Cliente A</span></div>
+      <div class="clients__cell"><span>Cliente B</span></div>
+      <div class="clients__cell"><span>Agência C</span></div>
+      <div class="clients__cell"><span>Empresa D</span></div>
+      <div class="clients__cell"><span>Startup E</span></div>
+      <div class="clients__cell"><span>Marca F</span></div>
+      <div class="clients__cell"><span>Agência G</span></div>
+      <div class="clients__cell"><span>Cliente H</span></div>
+      <div class="clients__cell"><span>Empresa I</span></div>
+      <div class="clients__cell"><span>Marca J</span></div>
+    </div>
+  </div>
+
+  <!-- ─── EXPERIENCE ────────────────────────────────────── -->
+  <section class="experience">
+    <div class="experience__item reveal">
+      <span class="experience__year">2022 — atual</span>
+      <span class="experience__role">Design Lead — Empresa XYZ</span>
+      <span class="experience__company">São Paulo, BR</span>
+    </div>
+    <div class="experience__item reveal">
+      <span class="experience__year">2020 — 2022</span>
+      <span class="experience__role">Senior Product Designer — Agência ABC</span>
+      <span class="experience__company">Remoto</span>
+    </div>
+    <div class="experience__item reveal">
+      <span class="experience__year">2018 — 2020</span>
+      <span class="experience__role">UI/UX Designer — Startup 123</span>
+      <span class="experience__company">São Paulo, BR</span>
+    </div>
+    <div class="experience__item reveal">
+      <span class="experience__year">2016 — 2018</span>
+      <span class="experience__role">Designer Jr. — Estúdio Visual</span>
+      <span class="experience__company">Rio de Janeiro, BR</span>
+    </div>
+  </section>
+
+  <!-- ─── CTA ───────────────────────────────────────────── -->
+  <div class="about-cta reveal">
+    <p class="t-eyebrow">Vamos trabalhar juntos</p>
+    <h2 class="about-cta__title t-serif-lg">
+      Tem um projeto em mente?<br>
+      <em>Me conta.</em>
+    </h2>
+    <a href="mailto:seuemail@email.com" class="about-cta__link">
+      seuemail@email.com →
+    </a>
+  </div>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>CONTEÚDO © SEU NOME — TODOS OS DIREITOS RESERVADOS</p>
+    <ul class="footer__links">
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">LinkedIn</a></li>
+      <li><a href="#">Behance</a></li>
+    </ul>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
