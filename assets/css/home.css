@@ -67,33 +67,17 @@
   animation: bounce 2.2s ease-in-out infinite;
 }
 
-#typing {
-  position: relative;
-  display: inline-block;
-  min-width: 320px;
-}
-
-#typing::after {
-  content: "";
-  position: absolute;
-  right: -8px;
-  top: 10%;
-  width: 2px;
-  height: 80%;
-  background: #111;
-  animation: blink 0.8s infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
 /* ─── PROJECTS ───────────────────────────────────────────── */
 .projects {
   padding: 0 var(--pad-x);
   border: none;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
 
 .project-item {
@@ -101,19 +85,11 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   padding: 3.5rem 0;
-  border: none;
+  border-bottom: 1px solid var(--border);
   align-items: center;
   text-decoration: none;
   color: inherit;
   transition: opacity 0.22s;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    justify-content: center;
-    /* ou flex-start */
-    padding-top: 120px;
-  }
 }
 
 .project-item:hover {
