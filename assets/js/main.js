@@ -116,3 +116,23 @@ window.addEventListener('keydown', (e) => {
     document.body.style.overflow = '';
   }
 });
+
+soonCases.forEach((item) => {
+  item.addEventListener('mouseenter', () => {
+    cursor.style.transform =
+      'translate(-50%, -50%) scale(1)';
+
+    cursor.style.opacity = '1';
+
+    document.body.style.cursor = 'none';
+  });
+
+  item.addEventListener('mouseleave', () => {
+    cursor.style.transform =
+      'translate(-50%, -50%) scale(0)';
+
+    cursor.style.opacity = '0';
+
+    document.body.style.cursor = 'default';
+  });
+});
