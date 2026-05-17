@@ -293,12 +293,24 @@ img {
   color: var(--text-ter);
 }
 
+.case-media {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.case-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
 
 video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  display: flex;
 }
 
 .project-item.featured .project-thumb-placeholder {
