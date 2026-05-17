@@ -294,7 +294,12 @@ img {
 }
 
 
-
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .project-item.featured .project-thumb-placeholder {
   aspect-ratio: 21/9;
