@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informações — Seu Nome</title>
+  <title>About me</title>
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/about.css">
 </head>
+
 <body>
 
   <!-- ─── NAV ──────────────────────────────────────────── -->
   <nav class="nav">
     <a href="index.html" class="nav__back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M19 12H5M5 12l7-7M5 12l7 7"/>
+        <path d="M19 12H5M5 12l7-7M5 12l7 7" />
       </svg>
       Home
     </a>
     <ul class="nav__links">
       <li><a href="index.html">Work</a></li>
-      <li><a href="about.html" class="is-active">Information</a></li>
-      <li><a href="mailto:seuemail@email.com">Email</a></li>
+      <li><a href="about.html" class="is-active">About</a></li>
+      <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
@@ -36,44 +40,51 @@
 
   <div class="nav-mobile" id="mobileMenu">
     <a href="index.html">Work</a>
-    <a href="about.html">Information</a>
-    <a href="mailto:seuemail@email.com">Email</a>
+    <a href="about.html">About</a>
+    <a href="mailto:cezar611@gmail.com">Email</a>
   </div>
 
   <!-- ─── PAGE HEADER ──────────────────────────────────── -->
   <div class="about-header reveal">
     <div>
-      <p class="about-header__eyebrow t-eyebrow">Informações</p>
-      <h1 class="about-header__title t-serif-lg">Mais sobre mim<br>e meu processo</h1>
-      <p class="about-header__subtitle">
-        Designer com foco em branding digital e produto. Ajudo empresas a construir presenças online com identidade própria.
-      </p>
+      <p class="about-header__eyebrow t-eyebrow">About</p>
+      <h1 class="about-header__title t-serif-lg">Me and <br> <span class="highlight">my process</span></h1>
+
     </div>
     <!--
       Substitua pelo caminho da sua foto:
       <img class="about-header__photo" src="assets/images/profile/profile.jpg" alt="Foto de Seu Nome">
     -->
     <div class="placeholder about-header__photo">
-      <span>Sua foto aqui<br>aspect-ratio 3:4</span>
+      <img src="/portfolio/assets/img/croped.jpg">
     </div>
   </div>
 
   <!-- ─── ABOUT TEXT ────────────────────────────────────── -->
   <div class="about-cols">
     <div class="about-cols__col reveal">
-      <h2>Sobre mim</h2>
+      <h2>About me</h2>
       <div class="about-cols__body">
-        <p>Desde que comecei meus estudos em comunicação visual, desenvolvi uma compreensão profunda de como a web se parece e se comporta.</p>
-        <p>Conforme a publicação digital se torna mais acessível com no-code e IA, criar marcas verdadeiramente distintas ficou mais difícil — e mais necessário.</p>
-        <p>Meu processo de design busca descobrir o que torna cada empresa única e investir o tempo de design para fazer esses valores brilharem.</p>
+        <p>
+          Graduated in Visual Design from Universidade Positivo, I have over 7 years of experience as a Graphic
+          Designer. Currently, I work at the Veeam Software, where I contribute as a brand designer, gathering
+          stakeholder requirements and designing effective solutions.</p>
+
+        <p>I am increasingly focused on developing my skills as a Product Designer. I am dedicated, detail-oriented, and
+          driven by curiosity and consistency, which I believe are essential for continuous learning and growth. I also
+          have a strong interest in business strategy and the impact design can create across different areas of a
+          company.
+        </p>
       </div>
     </div>
     <div class="about-cols__col reveal">
-      <h2>Processo</h2>
+      <h2>Process</h2>
       <div class="about-cols__body">
-        <p>Cada projeto começa com escuta. Antes de qualquer decisão visual, entendo o negócio, o público e o que diferencia aquela marca das demais.</p>
-        <p>Da estratégia ao pixel final, trabalho de forma colaborativa e iterativa — mantendo clareza em cada etapa para que o resultado seja ao mesmo tempo bonito e funcional.</p>
-        <p>Especializo em identidade de marca, design de produto digital e direção de arte para web.</p>
+        <p>Every project comes with its own context, and the process should be adapted to fit the specific needs of that
+          project. There are established methodologies that can be applied and customized throughout the process — such
+          as the Double Diamond framework for digital product design. Because of that, I consider myself highly
+          adaptable and solution-oriented. I enjoy exploring new approaches, experimenting with different executions,
+          and finding the most effective path for each challenge.</p>
       </div>
     </div>
   </div>
@@ -83,98 +94,118 @@
     Substitua os placeholders por imagens reais:
     <img class="photo-strip__cell" src="assets/images/profile/foto-1.jpg" alt="">
   -->
-  <div class="photo-strip reveal">
-    <div class="placeholder photo-strip__cell"><span>Foto / Imagem 1 — 4:3</span></div>
-    <div class="placeholder photo-strip__cell"><span>Foto / Imagem 2 — 4:3</span></div>
-    <div class="placeholder photo-strip__cell"><span>Foto / Imagem 3 — 4:3</span></div>
-  </div>
+
 
   <!-- ─── SKILLS / RECOGNITION / AVAILABILITY ──────────── -->
   <div class="info-grid">
     <div class="info-grid__col reveal">
-      <h3>Habilidades</h3>
+      <h3>Skills</h3>
       <ul class="skills-list">
-        <li>Design Visual</li>
-        <li>Web Design</li>
+        <li>UI/UX</li>
         <li>Branding</li>
         <li>Wireframing</li>
-        <li>Design de Produto</li>
-        <li>Ilustração</li>
-        <li>Animação UI</li>
+        <li>Product Designer</li>
+        <li>Research</li>
+        <li>Usability Test</li>
         <li>Design System</li>
+        <li>Ilustration</li>
+        <li>Motion UI</li>
+        <li>Design System</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
       </ul>
     </div>
     <div class="info-grid__col reveal">
-      <h3>Reconhecimentos</h3>
-      <p class="info-text">
-        Awwwards SOTD (3×), CSS Design Awards, Behance Featured, Lapa Ninja (5×), Minimal Gallery, Site Inspire (4×), Case Study Club
-      </p>
+      <h3>Tools</h3>
+      <ul class="skills-list">
+        <li>AI Tools - Firefly, Germini, Claude &#128293;</li>
+        <li>Figma &#128293;</li>
+        <li>Powerpoint &#128293;</li>
+        <li>Adobe CC &#128293;</li>
+        <li>Miro</li>
+        <li>Lookback</li>
+        <li>SurveyMonkey</li>
+        <li>Optimal Workshop</li>
+        <li>Notion</li>
+
+      </ul>
     </div>
     <div class="info-grid__col reveal">
-      <h3>Disponibilidade</h3>
-      <p class="info-text">
-        Atualmente disponível para projetos freelance e posições full-time. Baseado em São Paulo, trabalho com clientes globalmente.
-      </p>
-      <a href="mailto:seuemail@email.com" class="info-cta">Entre em contato →</a>
+      <h3>Soft Skills</h3>
+      <ul class="skills-list">
+        <li>Curiosity</li>
+        <li>Autonomy</li>
+        <li>Adaptability</li>
+        <li>Learning</li>
+        <li>Communication</li>
+
+
+
+
+      </ul>
+
     </div>
   </div>
 
   <!-- ─── CLIENTS ───────────────────────────────────────── -->
   <div class="clients reveal">
-    <h3>Clientes e Agências</h3>
+    <h3>Companies I’ve Collaborated With</h3>
     <div class="clients__grid">
-      <!--
-        Para logos reais use:
-        <div class="clients__cell">
-          <img src="assets/images/clients/cliente-a.svg" alt="Cliente A">
-        </div>
-      -->
-      <div class="clients__cell"><span>Cliente A</span></div>
-      <div class="clients__cell"><span>Cliente B</span></div>
-      <div class="clients__cell"><span>Agência C</span></div>
-      <div class="clients__cell"><span>Empresa D</span></div>
-      <div class="clients__cell"><span>Startup E</span></div>
-      <div class="clients__cell"><span>Marca F</span></div>
-      <div class="clients__cell"><span>Agência G</span></div>
-      <div class="clients__cell"><span>Cliente H</span></div>
-      <div class="clients__cell"><span>Empresa I</span></div>
-      <div class="clients__cell"><span>Marca J</span></div>
+
+      <div class="clients__cell">
+        <img src="assets/img/veeam.svg" alt="Veeam">
+      </div>
+
+      <div class="clients__cell">
+        <img src="assets/img/vonder.svg" alt="Vonder">
+      </div>
+      <div class="clients__cell"><img src="assets/img/fg_logo.svg" alt="Ferramentas Gerais"></div>
+
+
+
+      <div class="clients__cell"><img src="assets/img/topzstone.png" alt="Topzstone"></div>
+      <div class="clients__cell"><img src="assets/img/Logotipo_da_Universidade_Positivo.svg"
+          alt="Universidade Positivo"></div>
+
     </div>
+
+
+  </div>
   </div>
 
   <!-- ─── EXPERIENCE ────────────────────────────────────── -->
   <section class="experience">
     <div class="experience__item reveal">
-      <span class="experience__year">2022 — atual</span>
-      <span class="experience__role">Design Lead — Empresa XYZ</span>
-      <span class="experience__company">São Paulo, BR</span>
+      <span class="experience__year">2024 — now</span>
+      <span class="experience__role">Creative Designer — Veeam Software</span>
+      <span class="experience__company">Remote</span>
     </div>
     <div class="experience__item reveal">
       <span class="experience__year">2020 — 2022</span>
-      <span class="experience__role">Senior Product Designer — Agência ABC</span>
-      <span class="experience__company">Remoto</span>
+      <span class="experience__role">UI/UX Designer — OVD Group</span>
+      <span class="experience__company">Curitiba, PR - Brazil</span>
     </div>
     <div class="experience__item reveal">
-      <span class="experience__year">2018 — 2020</span>
-      <span class="experience__role">UI/UX Designer — Startup 123</span>
-      <span class="experience__company">São Paulo, BR</span>
+      <span class="experience__year">2017 — 2019</span>
+      <span class="experience__role">Middle Creative Designer — Desdobra Agency - Design of Brazil</span>
+      <span class="experience__company">Curitiba, PR - Brazil</span>
     </div>
     <div class="experience__item reveal">
-      <span class="experience__year">2016 — 2018</span>
-      <span class="experience__role">Designer Jr. — Estúdio Visual</span>
-      <span class="experience__company">Rio de Janeiro, BR</span>
+      <span class="experience__year">2015 — 2017</span>
+      <span class="experience__role">Jr. Creative Designer — Desdobra Agency - Design of Brazil</span>
+      <span class="experience__company">Curitiba, PR - Brazil</span>
     </div>
   </section>
 
   <!-- ─── CTA ───────────────────────────────────────────── -->
   <div class="about-cta reveal">
-    <p class="t-eyebrow">Vamos trabalhar juntos</p>
+    <p class="t-eyebrow">Let´s work together?</p>
     <h2 class="about-cta__title t-serif-lg">
-      Tem um projeto em mente?<br>
-      <em>Me conta.</em>
+      Got an idea?</em>
     </h2>
     <a href="mailto:seuemail@email.com" class="about-cta__link">
-      seuemail@email.com →
+      cezar611@gmail.com →
     </a>
   </div>
 
@@ -190,4 +221,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -161,15 +161,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   transition: background 0.2s;
 }
 
 .clients__cell:hover { background: var(--bg-subtle); }
 
 .clients__cell img {
-  max-height: 28px;
-  width: auto;
+  max-height: auto;
+  width: 180px;
   opacity: 0.5;
   filter: grayscale(1);
   transition: opacity 0.2s;

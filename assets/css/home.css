@@ -12,9 +12,6 @@
   border: none;
 }
 
-.highlight {
-  color: var(--text-ter);
-}
 
 
 .hero__tagline {
@@ -162,18 +159,19 @@
 }
 
 .soon-badge {
-  display: inline-block;
-  margin-top: 12px;
-  
+  position: absolute;
+  top: 12px;
 
-  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
   padding: 0.45rem 0.75rem;
   border-radius: 999px;
 
-  background: rgba(255, 75, 15, 0.968);
+  background: #ff4b0f;
+  /* cor sólida */
   border: 1px solid rgba(255, 255, 255, 0.14);
-
-  backdrop-filter: blur(12px);
 
   color: #fff;
 
@@ -183,8 +181,11 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
 
+  z-index: 10;
+
   animation: pulseSoon 1.8s ease-in-out infinite;
 }
+
 @keyframes pulseSoon {
 
   0%,
@@ -632,7 +633,7 @@
 .project-item.is-soon * {
   position: relative;
   cursor: default;
- 
+
 }
 
 /* cursor fake */
@@ -668,7 +669,7 @@
   will-change: transform, left, top;
 
   transition:
-    transform .35s cubic-bezier(.19,1,.22,1),
+    transform .35s cubic-bezier(.19, 1, .22, 1),
     opacity .25s ease;
 }
 

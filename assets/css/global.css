@@ -313,6 +313,10 @@ video {
   display: flex;
 }
 
+.highlight {
+  color: var(--text-ter);
+}
+
 .cursor-soon {
   width: 90px;
   height: 90px;
@@ -330,10 +334,10 @@ video {
   align-items: center;
   justify-content: center;
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
 
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
   color: white;
   font-size: 0.75rem;
@@ -343,11 +347,12 @@ video {
   transform: translate(-50%, -50%) scale(0);
 
   transition:
-    transform .35s cubic-bezier(.19,1,.22,1),
+    transform .35s cubic-bezier(.19, 1, .22, 1),
     opacity .25s ease;
 
   opacity: 0;
 }
+
 .project-item.featured .project-thumb-placeholder {
   aspect-ratio: 21/9;
 }
