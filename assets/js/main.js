@@ -117,22 +117,25 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-soonCases.forEach((item) => {
-  item.addEventListener('mouseenter', () => {
-    cursor.style.transform =
-      'translate(-50%, -50%) scale(1)';
 
-    cursor.style.opacity = '1';
+const cursor = document.querySelector('.cursor-progress');
+const soonCards = document.querySelectorAll('.project-item.is-soon');
 
-    document.body.style.cursor = 'none';
+window.addEventListener('mousemove', (e) => {
+  if (!cursor) return;
+  cursor.style.setProperty('--cx', `${e.clientX}px`);
+  cursor.style.setProperty('--cy', `${e.clientY}px`);
+
+  // checa se o mouse está sobre algum card is-soon
+  const overSoon = [...soonCards].some(card => {
+    const rect = card.getBoundingClientRect();
+    return (
+      e.clientX >= rect.left &&
+      e.clientX <= rect.right &&
+      e.clientY >= rect.top &&
+      e.clientY <= rect.bottom
+    );
   });
 
-  item.addEventListener('mouseleave', () => {
-    cursor.style.transform =
-      'translate(-50%, -50%) scale(0)';
-
-    cursor.style.opacity = '0';
-
-    document.body.style.cursor = 'default';
-  });
+  cursor.classList.toggle('active', overSoon);
 });

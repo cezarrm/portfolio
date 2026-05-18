@@ -162,15 +162,15 @@
 }
 
 .soon-badge {
-  position: absolute;
+  display: inline-block;
+  margin-top: 12px;
+  
 
-
-
+  position: relative;
   padding: 0.45rem 0.75rem;
-
   border-radius: 999px;
 
-  background: rgba(41, 0, 145, 0.968);
+  background: rgba(255, 75, 15, 0.968);
   border: 1px solid rgba(255, 255, 255, 0.14);
 
   backdrop-filter: blur(12px);
@@ -185,7 +185,6 @@
 
   animation: pulseSoon 1.8s ease-in-out infinite;
 }
-
 @keyframes pulseSoon {
 
   0%,
@@ -621,4 +620,59 @@
     height: 100%;
   }
 
+}
+
+/* ========================================
+   CUSTOM CURSOR — IN PROGRESS
+======================================== */
+
+/* ========================================
+   SOON CARD
+======================================== */
+.project-item.is-soon * {
+  position: relative;
+  cursor: default;
+ 
+}
+
+/* cursor fake */
+.cursor-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 110px;
+  height: 110px;
+
+  border-radius: 999px;
+
+  background: #000;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+
+  will-change: transform, left, top;
+
+  transition:
+    transform .35s cubic-bezier(.19,1,.22,1),
+    opacity .25s ease;
+}
+
+.cursor-progress.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
