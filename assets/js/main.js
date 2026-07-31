@@ -121,6 +121,13 @@ window.addEventListener('keydown', (e) => {
 const cursor = document.querySelector('.cursor-progress');
 const soonCards = document.querySelectorAll('.project-item.is-soon');
 
+// bloqueia a navegação nos cards "em breve"
+soonCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault();
+  });
+});
+
 window.addEventListener('mousemove', (e) => {
   if (!cursor) return;
   cursor.style.setProperty('--cx', `${e.clientX}px`);

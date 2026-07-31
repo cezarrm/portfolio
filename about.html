@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script>(function(){try{if((localStorage.getItem('lang')||'pt')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.setAttribute('lang','en');}}catch(e){}})();</script>
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About me</title>
+  <title>About — Cezar Miranda</title>
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/global.css">
@@ -24,102 +21,152 @@
   <nav class="nav">
     <a href="index.html" class="nav__back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M19 12H5M5 12l7-7M5 12l7 7" />
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"></path>
       </svg>
-      Home
+      <span class="t-pt">Voltar</span>
+      <span class="t-en">Back</span>
     </a>
     <ul class="nav__links">
-      <li><a href="index.html">Work</a></li>
-      <li><a href="about.html" class="is-active">About</a></li>
+      <li><a href="index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a></li>
+      <li><a href="about.html" class="is-active"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
       <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="nav-mobile" id="mobileMenu">
-    <a href="index.html">Work</a>
-    <a href="about.html">About</a>
+    <a href="index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
+    <a href="about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a>
     <a href="mailto:cezar611@gmail.com">Email</a>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </div>
 
   <!-- ─── PAGE HEADER ──────────────────────────────────── -->
   <div class="about-header reveal">
     <div>
-      <p class="about-header__eyebrow t-eyebrow">About</p>
-      <h1 class="about-header__title t-serif-lg">Me and <br> <span class="highlight">my process</span></h1>
-
+      <p class="about-header__eyebrow t-eyebrow t-pt">Sobre</p>
+      <p class="about-header__eyebrow t-eyebrow t-en">About</p>
+      <h1 class="about-header__title t-serif-lg t-pt">Eu e <br> <span class="highlight">meu processo</span></h1>
+      <h1 class="about-header__title t-serif-lg t-en">Me and <br> <span class="highlight">my process</span></h1>
     </div>
-    <!--
-      Substitua pelo caminho da sua foto:
-      <img class="about-header__photo" src="assets/images/profile/profile.jpg" alt="Foto de Seu Nome">
-    -->
     <div class="placeholder about-header__photo">
-      <img src="/portfolio/assets/img/croped.jpg">
+      <img src="assets/img/croped.jpg" alt="Cezar Miranda">
     </div>
   </div>
 
   <!-- ─── ABOUT TEXT ────────────────────────────────────── -->
   <div class="about-cols">
     <div class="about-cols__col reveal">
-      <h2>About me</h2>
-      <div class="about-cols__body">
+      <h2 class="t-pt">Sobre mim</h2>
+      <h2 class="t-en">About me</h2>
+      <div class="about-cols__body t-pt">
         <p>
-          Graduated in Visual Design from Universidade Positivo, I have over 7 years of experience as a Graphic
-          Designer. Currently, I work at the Veeam Software, where I contribute as a brand designer, gathering
-          stakeholder requirements and designing effective solutions.</p>
-
-        <p>I am increasingly focused on developing my skills as a Product Designer. I am dedicated, detail-oriented, and
-          driven by curiosity and consistency, which I believe are essential for continuous learning and growth. I also
-          have a strong interest in business strategy and the impact design can create across different areas of a
-          company.
+          Formado em Design Visual pela Universidade Positivo, tenho mais de 7 anos de
+          experiência como Designer Gráfico. Atualmente trabalho na Veeam Software, onde
+          atuo como brand designer, levantando necessidades dos stakeholders e desenhando
+          soluções eficazes.
+        </p>
+        <p>
+          Estou cada vez mais focado em desenvolver minhas habilidades como Product
+          Designer. Sou dedicado, atento aos detalhes e movido por curiosidade e
+          consistência, que considero essenciais para aprendizado e crescimento contínuos.
+          Também tenho forte interesse em estratégia de negócio e no impacto que o design
+          pode gerar em diferentes áreas de uma empresa.
+        </p>
+      </div>
+      <div class="about-cols__body t-en">
+        <p>
+          Graduated in Visual Design from Universidade Positivo, I have over 7 years of
+          experience as a Graphic Designer. Currently, I work at Veeam Software, where I
+          contribute as a brand designer, gathering stakeholder requirements and designing
+          effective solutions.
+        </p>
+        <p>
+          I am increasingly focused on developing my skills as a Product Designer. I am
+          dedicated, detail-oriented, and driven by curiosity and consistency, which I
+          believe are essential for continuous learning and growth. I also have a strong
+          interest in business strategy and the impact design can create across different
+          areas of a company.
         </p>
       </div>
     </div>
     <div class="about-cols__col reveal">
-      <h2>Process</h2>
-      <div class="about-cols__body">
-        <p>Every project comes with its own context, and the process should be adapted to fit the specific needs of that
-          project. There are established methodologies that can be applied and customized throughout the process — such
-          as the Double Diamond framework for digital product design. Because of that, I consider myself highly
-          adaptable and solution-oriented. I enjoy exploring new approaches, experimenting with different executions,
-          and finding the most effective path for each challenge.</p>
+      <h2 class="t-pt">Processo</h2>
+      <h2 class="t-en">Process</h2>
+      <div class="about-cols__body t-pt">
+        <p>
+          Cada projeto vem com seu próprio contexto, e o processo deve se adaptar às
+          necessidades específicas daquele projeto. Existem metodologias já estabelecidas
+          que podem ser aplicadas e adaptadas ao longo do caminho — como o framework Double
+          Diamond para design de produtos digitais. Por isso, me considero bastante
+          adaptável e orientado a soluções. Gosto de explorar novas abordagens, testar
+          execuções diferentes e encontrar o caminho mais eficaz para cada desafio.
+        </p>
+      </div>
+      <div class="about-cols__body t-en">
+        <p>
+          Every project comes with its own context, and the process should be adapted to
+          fit the specific needs of that project. There are established methodologies
+          that can be applied and customized throughout the process — such as the Double
+          Diamond framework for digital product design. Because of that, I consider
+          myself highly adaptable and solution-oriented. I enjoy exploring new approaches,
+          experimenting with different executions, and finding the most effective path
+          for each challenge.
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- ─── PHOTO STRIP ───────────────────────────────────── -->
-  <!--
-    Substitua os placeholders por imagens reais:
-    <img class="photo-strip__cell" src="assets/images/profile/foto-1.jpg" alt="">
-  -->
-
-
   <!-- ─── SKILLS / RECOGNITION / AVAILABILITY ──────────── -->
   <div class="info-grid">
     <div class="info-grid__col reveal">
-      <h3>Skills</h3>
-      <ul class="skills-list">
+      <h3 class="t-pt">Habilidades</h3>
+      <h3 class="t-en">Skills</h3>
+      <ul class="skills-list t-pt">
+        <li>UI/UX</li>
+        <li>Branding</li>
+        <li>Wireframing</li>
+        <li>Product Designer</li>
+        <li>Pesquisa</li>
+        <li>Teste de Usabilidade</li>
+        <li>Design System</li>
+        <li>Ilustração</li>
+        <li>Motion UI</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+      </ul>
+      <ul class="skills-list t-en">
         <li>UI/UX</li>
         <li>Branding</li>
         <li>Wireframing</li>
         <li>Product Designer</li>
         <li>Research</li>
-        <li>Usability Test</li>
+        <li>Usability Testing</li>
         <li>Design System</li>
-        <li>Ilustration</li>
+        <li>Illustration</li>
         <li>Motion UI</li>
-        <li>Design System</li>
         <li>HTML</li>
         <li>CSS</li>
         <li>Javascript</li>
       </ul>
     </div>
     <div class="info-grid__col reveal">
-      <h3>Tools</h3>
+      <h3 class="t-pt">Ferramentas</h3>
+      <h3 class="t-en">Tools</h3>
       <ul class="skills-list">
-        <li>AI Tools - Firefly, Germini, Claude &#128293;</li>
+        <li>AI Tools - Firefly, Gemini, Claude &#128293;</li>
         <li>Figma &#128293;</li>
         <li>Powerpoint &#128293;</li>
         <li>Adobe CC &#128293;</li>
@@ -128,58 +175,53 @@
         <li>SurveyMonkey</li>
         <li>Optimal Workshop</li>
         <li>Notion</li>
-
       </ul>
     </div>
     <div class="info-grid__col reveal">
-      <h3>Soft Skills</h3>
-      <ul class="skills-list">
+      <h3 class="t-pt">Habilidades Comportamentais</h3>
+      <h3 class="t-en">Soft Skills</h3>
+      <ul class="skills-list t-pt">
+        <li>Curiosidade</li>
+        <li>Autonomia</li>
+        <li>Adaptabilidade</li>
+        <li>Aprendizado contínuo</li>
+        <li>Comunicação</li>
+      </ul>
+      <ul class="skills-list t-en">
         <li>Curiosity</li>
         <li>Autonomy</li>
         <li>Adaptability</li>
         <li>Learning</li>
         <li>Communication</li>
-
-
-
-
       </ul>
-
     </div>
   </div>
 
   <!-- ─── CLIENTS ───────────────────────────────────────── -->
   <div class="clients reveal">
-    <h3>Companies I’ve Collaborated With</h3>
+    <h3 class="t-pt">Empresas com quem já colaborei</h3>
+    <h3 class="t-en">Companies I've Collaborated With</h3>
     <div class="clients__grid">
-
       <div class="clients__cell">
         <img src="assets/img/veeam.svg" alt="Veeam">
       </div>
-
       <div class="clients__cell">
         <img src="assets/img/vonder.svg" alt="Vonder">
       </div>
       <div class="clients__cell"><img src="assets/img/fg_logo.svg" alt="Ferramentas Gerais"></div>
-
-
-
       <div class="clients__cell"><img src="assets/img/topzstone.png" alt="Topzstone"></div>
-      <div class="clients__cell"><img src="assets/img/Logotipo_da_Universidade_Positivo.svg"
-          alt="Universidade Positivo"></div>
-
+      <div class="clients__cell"><img src="assets/img/Logotipo_da_Universidade_Positivo.svg" alt="Universidade Positivo"></div>
     </div>
-
-
-  </div>
   </div>
 
   <!-- ─── EXPERIENCE ────────────────────────────────────── -->
   <section class="experience">
     <div class="experience__item reveal">
-      <span class="experience__year">2024 — now</span>
+      <span class="experience__year t-pt">2024 — atual</span>
+      <span class="experience__year t-en">2024 — now</span>
       <span class="experience__role">Creative Designer — Veeam Software</span>
-      <span class="experience__company">Remote</span>
+      <span class="experience__company t-pt">Remoto</span>
+      <span class="experience__company t-en">Remote</span>
     </div>
     <div class="experience__item reveal">
       <span class="experience__year">2020 — 2022</span>
@@ -200,25 +242,28 @@
 
   <!-- ─── CTA ───────────────────────────────────────────── -->
   <div class="about-cta reveal">
-    <p class="t-eyebrow">Let´s work together?</p>
-    <h2 class="about-cta__title t-serif-lg">
-      Got an idea?</em>
-    </h2>
-    <a href="mailto:seuemail@email.com" class="about-cta__link">
+    <p class="t-eyebrow t-pt">Vamos trabalhar juntos?</p>
+    <p class="t-eyebrow t-en">Let's work together?</p>
+    <h2 class="about-cta__title t-serif-lg t-pt">Tem uma ideia?</h2>
+    <h2 class="about-cta__title t-serif-lg t-en">Got an idea?</h2>
+    <a href="mailto:cezar611@gmail.com" class="about-cta__link">
       cezar611@gmail.com →
     </a>
   </div>
 
   <!-- ─── FOOTER ────────────────────────────────────────── -->
   <footer class="footer">
-    <p>Content © Cezar Miranda — All rights reserved</p>
+    <p class="t-pt">Conteúdo © Cezar Miranda — Todos os direitos reservados</p>
+    <p class="t-en">Content © Cezar Miranda — All rights reserved</p>
     <ul class="footer__links">
       <li><a href="https://www.linkedin.com/in/cezarrm/">LinkedIn</a></li>
       <li><a href="https://www.behance.net/cezarrm">Behance</a></li>
     </ul>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+  <script src="assets/js/case.js"></script>
+  <script src="assets/js/i18n.js"></script>
+</body></html>

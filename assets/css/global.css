@@ -229,6 +229,53 @@ img {
   color: var(--text);
 }
 
+/* ─── I18N (troca de idioma EN / PT-BR) ──────────────────── */
+/* Nunca sobrescreve o display do idioma ativo — só esconde o
+   inativo — para não quebrar display:block/flex definidos por
+   outras classes (ex: .case-meta__label, .tag). */
+html:not(.lang-en) .t-en { display: none !important; }
+html.lang-en .t-pt { display: none !important; }
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-ter);
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-ter);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lang-switch button:hover {
+  color: var(--text);
+}
+
+.lang-switch button.is-active {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.lang-switch__divider {
+  color: var(--border);
+}
+
+.nav-mobile .lang-switch {
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.4rem;
+}
+
 /* ─── FOOTER ─────────────────────────────────────────────── */
 .footer {
   padding: 2rem var(--pad-x);
@@ -269,6 +316,7 @@ img {
 
 /* ─── PLACEHOLDER (shared across pages) ─────────────────── */
 .placeholder {
+  position: relative;
   width: 100%;
   background: var(--bg-subtle);
   border: 1px solid var(--border);
@@ -315,46 +363,6 @@ video {
 
 .highlight {
   color: var(--text-ter);
-}
-
-.cursor-soon {
-  width: 90px;
-  height: 90px;
-
-  border-radius: 50%;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  pointer-events: none;
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  color: white;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-
-  transform: translate(-50%, -50%) scale(0);
-
-  transition:
-    transform .35s cubic-bezier(.19, 1, .22, 1),
-    opacity .25s ease;
-
-  opacity: 0;
-}
-
-.project-item.featured .project-thumb-placeholder {
-  aspect-ratio: 21/9;
 }
 
 /* ─── TAG (pill label) ───────────────────────────────────── */

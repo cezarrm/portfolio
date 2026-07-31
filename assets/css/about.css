@@ -19,13 +19,6 @@
   margin-bottom: 0.75rem;
 }
 
-.about-header__subtitle {
-  font-size: 1rem;
-  color: var(--text-sec);
-  line-height: 1.7;
-  max-width: 420px;
-}
-
 .about-header__photo {
   width: 100%;
   max-width: 360px;
@@ -65,21 +58,6 @@
 
 .about-cols__body p + p { margin-top: 1.2rem; }
 
-/* ─── PHOTO STRIP ────────────────────────────────────────── */
-.photo-strip {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.photo-strip__cell {
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  width: 100%;
-}
-
 /* ─── SKILLS / RECOGNITION / AVAILABILITY ───────────────── */
 .info-grid {
   display: grid;
@@ -114,24 +92,6 @@
   color: var(--text-sec);
   line-height: 1.4;
 }
-
-.info-text {
-  font-size: 0.95rem;
-  color: var(--text-sec);
-  line-height: 1.8;
-}
-
-.info-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  color: var(--text);
-  margin-top: 1.25rem;
-  transition: gap 0.2s;
-}
-
-.info-cta:hover { gap: 0.9rem; }
 
 /* ─── CLIENTS ────────────────────────────────────────────── */
 .clients {
@@ -296,9 +256,6 @@
   .about-cols { grid-template-columns: 1fr; }
   .about-cols__col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
   .about-cols__col { padding: 2.5rem var(--pad-x-sm); }
-
-  .photo-strip { grid-template-columns: 1fr 1fr; }
-  .photo-strip__cell:nth-child(3) { display: none; }
 
   .info-grid { grid-template-columns: 1fr; }
   .info-grid__col { border-right: none !important; padding: 2.5rem var(--pad-x-sm); }

@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script>(function(){try{if((localStorage.getItem('lang')||'pt')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.setAttribute('lang','en');}}catch(e){}})();</script>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Topzstone — Editorial and Branding</title>
+  <title>Topzstone — Branding and Editorial | Cezar Miranda</title>
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
-  <!-- CSS — paths relativos a pages/ -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/global.css">
   <link rel="stylesheet" href="../assets/css/case.css">
 </head>
@@ -24,123 +21,195 @@
   <nav class="nav">
     <a href="../index.html" class="nav__back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M19 12H5M5 12l7-7M5 12l7 7" />
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"></path>
       </svg>
-      Home
+      <span class="t-pt">Voltar</span>
+      <span class="t-en">Back</span>
     </a>
     <ul class="nav__links">
-      <li><a href="../index.html">Work</a></li>
-      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a></li>
+      <li><a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
       <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="nav-mobile" id="mobileMenu">
-    <a href="../index.html">Work</a>
-    <a href="../about.html">About</a>
+    <a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
+    <a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a>
     <a href="mailto:cezar611@gmail.com">Email</a>
-  </div>
-
-  <!-- ─── HEADER ───────────────────────────────────────── -->
-  <header class="case-header">
-
-    <p class="case-header__client t-eyebrow">Branding and Editorial</p>
-    <h1 class="case-header__title t-serif-lg">
-      Topzstone
-    </h1>
-    <p class="case-header__intro">
-      Leveraging over 25 years of expertise in natural stone extraction and processing, Topzstone brings with it two new
-      industries in natural quartz and endless application possibilities.
-    </p>
-  </header>
-
-  <!-- ─── META ─────────────────────────────────────────── -->
-  <div class="case-meta">
-    <div class="case-meta__item"><label>Year</label><span>2018</span></div>
-    <div class="case-meta__item"><label>Scope</label><span>Branding, Editorial and ID Design</span></div>
-    <div class="case-meta__item"><label>Role</label><span>Designer</span></div>
-  </div>
-
-  <!-- ─── GALLERY ──────────────────────────────────────── -->
-  <section class="case-content">
-
-    <!-- Imagem principal -->
-    <div class="placeholder">
-      <img src="../assets/img/topsztone_01.jpg">
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
     </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. TÍTULO E CONTEXTO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-hero reveal">
+    <div class="case-hero__eyebrow">
+      <span class="dot"></span>
+      <span class="t-label t-pt">Branding e Editorial</span>
+      <span class="t-label t-en">Branding and Editorial</span>
+    </div>
+
+    <h1 class="case-hero__title t-serif-xl">
+      Topzstone<br>
+      <span class="t-pt highlight">identidade para uma nova linha de quartzo natural</span>
+      <span class="t-en highlight">identity for a new natural quartz line</span>
+    </h1>
+
+    <p class="case-hero__desc t-pt">
+      Aproveitando mais de 25 anos de experiência na extração e beneficiamento de pedras
+      naturais, a Topzstone traz consigo duas novas indústrias de quartzo natural e
+      possibilidades infinitas de aplicação.
+    </p>
+    <p class="case-hero__desc t-en">
+      Leveraging over 25 years of expertise in natural stone extraction and processing,
+      Topzstone brings with it two new industries in natural quartz and endless
+      application possibilities.
+    </p>
+  </section>
+
+  <!-- Meta rápida: contexto do projeto -->
+  <div class="case-meta reveal">
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Cliente</span>
+      <span class="case-meta__label t-en">Client</span>
+      <span class="case-meta__value">Topzstone</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Escopo</span>
+      <span class="case-meta__label t-en">Scope</span>
+      <span class="case-meta__value t-pt">Branding, Editorial e Design de Identidade</span>
+      <span class="case-meta__value t-en">Branding, Editorial and ID Design</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Meu papel</span>
+      <span class="case-meta__label t-en">My role</span>
+      <span class="case-meta__value">Designer</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Ano</span>
+      <span class="case-meta__label t-en">Year</span>
+      <span class="case-meta__value">2018</span>
+    </div>
+  </div>
+
+  <!-- Imagem de destaque do case -->
+  <div class="case-hero-media reveal">
+    <div class="case-media placeholder" style="aspect-ratio:21/9;">
+      <img src="../assets/img/topsztone_01.jpg" alt="Topzstone — identidade de marca">
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. GALERIA
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-content">
 
     <!-- Duas colunas -->
     <div class="media-row reveal">
-      <div class="placeholder media-row__cell">
-        <img src="../assets/img/topsztone_02.jpg">
-      </div>
-      <div class="placeholder media-row__cell"><img src="../assets/img/topsztone_03.jpg"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/topsztone_02.jpg" alt="Topzstone — aplicação da identidade"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/topsztone_03.jpg" alt="Topzstone — aplicação da identidade"></div>
     </div>
 
     <!-- Texto corrido -->
     <div class="case-text reveal">
-      <h2 class="t-serif-sm">Identity</h2>A strong identity was developed to represent the target audience of the new
-      brand: contemporary, refined, and in tune with trends. In a direct manner, the clear and precise lines around the
-      typography symbolize the product. The gap below the letter Z reinforces the uniqueness of the name and enhances
-      the brand's personality.</p>
+      <h2 class="t-serif-sm t-pt">Identidade</h2>
+      <h2 class="t-serif-sm t-en">Identity</h2>
+      <p class="t-pt">
+        Uma identidade forte foi desenvolvida para representar o público-alvo da nova
+        marca: contemporâneo, refinado e alinhado às tendências. De forma direta, as
+        linhas nítidas e precisas ao redor da tipografia simbolizam o produto. O vão
+        abaixo da letra Z reforça a singularidade do nome e realça a personalidade da marca.
+      </p>
+      <p class="t-en">
+        A strong identity was developed to represent the target audience of the new
+        brand: contemporary, refined, and in tune with trends. In a direct manner, the
+        clear and precise lines around the typography symbolize the product. The gap
+        below the letter Z reinforces the uniqueness of the name and enhances the brand's
+        personality.
+      </p>
     </div>
 
     <!-- Full width -->
     <div class="placeholder media-full reveal">
-      <img src="../assets/img/topsztone_05.jpg">
+      <img src="../assets/img/topsztone_05.jpg" alt="Topzstone — identidade de marca, spread completo">
     </div>
-
-    <!-- Split: texto + imagem -->
-
 
     <!-- Duas colunas -->
     <div class="media-row reveal">
-      <div class="placeholder media-row__cell">
-        <img src="../assets/img/topsztone_04.jpg">
-      </div>
-      <div class="placeholder media-row__cell"><img src="../assets/img/topsztone_06.jpg"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/topsztone_04.jpg" alt="Topzstone — aplicação da identidade"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/topsztone_06.jpg" alt="Topzstone — aplicação da identidade"></div>
     </div>
-
 
   </section>
 
   <!-- ─── CREDITS ───────────────────────────────────────── -->
   <div class="case-credits reveal">
     <div class="case-credits__group">
-      <h4>Team</h4>
-      <div class="case-credits__item"><label>Agency</label><span>Desdobra Design do Brasil</span></div>
-      <div class="case-credits__item"><label>Year</label><span>2018</span></div>
-      <div class="case-credits__item"><label>Creative Director</label><span>Lorenzo Andreola</span></div>
+      <h4 class="t-pt">Equipe</h4>
+      <h4 class="t-en">Team</h4>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Agência</span><span class="t-en">Agency</span></label>
+        <span>Desdobra — Design do Brasil</span>
+      </div>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Ano</span><span class="t-en">Year</span></label>
+        <span>2018</span>
+      </div>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Direção Criativa</span><span class="t-en">Creative Director</span></label>
+        <span>Lorenzo Andreola</span>
+      </div>
     </div>
     <div class="case-credits__group">
-
-      <div class="case-credits__item"><label>Writer</label><span>Laura Henz</span></div>
-      <div class="case-credits__item"><label>Designer</label><span>Cezar Miranda</span></div>
+      <h4 class="t-pt">Conteúdo</h4>
+      <h4 class="t-en">Content</h4>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Redação</span><span class="t-en">Writer</span></label>
+        <span>Laura Henz</span>
+      </div>
+      <div class="case-credits__item">
+        <label>Designer</label>
+        <span>Cezar Miranda</span>
+      </div>
     </div>
   </div>
 
-  <!-- ─── NEXT PROJECT ──────────────────────────────────── -->
-  <a href="case_positivo.html" class="case-next reveal">
-    <div>
-      <p class="case-next__label">Next project</p>
-      <h2 class="case-next__title t-serif-md">University Positivo</h2>
-    </div>
-    <span class="case-next__arrow" aria-hidden="true">→</span>
-  </a>
+  <!-- ─── PRÓXIMO CASE ────────────────────────────────────── -->
+  <section class="case-next reveal">
+    <p class="case-next__label t-pt">Próximo projeto</p>
+    <p class="case-next__label t-en">Next project</p>
+    <a href="case_tevalabs.html" class="case-next__link">
+      <h3 class="t-serif-lg t-pt">TevaLabs <span class="highlight">— Design System de PPT</span></h3>
+      <h3 class="t-serif-lg t-en">TevaLabs <span class="highlight">— PPT Design System</span></h3>
+    </a>
+  </section>
 
   <!-- ─── FOOTER ────────────────────────────────────────── -->
-  <footer class="footer">
-    <p>Content © Cezar Miranda — All rights reserved</p>
+  <footer class="footer reveal">
+    <p class="t-pt">Conteúdo © Cezar Miranda — Todos os direitos reservados</p>
+    <p class="t-en">Content © Cezar Miranda — All rights reserved</p>
     <ul class="footer__links">
       <li><a href="https://www.linkedin.com/in/cezarrm/">LinkedIn</a></li>
       <li><a href="https://www.behance.net/cezarrm">Behance</a></li>
     </ul>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
-</body>
-
-</html>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+  <script src="../assets/js/case.js"></script>
+  <script src="../assets/js/i18n.js"></script>
+</body></html>

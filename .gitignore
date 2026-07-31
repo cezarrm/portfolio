@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+._*
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Assets não utilizados no site (mantidos localmente, fora do deploy)
+assets/img/_unused/

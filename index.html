@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script>(function(){try{if((localStorage.getItem('lang')||'pt')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.setAttribute('lang','en');}}catch(e){}})();</script>
   <link rel="icon" type="image/png" href="assets/img/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +7,8 @@
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/global.css">
@@ -25,33 +21,47 @@
   <nav class="nav">
     <a href="index.html" class="nav__logo"></a>
     <ul class="nav__links">
-      <li><a href="index.html" class="is-active">Work</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="index.html" class="is-active"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a></li>
+      <li><a href="about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
       <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="nav-mobile" id="mobileMenu">
-    <a href="index.html">Work</a>
-    <a href="about.html">About</a>
+    <a href="index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
+    <a href="about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a>
     <a href="mailto:cezar611@gmail.com">Email</a>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </div>
 
   <!-- ─── HERO ─────────────────────────────────────────── -->
   <section class="hero">
     <h1 class="hero__title t-serif-xl">
-      I’m Cezar Miranda,<br> a
+      <span class="t-pt">Eu sou Cezar Miranda,<br> um</span>
+      <span class="t-en">I'm Cezar Miranda,<br> a</span>
       <span id="typing" class="highlight">Brand Designer</span>
-      <br>based in Brazil.
-      I’m currently designing at Veeam Software.
+      <span class="t-pt"><br>Morando no Brasil.
+      Atualmente Brand Designer na Veeam Software.</span>
+      <span class="t-en"><br>Living in Brazil.
+      Currently a Brand Designer at Veeam Software.</span>
     </h1>
     <button class="hero__scroll" aria-label="Ver trabalhos">
-      <span>Explore my works</span>
+      <span class="t-pt">Ver meus trabalhos</span>
+      <span class="t-en">Explore my works</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M12 5v14M5 12l7 7 7-7" />
+        <path d="M12 5v14M5 12l7 7 7-7"></path>
       </svg>
     </button>
   </section>
@@ -61,44 +71,117 @@
   <section class="projects">
 
     <!-- 01 — destaque full width -->
-    <div href="pages/case_easylaser.html" class="project-item project-item--featured reveal is-soon">
+    <a href="pages/case_easylaser.html" class="project-item project-item--featured reveal">
       <div class="project-item__meta">
 
         <div>
-          <h2 class="project-item__title t-serif-md">EasyLaser<br><span class='highlight'>E-commerce </span></h2><span
-            class="soon-badge">Soon</span>
-
+          <h2 class="project-item__title t-serif-md">EasyLaser<br>
+            <span class="highlight t-pt">Clínica de Estética</span>
+            <span class="highlight t-en">Aesthetics Clinic</span>
+          </h2>
         </div>
 
-        <p class="project-item__desc">
-          Improving the user flow for buying<br>and schedule on e-commerce.
+        <p class="project-item__desc t-pt">
+          Repensando a jornada de compra<br>e agendamento de uma clínica de laser.
+        </p>
+        <p class="project-item__desc t-en">
+          Rethinking the purchase and booking<br>journey for a laser aesthetics clinic.
         </p>
 
       </div>
       <div class="project-item__tags">
         <span class="tag">UX</span>
-        <span class="tag">Study Case</span>
+        <span class="tag t-pt">Estudo de Caso</span>
+        <span class="tag t-en">Study Case</span>
         <span class="tag">Interface</span>
-        <span class="tag">Research</span>
+        <span class="tag t-pt">Pesquisa</span>
+        <span class="tag t-en">Research</span>
 
       </div>
       <div class="placeholder">
         <img src="assets/img/image_header.png" alt="Projeto">
       </div>
-    </div>
+    </a>
 
-    <!-- 02 -->
+    <!-- 02 — destaque full width -->
+    <a href="pages/case_ferramentasgerais.html" class="project-item project-item--featured is-soon reveal">
+      <div class="project-item__meta">
+        <div>
+
+          <h2 class="project-item__title t-serif-md">Ferramentas Gerais <br>
+            <span class="highlight t-pt">E-commerce B2B</span>
+            <span class="highlight t-en">B2B E-commerce</span>
+          </h2>
+          <span class="soon-badge"><span class="t-pt">Em breve</span><span class="t-en">Soon</span></span>
+        </div>
+        <p class="project-item__desc t-pt">Desenvolvimento de uma nova plataforma de e-commerce B2B para o setor industrial, começando por um MVP validado com um cliente piloto antes de expandir para toda a base.</p>
+        <p class="project-item__desc t-en">Built a new B2B e-commerce platform for the industrial sector, starting with an
+          MVP validated with one pilot client before expanding to the full customer base.</p>
+      </div>
+      <div class="project-item__tags">
+        <span class="tag">UX</span>
+        <span class="tag">Interface</span>
+        <span class="tag t-pt">Pesquisa</span>
+        <span class="tag t-en">Research</span>
+        <span class="tag">MVP</span>
+      </div>
+      <div class="placeholder">
+        <img src="assets/img/punch_out_header.png" alt="Projeto">
+      </div>
+
+
+    </a>
+
+    <!-- 03 — destaque full width -->
+    <a href="pages/case_wave.html" class="project-item project-item--featured is-soon reveal">
+      <div class="project-item__meta">
+
+        <div>
+          <h2 class="project-item__title t-serif-md">Wave <br>
+            <span class="highlight t-pt">Gateway de Pagamentos</span>
+            <span class="highlight t-en">Payment Gateway</span>
+          </h2>
+          <span class="soon-badge"><span class="t-pt">Em breve</span><span class="t-en">Soon</span></span>
+        </div>
+
+        <p class="project-item__desc t-pt">
+          Gateway de pagamentos inteligente com SDK de fácil integração, processamento em tempo real, IA para detecção de fraudes e insights preditivos.
+        </p>
+        <p class="project-item__desc t-en">
+          An intelligent payment gateway with an easy-to-integrate SDK, real-time
+          processing, AI-powered fraud detection, and predictive insights.
+        </p>
+
+      </div>
+      <div class="project-item__tags">
+        <span class="tag">UX</span>
+        <span class="tag">UI</span>
+        <span class="tag">Fintech</span>
+        <span class="tag t-pt">IA</span>
+        <span class="tag t-en">AI</span>
+      </div>
+      <div class="placeholder">
+        <img src="assets/img/wave_header.png" alt="Projeto">
+      </div>
+    </a>
+
+    <!-- 04 -->
     <a href="pages/case_topzstone.html" class="project-item reveal">
       <div class="project-item__meta">
         <h2 class="project-item__title t-serif-md">Topzstone <br>
-          <span class='highlight'>Branding and Editorial</span>
+          <span class="highlight t-pt">Branding e Editorial</span>
+          <span class="highlight t-en">Branding and Editorial</span>
         </h2>
-        <p class="project-item__desc">Led the full visual identity development for the brand, including collaterals and
+        <p class="project-item__desc t-pt">Liderei o desenvolvimento completo da identidade visual da marca, incluindo materiais institucionais e whitepapers, garantindo um sistema visual coeso e escalável.</p>
+        <p class="project-item__desc t-en">Led the full visual identity development for the brand, including collaterals and
           whitepapers, ensuring a cohesive and scalable visual system.</p>
         <div class="project-item__tags">
-          <span class="tag">Branding</span>
-          <span class="tag">Editorial</span>
-          <span class="tag">Print</span>
+          <span class="tag t-pt">Branding</span>
+          <span class="tag t-en">Branding</span>
+          <span class="tag t-pt">Editorial</span>
+          <span class="tag t-en">Editorial</span>
+          <span class="tag t-pt">Impresso</span>
+          <span class="tag t-en">Print</span>
         </div>
       </div>
       <div class="placeholder">
@@ -107,157 +190,121 @@
       </div>
     </a>
 
-    <!-- 03 — imagem à esquerda -->
-    <div class="project-item project-item--img-first reveal is-soon">
+    <!-- 05 — imagem à esquerda -->
+    <a href="pages/case_tevalabs.html" class="project-item project-item--img-first is-soon reveal">
       <div class="placeholder">
-
-        <video autoplay muted loop playsinline>
+        <video autoplay="" muted="" loop="" playsinline="">
           <source src="assets/img/deck_review_case.mp4" type="video/mp4">
         </video>
       </div>
       <div class="project-item__meta">
 
-        <h2 class="project-item__title t-serif-md">TevaLabs<br><span class='highlight'>PPT Design System</span> </h2>
-        <span class="soon-badge"> Soon</span>
-        <p class="project-item__desc"><br>Design system developed for TevaLabs corporate presentations, created to
-          streamline content production while ensuring consistency with the brand’s visual guidelines.</p>
+        <h2 class="project-item__title t-serif-md">TevaLabs<br><span class="highlight">PPT Design System</span> </h2>
+        <span class="soon-badge"><span class="t-pt">Em breve</span><span class="t-en">Soon</span></span>
+        <p class="project-item__desc t-pt"><br>Design system desenvolvido para as apresentações corporativas da TevaLabs, criado para agilizar a produção de conteúdo e garantir consistência com as diretrizes visuais da marca.</p>
+        <p class="project-item__desc t-en"><br>Design system developed for TevaLabs corporate presentations, created to
+          streamline content production while ensuring consistency with the brand's visual guidelines.</p>
         <div class="project-item__tags">
-          <span class="tag">Branding</span>
-          <span class="tag">Motion</span>
-          <span class="tag">Template</span>
+          <span class="tag t-pt">Branding</span>
+          <span class="tag t-en">Branding</span>
+          <span class="tag t-pt">Motion</span>
+          <span class="tag t-en">Motion</span>
+          <span class="tag t-pt">Template</span>
+          <span class="tag t-en">Template</span>
           <span class="tag">PPT</span>
         </div>
       </div>
-    </div>
+    </a>
 
-    <!-- 04 — destaque full width -->
-    <div href="pages/case.html" class="project-item project-item--featured reveal is-soon">
-      <div class="project-item__meta">
-        <div>
-
-          <h2 class="project-item__title t-serif-md">Ferramentas Gerais <br>
-            <span class='highlight'>MVP for in Factory B2B</span>
-          </h2><span class="soon-badge">Soon</span>
-        </div>
-        <p class="project-item__desc">Develop a new platform for factories, starting with an MVP to test within one
-          client, and then expand to other clients.
-          ativos.</p>
-      </div>
-      <div class="project-item__tags">
-        <span class="tag">UX</span>
-        <span class="tag">Interface</span>
-        <span class="tag">Research</span>
-        <span class="tag">2024</span>
-      </div>
-      <div class="placeholder">
-        <img src="assets/img/punch_out_header.png" alt="Projeto">
-      </div>
-
-
-    </div>
-
-
-
-    <!-- 05 -->
+    <!-- 06 -->
     <a href="pages/case_positivo.html" class="project-item reveal">
       <div class="project-item__meta">
 
-        <h2 class="project-item__title t-serif-md">University Positivo <br><span class='highlight'>Career Guide</span>
+        <h2 class="project-item__title t-serif-md">University Positivo <br><span class="highlight">Career Guide</span>
         </h2>
-        <p class="project-item__desc">Designed and developed course guides for Universidade Positivo, combining
+        <p class="project-item__desc t-pt">Desenvolvi e diagramei guias de carreira para a Universidade Positivo, combinando design editorial, entrevistas e criação de conteúdo para engajar futuros alunos.</p>
+        <p class="project-item__desc t-en">Designed and developed course guides for Universidade Positivo, combining
           editorial design, interviews, and content creation to engage prospective students.</p>
         <div class="project-item__tags">
-          <span class="tag">Editorial</span>
-          <span class="tag">Iconography</span>
+          <span class="tag t-pt">Editorial</span>
+          <span class="tag t-en">Editorial</span>
+          <span class="tag t-pt">Iconografia</span>
+          <span class="tag t-en">Iconography</span>
           <span class="tag">Branding</span>
-          <span class="tag">Print</span>
+          <span class="tag t-pt">Impresso</span>
+          <span class="tag t-en">Print</span>
         </div>
       </div>
       <div class="placeholder">
         <img src="assets/img/positivo_01.jpg" alt="Positivo">
       </div>
     </a>
-
-    <!-- 06 — imagem à esquerda -->
-    <!--
-    <a href="pages/case.html" class="project-item project-item--img-first reveal">
-      <div class="placeholder project-item__thumb">
-        <span>Imagem do Projeto — 16:10</span>
-      </div>
-      <div class="project-item__meta">
-        <p class="project-item__number">06</p>
-        <h2 class="project-item__title t-serif-md">University Positivo — Career Guide</h2>
-        <p class="project-item__desc">Designed and developed course guides for Universidade Positivo, combining
-          editorial design, interviews, and content creation to engage prospective students.</p>
-        <div class="project-item__tags">
-          <span class="tag">Art Direction</span>
-          <span class="tag">Social</span>
-        </div>
-      </div>
-    </a>
-    -->
   </section>
 
   <!-- ─── VISUAL FEED ────────────────────────────────────── -->
-  <p class="section-label">Explorations</p>
-  <section class="feed reveal">
+  <div class="reveal">
+    <p class="section-label t-pt">Explorações</p>
+    <p class="section-label t-en">Explorations</p>
+  </div>
+  <section class="feed">
     <div class="feed__grid">
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
 
-          <img src=" assets/img/refracted_text.png" alt="Refracted Text">
+          <img src="assets/img/refracted_text.png" alt="Refracted Text">
 
-        </div><span class="feed__cell-label">Refracted text</span>
+        </div><span class="feed__cell-label t-pt">Texto Refratado</span><span class="feed__cell-label t-en">Refracted text</span>
 
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/grainy_gradient_short_simple.png" alt="Grainy Gradient">
+          <img src="assets/img/grainy_gradient_short_simple.png" alt="Grainy Gradient">
 
-        </div><span class="feed__cell-label">Grainy Gradient</span>
+        </div><span class="feed__cell-label t-pt">Gradiente Granulado</span><span class="feed__cell-label t-en">Grainy Gradient</span>
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/holographic_ chrome_text Effect.png" alt="Holographic Chrome Text Effect">
+          <img src="assets/img/holographic_%20chrome_text%20Effect.png" alt="Holographic Chrome Text Effect">
 
-        </div><span class="feed__cell-label">Holographic Chrome Text Effect</span>
+        </div><span class="feed__cell-label t-pt">Efeito de Texto Holográfico Cromado</span><span class="feed__cell-label t-en">Holographic Chrome Text Effect</span>
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/bitmap_text.png" alt="bitmap text">
+          <img src="assets/img/bitmap_text.png" alt="bitmap text">
 
-        </div><span class="feed__cell-label">Bitmap Text</span>
+        </div><span class="feed__cell-label t-pt">Texto Bitmap</span><span class="feed__cell-label t-en">Bitmap Text</span>
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/11_movie copy.png" alt="Refracted Text">
+          <img src="assets/img/11_movie%20copy.png" alt="Refracted Text">
 
-        </div><span class="feed__cell-label">Illustration</span>
+        </div><span class="feed__cell-label t-pt">Ilustração</span><span class="feed__cell-label t-en">Illustration</span>
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/draw.png" alt="Draw">
+          <img src="assets/img/draw.png" alt="Draw">
 
-        </div><span class="feed__cell-label" style="color: rgb(66, 66, 66);">Draw</span>
+        </div><span class="feed__cell-label t-pt" style="color: rgb(66, 66, 66);">Desenho</span><span class="feed__cell-label t-en" style="color: rgb(66, 66, 66);">Draw</span>
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/master_class_text_effect 1.png" alt="master_class_text_effect 1">
+          <img src="assets/img/master_class_text_effect%201.png" alt="master_class_text_effect 1">
 
-        </div><span class="feed__cell-label" style="color: rgb(66, 66, 66);">Master Class Text Effect</span>
+        </div><span class="feed__cell-label t-pt" style="color: rgb(66, 66, 66);">Efeito de Texto Master Class</span><span class="feed__cell-label t-en" style="color: rgb(66, 66, 66);">Master Class Text Effect</span>
       </div>
-      <div class="feed__cell">
+      <div class="feed__cell reveal">
         <div class="feed__cell-bg">
-          <img src=" assets/img/anao.png" alt="Concept art">
+          <img src="assets/img/anao.png" alt="Concept art">
 
-        </div><span class=" feed__cell-label ">Concept art</span>
+        </div><span class="feed__cell-label t-pt">Arte Conceitual</span><span class="feed__cell-label t-en">Concept art</span>
       </div>
     </div>
   </section>
 
   <!-- ─── FOOTER ────────────────────────────────────────── -->
-  <footer class="footer">
-    <p>Content © Cezar Miranda — All rights reserved</p>
+  <footer class="footer reveal">
+    <p class="t-pt">Conteúdo © Cezar Miranda — Todos os direitos reservados</p>
+    <p class="t-en">Content © Cezar Miranda — All rights reserved</p>
     <ul class="footer__links">
       <li><a href="https://www.linkedin.com/in/cezarrm/">LinkedIn</a></li>
       <li><a href="https://www.behance.net/cezarrm">Behance</a></li>
@@ -266,12 +313,10 @@
   <div class="lightbox" id="lightbox">
     <img src="" alt="">
   </div>
-  <script src="assets/js/main.js">
-
-  </script>
   <div class="cursor-progress">
-    Soon
+    <span class="t-pt">Em breve</span>
+    <span class="t-en">Soon</span>
   </div>
-</body>
-
-</html>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+</body></html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script>(function(){try{if((localStorage.getItem('lang')||'pt')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.setAttribute('lang','en');}}catch(e){}})();</script>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wave — Payments Case Study | Cezar Miranda</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+</head>
+
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="../index.html" class="nav__back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"></path>
+      </svg>
+      <span class="t-pt">Voltar</span>
+      <span class="t-en">Back</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a></li>
+      <li><a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
+      <li><a href="mailto:cezar611@gmail.com">Email</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
+    <a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a>
+    <a href="mailto:cezar611@gmail.com">Email</a>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. TÍTULO E CONTEXTO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-hero reveal">
+    <div class="case-hero__eyebrow">
+      <span class="dot"></span>
+      <span class="t-label t-pt">Case Study — Fintech / Pagamentos</span>
+      <span class="t-label t-en">Case Study — Fintech / Payments</span>
+    </div>
+
+    <h1 class="case-hero__title t-serif-xl">
+      Wave<br>
+      <span class="t-pt highlight">gateway de pagamentos inteligente para negócios em crescimento</span>
+      <span class="t-en highlight">an intelligent payment gateway for growing businesses</span>
+    </h1>
+
+    <p class="case-hero__desc t-pt">
+      A Wave precisava de um gateway de pagamentos fácil de integrar, seguro o suficiente
+      para lidar com fraude em tempo real e simples de entender para times de desenvolvimento
+      com pouco tempo disponível. Em <strong>[X semanas/meses]</strong>, desenhei o SDK, o
+      dashboard de monitoramento e o fluxo de detecção de fraudes com IA. <span class="edit-flag">editar</span>
+    </p>
+    <p class="case-hero__desc t-en">
+      Wave needed a payment gateway that was easy to integrate, secure enough to catch fraud
+      in real time, and simple enough for dev teams with little time to spare.
+      Over <strong>[X weeks/months]</strong>, I designed the SDK, the monitoring dashboard,
+      and the AI-powered fraud detection flow. <span class="edit-flag">edit</span>
+    </p>
+  </section>
+
+  <!-- Meta rápida: contexto do projeto -->
+  <div class="case-meta reveal">
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Cliente</span>
+      <span class="case-meta__label t-en">Client</span>
+      <span class="case-meta__value">Wave</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Meu papel</span>
+      <span class="case-meta__label t-en">My role</span>
+      <span class="case-meta__value t-pt">UX/UI Design, Design de Sistema</span>
+      <span class="case-meta__value t-en">UX/UI Design, Systems Design</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Prazo</span>
+      <span class="case-meta__label t-en">Timeline</span>
+      <span class="case-meta__value t-pt">[Duração do projeto]</span>
+      <span class="case-meta__value t-en">[Project duration]</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label">Ano</span>
+      <span class="case-meta__value">2025</span>
+    </div>
+  </div>
+
+  <!-- Imagem/vídeo de destaque do case -->
+  <div class="case-hero-media reveal">
+    <div class="case-media placeholder" style="aspect-ratio:21/9;">
+      <span class="t-pt">Imagem/Vídeo de destaque — Wave</span>
+      <span class="t-en">Featured image/video — Wave</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. O PROBLEMA
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-section reveal">
+    <div class="case-section__head">
+      <div>
+        <p class="case-section__index t-pt">01 — O Problema</p>
+        <p class="case-section__index t-en">01 — The Problem</p>
+        <h2 class="case-section__title t-serif-md t-pt">Sem confiança na segurança, a adoção não acontece.</h2>
+        <h2 class="case-section__title t-serif-md t-en">Without trust in security, adoption never happens.</h2>
+      </div>
+      <p class="case-section__intro t-pt">
+        Antes de desenhar o SDK e o dashboard, mapeamos o que travava a adoção do gateway
+        pelos times de desenvolvimento e o que o negócio precisava para escalar com segurança.
+      </p>
+      <p class="case-section__intro t-en">
+        Before designing the SDK and dashboard, we mapped what was blocking developer teams
+        from adopting the gateway and what the business needed to scale securely.
+      </p>
+    </div>
+
+    <div class="case-problem">
+      <div class="case-problem__card">
+        <span class="case-problem__label t-pt">Dores do usuário</span>
+        <span class="case-problem__label t-en">User pain points</span>
+        <ul class="t-pt">
+          <li>Integração com gateways de pagamento exigia semanas de trabalho e documentação confusa.</li>
+          <li>Falta de visibilidade em tempo real sobre transações suspeitas.</li>
+          <li>Alertas de fraude chegavam tarde demais, depois do prejuízo já ter ocorrido.</li>
+        </ul>
+        <ul class="t-en">
+          <li>Integrating a payment gateway took weeks of work and confusing documentation.</li>
+          <li>No real-time visibility into suspicious transactions.</li>
+          <li>Fraud alerts arrived too late, after the damage was already done.</li>
+        </ul>
+      </div>
+      <div class="case-problem__card case-problem__card--dark">
+        <span class="case-problem__label t-pt">Objetivos de negócio</span>
+        <span class="case-problem__label t-en">Business objectives</span>
+        <ul class="t-pt">
+          <li>Reduzir o tempo de integração do SDK de semanas para dias.</li>
+          <li>Aumentar a taxa de detecção de fraude sem aumentar falsos positivos.</li>
+          <li>Oferecer insights preditivos que ajudem o cliente a antecipar riscos.</li>
+        </ul>
+        <ul class="t-en">
+          <li>Cut SDK integration time from weeks to days.</li>
+          <li>Increase fraud detection rates without raising false positives.</li>
+          <li>Offer predictive insights that help clients anticipate risk.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       3. A SOLUÇÃO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-section reveal">
+    <div class="case-section__head">
+      <div>
+        <p class="case-section__index t-pt">02 — A Solução</p>
+        <p class="case-section__index t-en">02 — The Solution</p>
+        <h2 class="case-section__title t-serif-md t-pt">Um SDK simples por fora, inteligente por dentro.</h2>
+        <h2 class="case-section__title t-serif-md t-en">An SDK that's simple on the outside, intelligent underneath.</h2>
+      </div>
+      <p class="case-section__intro t-pt">
+        A solução final combina um SDK de poucas linhas de código com um motor de IA
+        rodando em tempo real por trás de cada transação.
+      </p>
+      <p class="case-section__intro t-en">
+        The final solution pairs a few-lines-of-code SDK with an AI engine running in
+        real time behind every transaction.
+      </p>
+    </div>
+
+    <div class="case-solution-grid">
+      <div class="case-screen reveal">
+        <div class="case-screen__frame">
+          <span class="t-pt">Tela — Onboarding do SDK</span>
+          <span class="t-en">Screen — SDK onboarding</span>
+        </div>
+        <div class="case-screen__caption">
+          <span class="case-screen__num">01</span>
+          <p class="case-screen__text t-pt">
+            <strong>Integração guiada.</strong> Um passo a passo interativo reduz o tempo de
+            setup do SDK de semanas para poucos dias, com exemplos de código prontos para copiar.
+          </p>
+          <p class="case-screen__text t-en">
+            <strong>Guided integration.</strong> An interactive step-by-step flow cuts SDK
+            setup time from weeks to a few days, with ready-to-copy code samples.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-screen reveal">
+        <div class="case-screen__frame">
+          <span class="t-pt">Tela — Dashboard de transações</span>
+          <span class="t-en">Screen — Transactions dashboard</span>
+        </div>
+        <div class="case-screen__caption">
+          <span class="case-screen__num">02</span>
+          <p class="case-screen__text t-pt">
+            <strong>Monitoramento em tempo real.</strong> Cada transação aparece com status,
+            risco calculado pela IA e ações rápidas de bloqueio ou aprovação manual.
+          </p>
+          <p class="case-screen__text t-en">
+            <strong>Real-time monitoring.</strong> Every transaction shows its status,
+            AI-calculated risk score, and quick actions to block or manually approve.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-screen reveal">
+        <div class="case-screen__frame">
+          <span class="t-pt">Tela — Alertas de fraude e insights preditivos</span>
+          <span class="t-en">Screen — Fraud alerts and predictive insights</span>
+        </div>
+        <div class="case-screen__caption">
+          <span class="case-screen__num">03</span>
+          <p class="case-screen__text t-pt">
+            <strong>Alertas antes do prejuízo.</strong> O modelo de IA sinaliza padrões
+            suspeitos antes da transação ser concluída, com insights preditivos sobre
+            tendências de risco.
+          </p>
+          <p class="case-screen__text t-en">
+            <strong>Alerts before the damage.</strong> The AI model flags suspicious
+            patterns before the transaction completes, with predictive insights into
+            risk trends.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       4. O PROCESSO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-section reveal">
+    <div class="case-section__head">
+      <div>
+        <p class="case-section__index t-pt">03 — O Processo</p>
+        <p class="case-section__index t-en">03 — The Process</p>
+        <h2 class="case-section__title t-serif-md t-pt">De um motor de fraude confuso a um fluxo confiável.</h2>
+        <h2 class="case-section__title t-serif-md t-en">From a confusing fraud engine to a flow people trust.</h2>
+      </div>
+      <p class="case-section__intro t-pt">
+        Um processo iterativo, com validação constante junto a times técnicos e de risco.
+      </p>
+      <p class="case-section__intro t-en">
+        An iterative process, validated constantly with engineering and risk teams.
+      </p>
+    </div>
+
+    <div class="case-process">
+      <div class="case-process__step reveal">
+        <span class="case-process__num">01</span>
+        <h3 class="case-process__title t-pt">Pesquisa</h3>
+        <h3 class="case-process__title t-en">Research</h3>
+        <div>
+          <p class="case-process__body t-pt">
+            Entrevistas com desenvolvedores que integram gateways de pagamento e com
+            analistas de risco, para entender onde a fricção técnica e a fricção de
+            confiança apareciam.
+          </p>
+          <p class="case-process__body t-en">
+            Interviews with developers who integrate payment gateways and with risk
+            analysts, to understand where technical friction and trust friction showed up.
+          </p>
+          <p class="case-process__insight t-pt">
+            "Insight principal da pesquisa que guiou as decisões de design." <span class="edit-flag">editar</span>
+          </p>
+          <p class="case-process__insight t-en">
+            "Main research insight that guided the design decisions." <span class="edit-flag">edit</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="case-process__step reveal">
+        <span class="case-process__num">02</span>
+        <h3 class="case-process__title">Wireframes</h3>
+        <div>
+          <p class="case-process__body t-pt">
+            Testamos diferentes estruturas de onboarding técnico e de dashboard antes de
+            definir a arquitetura final entre SDK, painel de monitoramento e alertas.
+          </p>
+          <p class="case-process__body t-en">
+            We tested different technical onboarding and dashboard structures before
+            settling on the final architecture between SDK, monitoring panel, and alerts.
+          </p>
+        </div>
+      </div>
+
+      <div class="case-process__step reveal">
+        <span class="case-process__num">03</span>
+        <h3 class="case-process__title t-pt">Teste de usabilidade</h3>
+        <h3 class="case-process__title t-en">Usability testing</h3>
+        <div>
+          <p class="case-process__body t-pt">
+            Sessões moderadas com [N] desenvolvedores e analistas revelaram fricção na
+            etapa de configuração de regras de fraude, o que levou à simplificação dos
+            presets de risco.
+          </p>
+          <p class="case-process__body t-en">
+            Moderated sessions with [N] developers and analysts revealed friction in the
+            fraud rule configuration step, which led to simplifying the risk presets.
+          </p>
+          <p class="case-process__insight t-pt">
+            "Resultado ou aprendizado direto do teste de usabilidade." <span class="edit-flag">editar</span>
+          </p>
+          <p class="case-process__insight t-en">
+            "Direct result or learning from the usability test." <span class="edit-flag">edit</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="case-process__step reveal">
+        <span class="case-process__num">04</span>
+        <h3 class="case-process__title t-pt">Iteração e UI final</h3>
+        <h3 class="case-process__title t-en">Iteration and final UI</h3>
+        <div>
+          <p class="case-process__body t-pt">
+            Refinamos a hierarquia de informação do dashboard e a linguagem dos alertas
+            com base no teste, chegando à versão entregue ao time de desenvolvimento.
+          </p>
+          <p class="case-process__body t-en">
+            We refined the dashboard's information hierarchy and alert copy based on
+            testing, arriving at the version handed off to the development team.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       5. RESULTADOS E MEU PAPEL
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-section reveal">
+    <div class="case-section__head">
+      <div>
+        <p class="case-section__index t-pt">04 — Resultados e Meu Papel</p>
+        <p class="case-section__index t-en">04 — Results and My Role</p>
+        <h2 class="case-section__title t-serif-md t-pt">O impacto do novo gateway.</h2>
+        <h2 class="case-section__title t-serif-md t-en">The impact of the new gateway.</h2>
+      </div>
+      <p class="case-section__intro t-pt">
+        Métricas de negócio combinadas com o que aprendi ao longo do projeto.
+      </p>
+      <p class="case-section__intro t-en">
+        Business metrics combined with what I learned throughout the project.
+      </p>
+    </div>
+
+    <div class="case-results">
+      <div class="case-stat">
+        <p class="case-stat__value">+[X]%</p>
+        <p class="case-stat__label t-pt">Redução no tempo de integração do SDK</p>
+        <p class="case-stat__label t-en">Reduction in SDK integration time</p>
+      </div>
+      <div class="case-stat">
+        <p class="case-stat__value">-[X]%</p>
+        <p class="case-stat__label t-pt">Queda em transações fraudulentas não detectadas</p>
+        <p class="case-stat__label t-en">Drop in undetected fraudulent transactions</p>
+      </div>
+      <div class="case-stat">
+        <p class="case-stat__value">[X]</p>
+        <p class="case-stat__label t-pt">Desenvolvedores testados nas sessões de usabilidade</p>
+        <p class="case-stat__label t-en">Developers tested in usability sessions</p>
+      </div>
+      <div class="case-stat">
+        <p class="case-stat__value">[X]/10</p>
+        <p class="case-stat__label t-pt">Nota de satisfação dos times técnicos</p>
+        <p class="case-stat__label t-en">Satisfaction score from technical teams</p>
+      </div>
+    </div>
+
+    <div class="case-role">
+      <div>
+        <h3 class="case-role__title t-pt">Meu papel no time</h3>
+        <h3 class="case-role__title t-en">My role on the team</h3>
+        <p class="case-role__body t-pt">
+          Fui responsável por pesquisa com desenvolvedores e analistas de risco,
+          arquitetura de informação do dashboard e UI do SDK e dos alertas, trabalhando
+          junto a [PM / dev / cientista de dados] desde a descoberta até o handoff
+          para desenvolvimento.
+        </p>
+        <p class="case-role__body t-en">
+          I was responsible for research with developers and risk analysts,
+          information architecture for the dashboard, and UI for the SDK and alerts,
+          working alongside [PM / dev / data scientist] from discovery through
+          handoff to development.
+        </p>
+      </div>
+      <div class="case-role__tags">
+        <span class="tag t-pt">Pesquisa</span>
+        <span class="tag t-en">Research</span>
+        <span class="tag">UX</span>
+        <span class="tag">UI</span>
+        <span class="tag t-pt">Design de Sistema</span>
+        <span class="tag t-en">Systems Design</span>
+        <span class="tag">Handoff</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRÓXIMO CASE ────────────────────────────────────── -->
+  <section class="case-next reveal">
+    <p class="case-next__label t-pt">Próximo projeto</p>
+    <p class="case-next__label t-en">Next project</p>
+    <a href="case_positivo.html" class="case-next__link">
+      <h3 class="t-serif-lg t-pt">University Positivo <span class="highlight">— Guia de Carreira</span></h3>
+      <h3 class="t-serif-lg t-en">University Positivo <span class="highlight">— Career Guide</span></h3>
+    </a>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer reveal">
+    <p class="t-pt">Conteúdo © Cezar Miranda — Todos os direitos reservados</p>
+    <p class="t-en">Content © Cezar Miranda — All rights reserved</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/cezarrm/">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/cezarrm">Behance</a></li>
+    </ul>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+  <script src="../assets/js/case.js"></script>
+  <script src="../assets/js/i18n.js"></script>
+</body></html>

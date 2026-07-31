@@ -14,13 +14,6 @@
 
 
 
-.hero__tagline {
-  margin-bottom: 1.25rem;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: fadeUp 0.7s ease 0.1s forwards;
-}
-
 .hero__title {
   max-width: 860px;
   color: var(--text);
@@ -82,7 +75,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  padding: 3.5rem 0;
+  padding: 3.75rem 0;
   border: none;
   align-items: center;
   text-decoration: none;
@@ -107,11 +100,8 @@
   gap: 2rem;
 }
 
-.project-item__number {
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  color: var(--text-ter);
-  margin-bottom: 0.5rem;
+.project-item--featured .placeholder {
+  aspect-ratio: 21 / 9;
 }
 
 .project-item__title {
@@ -119,28 +109,18 @@
 }
 
 .project-item__desc {
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   color: var(--text-sec);
   max-width: 340px;
   line-height: 1.7;
-  margin-top: 0.6rem;
+  margin-top: 0.75rem;
 }
 
 .project-item__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 1rem;
-}
-
-.project-item__thumb {
-  width: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-}
-
-.project-item__thumb--wide {
-  aspect-ratio: 21/9;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
 }
 
 /* ─── VISUAL FEED ────────────────────────────────────────── */
@@ -159,18 +139,14 @@
 }
 
 .soon-badge {
-  position: absolute;
-  top: 12px;
-
-
   display: inline-flex;
   align-items: center;
 
-  padding: 0.45rem 0.75rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
 
-  background: #ff4b0f;
-  /* cor sólida */
+  background: #FE8A25;
   border: 1px solid rgba(255, 255, 255, 0.14);
 
   color: #fff;
@@ -180,8 +156,6 @@
 
   text-transform: uppercase;
   letter-spacing: 0.08em;
-
-  z-index: 10;
 
   animation: pulseSoon 1.8s ease-in-out infinite;
 }
@@ -223,6 +197,18 @@
     transform .7s cubic-bezier(.19, 1, .22, 1),
     opacity .4s ease;
 }
+
+/* cascata suave ao revelar a grade de explorações
+   (:not(.is-visible) garante que o delay some depois da revelação,
+   sem atrasar as transições de hover) */
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(1) { transition-delay: 0s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(2) { transition-delay: 0.06s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(3) { transition-delay: 0.12s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(4) { transition-delay: 0.18s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(5) { transition-delay: 0.24s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(6) { transition-delay: 0.3s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(7) { transition-delay: 0.36s; }
+.feed__grid .feed__cell.reveal:not(.is-visible):nth-child(8) { transition-delay: 0.42s; }
 
 /* =========================
    IMAGE
@@ -595,7 +581,7 @@
   }
 
   /* imagem primeiro no mobile para itens invertidos */
-  .project-item--img-first .project-item__thumb {
+  .project-item--img-first .placeholder {
     order: -1;
   }
 
@@ -631,16 +617,14 @@
    SOON CARD
 ======================================== */
 .project-item.is-soon * {
-  position: relative;
   cursor: default;
-
 }
 
 /* cursor fake */
 .cursor-progress {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: var(--cy, 0px);
+  left: var(--cx, 0px);
 
   width: 110px;
   height: 110px;

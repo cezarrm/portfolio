@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script>(function(){try{if((localStorage.getItem('lang')||'pt')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.setAttribute('lang','en');}}catch(e){}})();</script>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>University Positivo — Career Guide</title>
+  <title>University Positivo — Career Guide | Cezar Miranda</title>
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 
-  <!-- CSS — paths relativos a pages/ -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/global.css">
   <link rel="stylesheet" href="../assets/css/case.css">
 </head>
@@ -24,126 +21,199 @@
   <nav class="nav">
     <a href="../index.html" class="nav__back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M19 12H5M5 12l7-7M5 12l7 7" />
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"></path>
       </svg>
-      Home
+      <span class="t-pt">Voltar</span>
+      <span class="t-en">Back</span>
     </a>
     <ul class="nav__links">
-      <li><a href="../index.html">Work</a></li>
-      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a></li>
+      <li><a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
       <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="nav-mobile" id="mobileMenu">
-    <a href="../index.html">Work</a>
-    <a href="../about.html">About</a>
+    <a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
+    <a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a>
     <a href="mailto:cezar611@gmail.com">Email</a>
-  </div>
-
-  <!-- ─── HEADER ───────────────────────────────────────── -->
-  <header class="case-header">
-
-    <p class="case-header__client t-eyebrow">Editorial, Iconography and Print</p>
-    <h1 class="case-header__title t-serif-lg">
-      University Positivo
-    </h1>
-    <p class="case-header__intro">
-      Graphic design, layout, interviews with professors, and writing/content creation for the Universidade Positivo
-      Course Guides — materials designed to highlight the institution’s benefits and engage young audiences. The project
-      also included the development of a complete custom iconography system for all highlighted sections featured
-      throughout each guide.
-    </p>
-  </header>
-
-  <!-- ─── META ─────────────────────────────────────────── -->
-  <div class="case-meta">
-    <div class="case-meta__item"><label>Year</label><span>2018</span></div>
-    <div class="case-meta__item"><label>Scope</label><span>Branding, Editorial and Iconograpy</span></div>
-    <div class="case-meta__item"><label>Role</label><span>Designer</span></div>
-  </div>
-
-  <!-- ─── GALLERY ──────────────────────────────────────── -->
-  <section class="case-content">
-
-    <!-- Imagem principal -->
-    <div class="placeholder">
-      <img src="../assets/img/positivo_01.jpg">
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
     </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. TÍTULO E CONTEXTO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-hero reveal">
+    <div class="case-hero__eyebrow">
+      <span class="dot"></span>
+      <span class="t-label t-pt">Editorial, Iconografia e Impresso</span>
+      <span class="t-label t-en">Editorial, Iconography and Print</span>
+    </div>
+
+    <h1 class="case-hero__title t-serif-xl">
+      University Positivo<br>
+      <span class="t-pt highlight">guias de carreira para futuros alunos</span>
+      <span class="t-en highlight">career guides for prospective students</span>
+    </h1>
+
+    <p class="case-hero__desc t-pt">
+      Design gráfico, diagramação, entrevistas com professores e criação de conteúdo para
+      os Guias de Cursos da Universidade Positivo — materiais pensados para destacar os
+      diferenciais da instituição e engajar o público jovem. O projeto também incluiu o
+      desenvolvimento de um sistema completo de iconografia customizada para todas as
+      seções de destaque de cada guia.
+    </p>
+    <p class="case-hero__desc t-en">
+      Graphic design, layout, interviews with professors, and writing/content creation for
+      the Universidade Positivo Course Guides — materials designed to highlight the
+      institution's benefits and engage young audiences. The project also included the
+      development of a complete custom iconography system for all highlighted sections
+      featured throughout each guide.
+    </p>
+  </section>
+
+  <!-- Meta rápida: contexto do projeto -->
+  <div class="case-meta reveal">
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Cliente</span>
+      <span class="case-meta__label t-en">Client</span>
+      <span class="case-meta__value">University Positivo</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Escopo</span>
+      <span class="case-meta__label t-en">Scope</span>
+      <span class="case-meta__value t-pt">Branding, Editorial e Iconografia</span>
+      <span class="case-meta__value t-en">Branding, Editorial and Iconography</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Meu papel</span>
+      <span class="case-meta__label t-en">My role</span>
+      <span class="case-meta__value">Designer</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Ano</span>
+      <span class="case-meta__label t-en">Year</span>
+      <span class="case-meta__value">2018</span>
+    </div>
+  </div>
+
+  <!-- Imagem de destaque do case -->
+  <div class="case-hero-media reveal">
+    <div class="case-media placeholder" style="aspect-ratio:21/9;">
+      <img src="../assets/img/positivo_01.jpg" alt="University Positivo — guia de curso">
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. GALERIA
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-content">
 
     <!-- Duas colunas -->
     <div class="media-row reveal">
-      <div class="placeholder"><img src="../assets/img/positivo_02.jpg"></div>
-      <div class="placeholder"><img src="../assets/img/positivo_03.jpg"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/positivo_02.jpg" alt="University Positivo — guia de curso, página interna"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/positivo_03.jpg" alt="University Positivo — guia de curso, página interna"></div>
     </div>
 
     <!-- Texto corrido -->
     <div class="case-text reveal">
-      <h2 class="t-serif-sm">Color-Coded Visual System</h2>
-      <p>Different colors were assigned to each course category to visually distinguish the university’s areas of study
-        — for example, Technology and Business used blue tones, while Design followed a yellow palette. Each guide was
-        developed with its own specific color system to reinforce the identity of each field.</p>
+      <h2 class="t-serif-sm t-pt">Sistema Visual por Cores</h2>
+      <h2 class="t-serif-sm t-en">Color-Coded Visual System</h2>
+      <p class="t-pt">
+        Cores diferentes foram atribuídas a cada categoria de curso para distinguir
+        visualmente as áreas de estudo da universidade — por exemplo, Tecnologia e
+        Negócios usavam tons de azul, enquanto Design seguia uma paleta amarela. Cada
+        guia foi desenvolvido com seu próprio sistema de cores para reforçar a identidade
+        de cada área.
+      </p>
+      <p class="t-en">
+        Different colors were assigned to each course category to visually distinguish
+        the university's areas of study — for example, Technology and Business used blue
+        tones, while Design followed a yellow palette. Each guide was developed with its
+        own specific color system to reinforce the identity of each field.
+      </p>
     </div>
 
     <!-- Full width -->
     <div class="placeholder media-full reveal">
-      <img src="../assets/img/positivo_04.jpg">
+      <img src="../assets/img/positivo_04.jpg" alt="University Positivo — guia de curso, spread completo">
     </div>
-
-
-
-
-
-
-
-
 
     <!-- Duas colunas -->
     <div class="media-row reveal">
-      <div class="placeholder media-row__cell"><img src="../assets/img/positivo_05.jpg"></div>
-      <div class="placeholder media-row__cell"><img src="../assets/img/positivo_06.jpg"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/positivo_05.jpg" alt="University Positivo — guia de curso, página interna"></div>
+      <div class="placeholder media-row__cell"><img src="../assets/img/positivo_06.jpg" alt="University Positivo — guia de curso, página interna"></div>
     </div>
-
 
   </section>
 
   <!-- ─── CREDITS ───────────────────────────────────────── -->
   <div class="case-credits reveal">
     <div class="case-credits__group">
-      <h4>Team</h4>
-      <div class="case-credits__item"><label>Agency</label><span>Desdobra - Design of Brasil</span></div>
-      <div class="case-credits__item"><label>Year</label><span>2018</span></div>
-      <div class="case-credits__item"><label>Creative Director</label><span>Lorenzo Andreola</span></div>
+      <h4 class="t-pt">Equipe</h4>
+      <h4 class="t-en">Team</h4>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Agência</span><span class="t-en">Agency</span></label>
+        <span>Desdobra — Design do Brasil</span>
+      </div>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Ano</span><span class="t-en">Year</span></label>
+        <span>2018</span>
+      </div>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Direção Criativa</span><span class="t-en">Creative Director</span></label>
+        <span>Lorenzo Andreola</span>
+      </div>
     </div>
     <div class="case-credits__group">
-
-      <div class="case-credits__item"><label>Writer</label><span>Laura Henz</span></div>
-      <div class="case-credits__item"><label>Designer</label><span>Cezar Miranda</span></div>
+      <h4 class="t-pt">Conteúdo</h4>
+      <h4 class="t-en">Content</h4>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Redação</span><span class="t-en">Writer</span></label>
+        <span>Laura Henz</span>
+      </div>
+      <div class="case-credits__item">
+        <label>Designer</label>
+        <span>Cezar Miranda</span>
+      </div>
     </div>
   </div>
 
-  <!-- ─── NEXT PROJECT ──────────────────────────────────── -->
-  <a href="case_topzstone.html" class="case-next reveal">
-    <div>
-      <p class="case-next__label">Next project</p>
-      <h2 class="case-next__title t-serif-md">Topzstone</h2>
-    </div>
-    <span class="case-next__arrow" aria-hidden="true">→</span>
-  </a>
+  <!-- ─── PRÓXIMO CASE ────────────────────────────────────── -->
+  <section class="case-next reveal">
+    <p class="case-next__label t-pt">Próximo projeto</p>
+    <p class="case-next__label t-en">Next project</p>
+    <a href="case_easylaser.html" class="case-next__link">
+      <h3 class="t-serif-lg t-pt">EasyLaser <span class="highlight">— E-commerce</span></h3>
+      <h3 class="t-serif-lg t-en">EasyLaser <span class="highlight">— E-commerce</span></h3>
+    </a>
+  </section>
 
   <!-- ─── FOOTER ────────────────────────────────────────── -->
-  <footer class="footer">
-    <p>Content © Cezar Miranda — All rights reserved</p>
+  <footer class="footer reveal">
+    <p class="t-pt">Conteúdo © Cezar Miranda — Todos os direitos reservados</p>
+    <p class="t-en">Content © Cezar Miranda — All rights reserved</p>
     <ul class="footer__links">
       <li><a href="https://www.linkedin.com/in/cezarrm/">LinkedIn</a></li>
       <li><a href="https://www.behance.net/cezarrm">Behance</a></li>
     </ul>
   </footer>
 
-  <script src="../assets/js/main.js"></script>
-</body>
-
-</html>
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+  <script src="../assets/js/case.js"></script>
+  <script src="../assets/js/i18n.js"></script>
+</body></html>

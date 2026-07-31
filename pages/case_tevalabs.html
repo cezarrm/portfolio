@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <script>(function(){try{if((localStorage.getItem('lang')||'pt')==='en'){document.documentElement.classList.add('lang-en');document.documentElement.setAttribute('lang','en');}}catch(e){}})();</script>
+  <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TevaLabs — PPT Design System | Cezar Miranda</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/case.css">
+</head>
+
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="../index.html" class="nav__back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M19 12H5M5 12l7-7M5 12l7 7"></path>
+      </svg>
+      <span class="t-pt">Voltar</span>
+      <span class="t-en">Back</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a></li>
+      <li><a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
+      <li><a href="mailto:cezar611@gmail.com">Email</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <button class="nav__hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
+    <a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a>
+    <a href="mailto:cezar611@gmail.com">Email</a>
+    <div class="lang-switch">
+      <button type="button" data-lang="pt">PT</button>
+      <span class="lang-switch__divider">·</span>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. TÍTULO E CONTEXTO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-hero reveal">
+    <div class="case-hero__eyebrow">
+      <span class="dot"></span>
+      <span class="t-label">Case Study — Branding / Motion</span>
+    </div>
+
+    <h1 class="case-hero__title t-serif-xl">
+      TevaLabs<br>
+      <span class="t-pt highlight">um design system para apresentações corporativas</span>
+      <span class="t-en highlight">a design system for corporate presentations</span>
+    </h1>
+
+    <p class="case-hero__desc t-pt">
+      As apresentações da TevaLabs eram montadas do zero a cada novo pitch ou relatório,
+      sem um padrão visual consistente entre os times. Em <strong>[X semanas/meses]</strong>,
+      desenvolvi um design system completo de slides — templates, ícones e diretrizes de
+      uso — para agilizar a produção de conteúdo e manter a marca consistente em qualquer
+      apresentação. <span class="edit-flag">editar</span>
+    </p>
+    <p class="case-hero__desc t-en">
+      TevaLabs presentations were built from scratch for every new pitch or report, with
+      no consistent visual standard across teams. Over <strong>[X weeks/months]</strong>,
+      I developed a complete slide design system — templates, icons, and usage guidelines —
+      to streamline content production and keep the brand consistent across every
+      presentation. <span class="edit-flag">edit</span>
+    </p>
+  </section>
+
+  <!-- Meta rápida: contexto do projeto -->
+  <div class="case-meta reveal">
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Cliente</span>
+      <span class="case-meta__label t-en">Client</span>
+      <span class="case-meta__value">TevaLabs</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Escopo</span>
+      <span class="case-meta__label t-en">Scope</span>
+      <span class="case-meta__value">Branding, Motion, Template</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Meu papel</span>
+      <span class="case-meta__label t-en">My role</span>
+      <span class="case-meta__value t-pt">Brand Designer, Motion</span>
+      <span class="case-meta__value t-en">Brand Designer, Motion</span>
+    </div>
+    <div class="case-meta__item">
+      <span class="case-meta__label t-pt">Ano</span>
+      <span class="case-meta__label t-en">Year</span>
+      <span class="case-meta__value">2025</span>
+    </div>
+  </div>
+
+  <!-- Vídeo de destaque do case -->
+  <div class="case-hero-media reveal">
+    <div class="case-media placeholder" style="aspect-ratio:21/9;">
+      <video autoplay="" muted="" loop="" playsinline="">
+        <source src="../assets/img/deck_review_case.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. GALERIA
+       ═══════════════════════════════════════════════════════ -->
+  <section class="case-content">
+
+    <!-- Texto corrido -->
+    <div class="case-text reveal">
+      <h2 class="t-serif-sm t-pt">Um sistema modular, não um arquivo de slides.</h2>
+      <h2 class="t-serif-sm t-en">A modular system, not a slide file.</h2>
+      <p class="t-pt">
+        Em vez de entregar um arquivo estático, criamos um sistema de templates com
+        layouts mestres, paleta de cores e biblioteca de ícones prontos para qualquer
+        time montar uma apresentação sem depender do time de design.
+      </p>
+      <p class="t-en">
+        Instead of delivering a static file, we built a template system with master
+        layouts, a color palette, and an icon library ready for any team to assemble a
+        presentation without depending on the design team.
+      </p>
+    </div>
+
+    <!-- Duas colunas -->
+    <div class="media-row reveal">
+      <div class="placeholder media-row__cell">
+        <span class="t-pt">Template de capa</span>
+        <span class="t-en">Cover template</span>
+      </div>
+      <div class="placeholder media-row__cell">
+        <span class="t-pt">Template de conteúdo</span>
+        <span class="t-en">Content template</span>
+      </div>
+    </div>
+
+    <!-- Full width -->
+    <div class="placeholder media-full reveal">
+      <span class="t-pt">Biblioteca de ícones</span>
+      <span class="t-en">Icon library</span>
+    </div>
+
+    <!-- Duas colunas -->
+    <div class="media-row reveal">
+      <div class="placeholder media-row__cell">
+        <span class="t-pt">Paleta de cores e tipografia</span>
+        <span class="t-en">Color palette and typography</span>
+      </div>
+      <div class="placeholder media-row__cell">
+        <span class="t-pt">Transições de motion</span>
+        <span class="t-en">Motion transitions</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ─── CREDITS ───────────────────────────────────────── -->
+  <div class="case-credits reveal">
+    <div class="case-credits__group">
+      <h4 class="t-pt">Equipe</h4>
+      <h4 class="t-en">Team</h4>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Design de Marca</span><span class="t-en">Brand Design</span></label>
+        <span>Cezar Miranda</span>
+      </div>
+      <div class="case-credits__item">
+        <label>Motion</label>
+        <span class="t-pt">[Nome do colaborador]</span>
+        <span class="t-en">[Collaborator name]</span>
+      </div>
+    </div>
+    <div class="case-credits__group">
+      <h4 class="t-pt">Projeto</h4>
+      <h4 class="t-en">Project</h4>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Cliente</span><span class="t-en">Client</span></label>
+        <span>TevaLabs</span>
+      </div>
+      <div class="case-credits__item">
+        <label><span class="t-pt">Ano</span><span class="t-en">Year</span></label>
+        <span>2025</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── PRÓXIMO CASE ────────────────────────────────────── -->
+  <section class="case-next reveal">
+    <p class="case-next__label t-pt">Próximo projeto</p>
+    <p class="case-next__label t-en">Next project</p>
+    <a href="case_ferramentasgerais.html" class="case-next__link">
+      <h3 class="t-serif-lg t-pt">Ferramentas Gerais <span class="highlight">— E-commerce B2B</span></h3>
+      <h3 class="t-serif-lg t-en">Ferramentas Gerais <span class="highlight">— B2B E-commerce</span></h3>
+    </a>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer class="footer reveal">
+    <p class="t-pt">Conteúdo © Cezar Miranda — Todos os direitos reservados</p>
+    <p class="t-en">Content © Cezar Miranda — All rights reserved</p>
+    <ul class="footer__links">
+      <li><a href="https://www.linkedin.com/in/cezarrm/">LinkedIn</a></li>
+      <li><a href="https://www.behance.net/cezarrm">Behance</a></li>
+    </ul>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+  <script src="../assets/js/case.js"></script>
+  <script src="../assets/js/i18n.js"></script>
+</body></html>
