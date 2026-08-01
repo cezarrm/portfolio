@@ -708,15 +708,10 @@
     grid-column: auto;
   }
 
-  /* telas maiores e quadradas no mobile, sem cortar a imagem
-     (object-fit: contain em vez de cover) */
+  /* telas maiores e quadradas no mobile */
   .case-screen__frame,
   .case-solution-grid .case-screen:first-child .case-screen__frame {
     aspect-ratio: 1 / 1;
-  }
-
-  .case-screen__frame img {
-    object-fit: contain;
   }
 
   .case-process__step {
