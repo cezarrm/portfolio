@@ -628,6 +628,10 @@
     margin: 3rem var(--pad-x-md) 1.5rem;
   }
 
+  .compare-slider {
+    aspect-ratio: 4 / 3;
+  }
+
   .case-section {
     padding: 4.5rem var(--pad-x-md);
   }
@@ -686,6 +690,10 @@
 
   .case-hero-media {
     margin: 2.5rem var(--pad-x-sm) 1.25rem;
+  }
+
+  .compare-slider {
+    aspect-ratio: 1 / 1;
   }
 
   .case-section {
