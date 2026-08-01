@@ -109,10 +109,21 @@
     </div>
   </div>
 
-  <!-- Imagem/vídeo de destaque do case -->
+  <!-- Antes / depois: comparação com slider -->
   <div class="case-hero-media reveal">
-    <div class="case-media placeholder" style="aspect-ratio:21/9;">
-      <img src="../assets/img/image_header.png" alt="EasyLaser — visão geral do produto">
+    <div class="compare-slider" id="compareSlider">
+      <img class="compare-slider__img compare-slider__img--after" src="../assets/img/image_header.png" alt="Depois — site redesenhado">
+      <img class="compare-slider__img compare-slider__img--before" src="../assets/img/easylaser_before.png" alt="Antes — site original">
+      <span class="compare-slider__tag compare-slider__tag--before t-pt">Antes</span>
+      <span class="compare-slider__tag compare-slider__tag--before t-en">Before</span>
+      <span class="compare-slider__tag compare-slider__tag--after t-pt">Depois</span>
+      <span class="compare-slider__tag compare-slider__tag--after t-en">After</span>
+      <div class="compare-slider__handle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M8 8l-4 4 4 4M16 8l4 4-4 4"></path>
+        </svg>
+      </div>
+      <input type="range" class="compare-slider__range" min="0" max="100" value="50" aria-label="Arraste para comparar antes e depois">
     </div>
   </div>
 

@@ -74,6 +74,111 @@
   margin: 3.5rem var(--pad-x) 1.75rem;
 }
 
+/* ─── COMPARE SLIDER (antes / depois) ────────────────────── */
+.compare-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21/9;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  cursor: ew-resize;
+  --pos: 50%;
+}
+
+.compare-slider__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.compare-slider__img--before {
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+.compare-slider__tag {
+  position: absolute;
+  top: 16px;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.compare-slider__tag--before { left: 16px; }
+.compare-slider__tag--after { right: 16px; }
+
+.compare-slider__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  width: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.compare-slider__handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.compare-slider__handle svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  color: #111;
+  z-index: 3;
+}
+
+.compare-slider__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 4;
+}
+
+.compare-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 44px;
+  height: 100%;
+}
+
+.compare-slider__range::-moz-range-thumb {
+  width: 44px;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
 /* ─── SECTION SHELL ──────────────────────────────────────── */
 .case-section {
   padding: 6rem var(--pad-x);

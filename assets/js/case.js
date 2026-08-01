@@ -34,6 +34,16 @@ if (hamburger && mobileMenu) {
   });
 }
 
+// ─── COMPARE SLIDER: antes / depois ─────────────────────────
+document.querySelectorAll('.compare-slider').forEach(slider => {
+  const range = slider.querySelector('.compare-slider__range');
+  if (!range) return;
+
+  const update = () => slider.style.setProperty('--pos', `${range.value}%`);
+  range.addEventListener('input', update);
+  update();
+});
+
 // ─── NEXT PROJECT: pula automaticamente os "em breve" ──────
 // Única fonte de verdade da ordem/estado dos cases. Quando um projeto
 // sair do "em breve" (ou entrar), basta mudar `soon` aqui — o link de

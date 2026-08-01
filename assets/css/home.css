@@ -83,8 +83,15 @@
   transition: opacity 0.22s;
 }
 
-.project-item:hover {
+/* bloqueados ("em breve"): mantém o dimming atual */
+.project-item.is-soon:hover {
   opacity: 0.56;
+}
+
+/* liberados: zoom na imagem, sem esmaecer o card */
+.project-item:not(.is-soon):hover .placeholder img,
+.project-item:not(.is-soon):hover .placeholder video {
+  transform: scale(1.06);
 }
 
 .project-item--featured {
@@ -607,6 +614,17 @@
     height: 100%;
   }
 
+}
+
+/* Mantém a mesma proporção em TODOS os cards de projeto no mobile.
+   Sobrescreve tanto o quadrado padrão (.placeholder em global.css)
+   quanto o 21/9 dos cards em destaque, que senão ganhava por
+   especificidade e deixava alguns cards quadrados e outros retangulares. */
+@media (max-width: 768px) {
+  .project-item .placeholder {
+    aspect-ratio: 4 / 3;
+    height: auto;
+  }
 }
 
 /* ========================================
