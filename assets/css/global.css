@@ -53,6 +53,16 @@ a {
   text-decoration: none;
 }
 
+/* evita viúvas/órfãs no texto (progressive enhancement — navegadores
+   sem suporte simplesmente ignoram, sem quebrar nada) */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
 img {
   display: block;
   max-width: 100%;
