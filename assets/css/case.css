@@ -95,6 +95,8 @@
   object-fit: cover;
   user-select: none;
   pointer-events: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 .compare-slider__img--before {
