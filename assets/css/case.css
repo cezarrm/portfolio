@@ -83,6 +83,7 @@
   overflow: hidden;
   background: var(--bg-subtle);
   cursor: ew-resize;
+  touch-action: none;
   --pos: 50%;
 }
 
@@ -161,6 +162,7 @@
   margin: 0;
   opacity: 0;
   cursor: ew-resize;
+  pointer-events: none;
   -webkit-appearance: none;
   appearance: none;
   z-index: 4;
