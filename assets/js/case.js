@@ -52,9 +52,15 @@ document.querySelectorAll('.compare-slider').forEach(slider => {
     if (range) range.value = pct;
   };
 
+  // bloqueia o gesto nativo de "arrastar imagem para fora", que no
+  // Safari pode sequestrar o arraste antes do pointermove continuar
+  slider.addEventListener('dragstart', (e) => e.preventDefault());
+
   slider.addEventListener('pointerdown', (e) => {
     dragging = true;
-    slider.setPointerCapture(e.pointerId);
+    if (slider.setPointerCapture) {
+      try { slider.setPointerCapture(e.pointerId); } catch (err) {}
+    }
     setPosFromClientX(e.clientX);
   });
 
@@ -72,6 +78,23 @@ document.querySelectorAll('.compare-slider').forEach(slider => {
 
   slider.addEventListener('pointerup', stopDrag);
   slider.addEventListener('pointercancel', stopDrag);
+  window.addEventListener('pointerup', stopDrag);
+
+  // reforço com mouse events "puros" — alguns Safaris tem
+  // comportamento inconsistente de Pointer Events só com mouse
+  slider.addEventListener('mousedown', (e) => {
+    dragging = true;
+    setPosFromClientX(e.clientX);
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    setPosFromClientX(e.clientX);
+  });
+
+  window.addEventListener('mouseup', () => {
+    dragging = false;
+  });
 
   if (range) {
     range.addEventListener('input', () => {
