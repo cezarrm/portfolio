@@ -35,13 +35,49 @@ if (hamburger && mobileMenu) {
 }
 
 // ─── COMPARE SLIDER: antes / depois ─────────────────────────
+// Usa Pointer Events (mouse + touch + caneta unificados) em vez de
+// depender só do <input type="range"> nativo — no iOS a área de
+// toque real do range é menor que a caixa esticada via CSS, então
+// o drag não respondia. O range continua aqui só como fallback
+// acessível via teclado (setas, quando focado).
 document.querySelectorAll('.compare-slider').forEach(slider => {
   const range = slider.querySelector('.compare-slider__range');
-  if (!range) return;
+  let dragging = false;
 
-  const update = () => slider.style.setProperty('--pos', `${range.value}%`);
-  range.addEventListener('input', update);
-  update();
+  const setPosFromClientX = (clientX) => {
+    const rect = slider.getBoundingClientRect();
+    let pct = ((clientX - rect.left) / rect.width) * 100;
+    pct = Math.min(100, Math.max(0, pct));
+    slider.style.setProperty('--pos', `${pct}%`);
+    if (range) range.value = pct;
+  };
+
+  slider.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    slider.setPointerCapture(e.pointerId);
+    setPosFromClientX(e.clientX);
+  });
+
+  slider.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    setPosFromClientX(e.clientX);
+  });
+
+  const stopDrag = (e) => {
+    dragging = false;
+    if (e && slider.hasPointerCapture && slider.hasPointerCapture(e.pointerId)) {
+      slider.releasePointerCapture(e.pointerId);
+    }
+  };
+
+  slider.addEventListener('pointerup', stopDrag);
+  slider.addEventListener('pointercancel', stopDrag);
+
+  if (range) {
+    range.addEventListener('input', () => {
+      slider.style.setProperty('--pos', `${range.value}%`);
+    });
+  }
 });
 
 // ─── NEXT PROJECT: pula automaticamente os "em breve" ──────
