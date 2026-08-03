@@ -1,5 +1,5 @@
 /* ============================================================
-   case.js — Scripts compartilhados entre as páginas de Case Study
+   case.js - Scripts compartilhados entre as páginas de Case Study
    e a página About
    ============================================================ */
 
@@ -36,7 +36,7 @@ if (hamburger && mobileMenu) {
 
 // ─── COMPARE SLIDER: antes / depois ─────────────────────────
 // Usa Pointer Events (mouse + touch + caneta unificados) em vez de
-// depender só do <input type="range"> nativo — no iOS a área de
+// depender só do <input type="range"> nativo - no iOS a área de
 // toque real do range é menor que a caixa esticada via CSS, então
 // o drag não respondia. O range continua aqui só como fallback
 // acessível via teclado (setas, quando focado).
@@ -80,7 +80,7 @@ document.querySelectorAll('.compare-slider').forEach(slider => {
   slider.addEventListener('pointercancel', stopDrag);
   window.addEventListener('pointerup', stopDrag);
 
-  // reforço com mouse events "puros" — alguns Safaris tem
+  // reforço com mouse events "puros" - alguns Safaris tem
   // comportamento inconsistente de Pointer Events só com mouse
   slider.addEventListener('mousedown', (e) => {
     dragging = true;
@@ -103,13 +103,56 @@ document.querySelectorAll('.compare-slider').forEach(slider => {
   }
 });
 
+// ─── DESIGN SYSTEM: copiar hex ao clicar no swatch ─────────
+document.querySelectorAll('.case-swatch, .case-colorband').forEach(swatch => {
+  swatch.addEventListener('click', () => {
+    const hex = swatch.getAttribute('data-hex') || '';
+
+    const showCopied = () => {
+      swatch.classList.add('is-copied');
+      setTimeout(() => swatch.classList.remove('is-copied'), 1200);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(hex).then(showCopied).catch(() => {
+        fallbackCopy(hex);
+        showCopied();
+      });
+    } else {
+      fallbackCopy(hex);
+      showCopied();
+    }
+  });
+});
+
+function fallbackCopy(text) {
+  const helper = document.createElement('textarea');
+  helper.value = text;
+  helper.style.position = 'fixed';
+  helper.style.opacity = '0';
+  document.body.appendChild(helper);
+  helper.select();
+  try { document.execCommand('copy'); } catch (err) { /* noop */ }
+  document.body.removeChild(helper);
+}
+
+// ─── UI STATE CARDS: hover (desktop) / toque (mobile) ──────
+// No touch não existe :hover, então o clique/toque fixa o estado
+// "depois" ligando a classe is-active - no desktop isso só reforça
+// o hover, permitindo também "fixar" o estado clicando.
+document.querySelectorAll('.case-uistate__card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('is-active');
+  });
+});
+
 // ─── NEXT PROJECT: pula automaticamente os "em breve" ──────
 // Única fonte de verdade da ordem/estado dos cases. Quando um projeto
-// sair do "em breve" (ou entrar), basta mudar `soon` aqui — o link de
+// sair do "em breve" (ou entrar), basta mudar `soon` aqui - o link de
 // "próximo projeto" em todas as páginas se ajusta sozinho.
 const CASE_PROJECTS = [
   { slug: 'case_easylaser.html', pt: 'EasyLaser', ptSub: 'Clínica de Estética', en: 'EasyLaser', enSub: 'Aesthetics Clinic', soon: false },
-  { slug: 'case_ferramentasgerais.html', pt: 'Ferramentas Gerais', ptSub: 'E-commerce B2B', en: 'Ferramentas Gerais', enSub: 'B2B E-commerce', soon: true },
+  { slug: 'case_ferramentasgerais.html', pt: 'Ferramentas Gerais', ptSub: 'E-commerce B2B', en: 'Ferramentas Gerais', enSub: 'B2B E-commerce', soon: false },
   { slug: 'case_wave.html', pt: 'Wave', ptSub: 'Gateway de Pagamentos', en: 'Wave', enSub: 'Payment Gateway', soon: true },
   { slug: 'case_topzstone.html', pt: 'Topzstone', ptSub: 'Branding e Editorial', en: 'Topzstone', enSub: 'Branding and Editorial', soon: false },
   { slug: 'case_tevalabs.html', pt: 'TevaLabs', ptSub: 'Design System de PPT', en: 'TevaLabs', enSub: 'PPT Design System', soon: true },
@@ -138,8 +181,8 @@ if (nextLink) {
     const ptEl = nextLink.querySelector('.t-pt');
     const enEl = nextLink.querySelector('.t-en');
 
-    if (ptEl) ptEl.innerHTML = `${next.pt} <span class="highlight">— ${next.ptSub}</span>`;
-    if (enEl) enEl.innerHTML = `${next.en} <span class="highlight">— ${next.enSub}</span>`;
+    if (ptEl) ptEl.innerHTML = `${next.pt} <span class="highlight">- ${next.ptSub}</span>`;
+    if (enEl) enEl.innerHTML = `${next.en} <span class="highlight">- ${next.enSub}</span>`;
   }
 }
 

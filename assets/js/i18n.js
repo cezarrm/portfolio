@@ -1,5 +1,5 @@
 /* ============================================================
-   i18n.js — Troca de idioma EN / PT-BR, compartilhado entre
+   i18n.js - Troca de idioma EN / PT-BR, compartilhado entre
    todas as páginas. Persiste a escolha em localStorage.
    ============================================================ */
 

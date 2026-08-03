@@ -1,5 +1,5 @@
 /* ============================================================
-   main.js — Scripts compartilhados entre todas as páginas
+   main.js - Scripts compartilhados entre todas as páginas
    ============================================================ */
 
 // ─── NAV: hamburger menu ──────────────────────────────────
