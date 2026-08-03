@@ -1,5 +1,5 @@
 /* ============================================================
-   home.css — Estilos da página inicial (index.html)
+   home.css - Estilos da página inicial (index.html)
    ============================================================ */
 
 /* ─── HERO ───────────────────────────────────────────────── */
@@ -154,6 +154,28 @@
   border-radius: 999px;
 
   background: #FE8A25;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  color: #fff;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  animation: pulseSoon 1.8s ease-in-out infinite;
+}
+
+.new-badge {
+  display: inline-flex;
+  align-items: center;
+
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+
+  background: #0559D3;
   border: 1px solid rgba(255, 255, 255, 0.14);
 
   color: #fff;
@@ -576,7 +598,7 @@
 }
 
 /* ========================================
-   CUSTOM CURSOR — IN PROGRESS
+   CUSTOM CURSOR - IN PROGRESS
 ======================================== */
 
 /* ========================================

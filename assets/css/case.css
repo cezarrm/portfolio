@@ -1,5 +1,5 @@
 /* ============================================================
-   case.css — Estilos para páginas de Case Study
+   case.css - Estilos para páginas de Case Study
    Estende os tokens definidos em global.css
    ============================================================ */
 
@@ -19,7 +19,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #ff4b0f;
+  background: var(--case-accent, #ff4b0f);
 }
 
 .case-hero__title {
@@ -33,6 +33,15 @@
   font-size: 1.08rem;
   line-height: 1.75;
   color: var(--text-sec);
+}
+
+.case-hero__desc p + p {
+  margin-top: 1.1rem;
+}
+
+.case-hero__desc strong {
+  color: var(--text);
+  font-weight: 500;
 }
 
 /* ─── META ROW (contexto rápido) ─────────────────────────── */
@@ -248,8 +257,8 @@
 }
 
 .case-problem__card--dark {
-  background: #3E6D89;
-  border-color: #3E6D89;
+  background: var(--case-accent, #3E6D89);
+  border-color: var(--case-accent, #3E6D89);
 }
 
 .icon-plate {
@@ -274,7 +283,7 @@
 .case-problem__icon {
   width: 20px;
   height: 20px;
-  color: var(--text-ter);
+  color: var(--case-accent, var(--text-ter));
   display: block;
 }
 
@@ -307,7 +316,7 @@
 }
 
 .case-problem__card li::before {
-  content: "—";
+  content: "-";
   position: absolute;
   left: 0;
   color: var(--text-ter);
@@ -382,7 +391,7 @@
 .case-screen__icon {
   width: 20px;
   height: 20px;
-  color: #3D6D89;
+  color: var(--case-accent, #3D6D89);
 }
 
 .case-screen__content {
@@ -402,6 +411,300 @@
   font-size: 0.96rem;
   line-height: 1.65;
   color: var(--text-sec);
+}
+
+/* ─── DESIGN SYSTEM: paleta, tipografia, iconografia ─────── */
+.case-design__group {
+  margin-bottom: 3.5rem;
+}
+
+.case-design__group:last-child {
+  margin-bottom: 0;
+}
+
+.case-design__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-ter);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Paleta (faixas) + tipografia lado a lado */
+.case-brand {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 1.75rem;
+}
+
+.case-brand__colors {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.case-colorband {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.75rem;
+  background: var(--band, var(--bg-subtle));
+  cursor: pointer;
+  position: relative;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.case-colorband + .case-colorband {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.case-colorband__name {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.case-colorband__hex {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--text-sec);
+}
+
+.case-colorband--dark .case-colorband__name,
+.case-colorband--dark .case-colorband__hex {
+  color: #fff;
+}
+
+.case-colorband--dark .case-colorband__hex {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.case-colorband__copied {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1.75rem;
+  background: rgba(17, 17, 17, 0.5);
+  color: #fff;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.case-colorband.is-copied .case-colorband__copied {
+  opacity: 1;
+}
+
+.case-brand__type {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 0 2rem;
+}
+
+/* Tipografia (specimens reaproveitados em outros contextos, se necessário) */
+.case-type-specimens {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-type-specimen {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.case-type-specimen:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.case-type-specimen__sample {
+  width: 110px;
+  flex-shrink: 0;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--text);
+}
+
+.case-type-specimen__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.case-type-specimen__name {
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.case-type-specimen__use {
+  font-size: 0.86rem;
+  color: var(--text-sec);
+}
+
+/* Dentro do painel case-brand__type os specimens não precisam do
+   próprio border-top/padding - o painel já tem borda e padding */
+.case-brand__type .case-type-specimen,
+.case-brand__type .case-type-specimen:first-child {
+  border-top: none;
+  padding: 0;
+}
+
+/* Animação: faixas entrando da esquerda pra direita, tipografia em fade-in.
+   Dispara junto com o IntersectionObserver que já controla .reveal/.is-visible. */
+.case-brand__colors .case-colorband {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.case-brand__colors.is-visible .case-colorband {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.case-brand__colors.is-visible .case-colorband:nth-child(1) { transition-delay: 0s; }
+.case-brand__colors.is-visible .case-colorband:nth-child(2) { transition-delay: 0.09s; }
+.case-brand__colors.is-visible .case-colorband:nth-child(3) { transition-delay: 0.18s; }
+.case-brand__colors.is-visible .case-colorband:nth-child(4) { transition-delay: 0.27s; }
+
+.case-brand__type .case-type-specimen {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.case-brand__type.is-visible .case-type-specimen {
+  opacity: 1;
+}
+
+.case-brand__type.is-visible .case-type-specimen:nth-child(1) { transition-delay: 0.15s; }
+.case-brand__type.is-visible .case-type-specimen:nth-child(2) { transition-delay: 0.32s; }
+.case-brand__type.is-visible .case-type-specimen:nth-child(3) { transition-delay: 0.49s; }
+
+/* ─── UI STATES: cards com hover/toque antes-depois ──────── */
+.case-uistate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+}
+
+.case-uistate__card {
+  cursor: pointer;
+}
+
+.case-uistate__frame {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.case-uistate__layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.case-uistate__layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.case-uistate__layer span {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-ter);
+}
+
+.case-uistate__layer--after {
+  background: var(--bg-muted);
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(.19, 1, .22, 1);
+}
+
+.case-uistate__card:hover .case-uistate__layer--after,
+.case-uistate__card.is-active .case-uistate__layer--after {
+  opacity: 1;
+}
+
+.case-uistate__hint {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.78);
+  color: #fff;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+
+.case-uistate__hint svg {
+  width: 12px;
+  height: 12px;
+}
+
+.case-uistate__card:hover .case-uistate__hint,
+.case-uistate__card.is-active .case-uistate__hint {
+  opacity: 0;
+}
+
+.case-uistate__caption {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 1.1rem;
+  align-items: baseline;
+}
+
+.case-uistate__num {
+  font-size: 0.72rem;
+  color: var(--text-ter);
+  flex-shrink: 0;
+}
+
+.case-uistate__text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-sec);
+}
+
+.case-uistate__text strong {
+  color: var(--text);
+  font-weight: 500;
 }
 
 /* ─── PROCESS: linha do tempo ────────────────────────────── */
@@ -485,6 +788,12 @@
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2.75rem;
+}
+
+/* Usado quando o card de papel é destacado fora de um .case-section,
+   ex.: logo abaixo do hero - precisa do próprio gutter lateral */
+.case-role--top {
+  margin: 0 var(--pad-x) 4rem;
 }
 
 .case-role__title {
@@ -675,6 +984,11 @@
     padding: 7.5rem var(--pad-x-md) 3rem;
   }
 
+  .case-role--top {
+    margin: 0 var(--pad-x-md) 3rem;
+    padding: 2rem;
+  }
+
   .case-meta {
     grid-template-columns: repeat(2, 1fr);
     margin: 3rem var(--pad-x-md) 0;
@@ -707,6 +1021,24 @@
   .case-solution-grid,
   .case-results {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .case-brand {
+    grid-template-columns: 1fr;
+  }
+
+  .case-brand__colors,
+  .case-brand__type {
+    height: auto;
+  }
+
+  .case-colorband {
+    padding: 1.5rem 1.75rem;
+  }
+
+  .case-brand__type {
+    padding: 2rem;
+    gap: 1.5rem;
   }
 
   .case-role {
@@ -750,6 +1082,11 @@
     padding: 6.5rem var(--pad-x-sm) 2.5rem;
   }
 
+  .case-role--top {
+    margin: 0 var(--pad-x-sm) 2.5rem;
+    padding: 1.5rem;
+  }
+
   .case-meta {
     grid-template-columns: 1fr 1fr;
     margin: 2.5rem var(--pad-x-sm) 0;
@@ -775,8 +1112,15 @@
 
   .case-problem,
   .case-solution-grid,
-  .case-results {
+  .case-results,
+  .case-uistate {
     grid-template-columns: 1fr;
+  }
+
+  .case-type-specimen {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
   .case-solution-grid .case-screen:first-child,

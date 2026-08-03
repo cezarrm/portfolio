@@ -1,5 +1,5 @@
 /* ============================================================
-   global.css — Base compartilhada entre todas as páginas
+   global.css - Base compartilhada entre todas as páginas
    ============================================================ */
 
 /* ─── RESET ──────────────────────────────────────────────── */
@@ -53,7 +53,7 @@ a {
   text-decoration: none;
 }
 
-/* evita viúvas/órfãs no texto (progressive enhancement — navegadores
+/* evita viúvas/órfãs no texto (progressive enhancement - navegadores
    sem suporte simplesmente ignoram, sem quebrar nada) */
 h1, h2, h3, h4 {
   text-wrap: balance;
@@ -240,8 +240,8 @@ img {
 }
 
 /* ─── I18N (troca de idioma EN / PT-BR) ──────────────────── */
-/* Nunca sobrescreve o display do idioma ativo — só esconde o
-   inativo — para não quebrar display:block/flex definidos por
+/* Nunca sobrescreve o display do idioma ativo - só esconde o
+   inativo - para não quebrar display:block/flex definidos por
    outras classes (ex: .case-meta__label, .tag). */
 html:not(.lang-en) .t-en { display: none !important; }
 html.lang-en .t-pt { display: none !important; }
