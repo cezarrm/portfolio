@@ -192,7 +192,7 @@ const lightbox = document.getElementById('lightbox');
 if (lightbox) {
   const lightboxImg = lightbox.querySelector('img');
 
-  document.querySelectorAll('.case-hero-media img, .case-screen__frame img, .case-content img').forEach(img => {
+  document.querySelectorAll('.case-hero-media img, .case-media img, .case-screen__frame img, .case-content img').forEach(img => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
       lightboxImg.src = img.src;
