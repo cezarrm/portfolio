@@ -91,6 +91,12 @@
   margin: 3.5rem var(--pad-x) 1.75rem;
 }
 
+/* Imagem larga (21:9) usada no hero e em blocos de destaque dentro
+   das seções — vira quadrada no mobile, junto com .compare-slider */
+.case-media--wide {
+  aspect-ratio: 21/9;
+}
+
 /* ─── COMPARE SLIDER (antes / depois) ────────────────────── */
 .compare-slider {
   position: relative;
@@ -1096,7 +1102,12 @@
     margin: 2.5rem var(--pad-x-sm) 1.25rem;
   }
 
-  .compare-slider {
+  .compare-slider,
+  .case-media--wide {
+    aspect-ratio: 1 / 1;
+  }
+
+  .case-uistate__frame {
     aspect-ratio: 1 / 1;
   }
 
