@@ -151,6 +151,8 @@ document.querySelectorAll('.case-uistate__card').forEach(card => {
 // sair do "em breve" (ou entrar), basta mudar `soon` aqui - o link de
 // "próximo projeto" em todas as páginas se ajusta sozinho.
 const CASE_PROJECTS = [
+  { slug: 'case_bemdeflor.html', pt: 'BEM-DE-FLOR', ptSub: 'Concept Package', en: 'BEM-DE-FLOR', enSub: 'Concept Package', soon: false },
+  { slug: 'case_gptw_veeam.html', pt: 'GPTW Veeam', ptSub: 'Campanha Global', en: 'GPTW Veeam', enSub: 'Global Campaign', soon: false },
   { slug: 'case_easylaser.html', pt: 'EasyLaser', ptSub: 'Clínica de Estética', en: 'EasyLaser', enSub: 'Aesthetics Clinic', soon: false },
   { slug: 'case_ferramentasgerais.html', pt: 'Ferramentas Gerais', ptSub: 'E-commerce B2B', en: 'Ferramentas Gerais', enSub: 'B2B E-commerce', soon: false },
   { slug: 'case_wave.html', pt: 'Wave', ptSub: 'Gateway de Pagamentos', en: 'Wave', enSub: 'Payment Gateway', soon: true },
