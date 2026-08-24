@@ -92,9 +92,22 @@
 }
 
 /* Imagem larga (21:9) usada no hero e em blocos de destaque dentro
-   das seções — vira quadrada no mobile, junto com .compare-slider */
+   das seções - vira quadrada no mobile, junto com .compare-slider */
 .case-media--wide {
   aspect-ratio: 21/9;
+}
+
+/* Embed de vídeo (YouTube etc) - mantém a proporção real de vídeo (16:9)
+   dentro do mesmo cartão arredondado usado pelas imagens do case */
+.case-media--video {
+  aspect-ratio: 16/9;
+}
+
+.case-media iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
 }
 
 /* ─── COMPARE SLIDER (antes / depois) ────────────────────── */
