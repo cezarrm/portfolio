@@ -146,6 +146,33 @@ document.querySelectorAll('.case-uistate__card').forEach(card => {
   });
 });
 
+// ─── BANNER FLUTUANTE: pill fixa + cartão de vidro separado ──
+// A pill nunca muda de forma - só o cartão acima dela aparece/some.
+// Usa a altura real do conteúdo (scrollHeight) para a transição de
+// max-height animar na velocidade certa, proporcional ao conteúdo.
+document.querySelectorAll('.case-float-dock').forEach(dock => {
+  const pill = dock.querySelector('.case-float-pill');
+  const toggleIcon = dock.querySelector('.case-float-pill__toggle');
+  const card = dock.querySelector('.case-float-card');
+  const cardInner = dock.querySelector('.case-float-card__inner');
+  if (!pill || !card || !cardInner) return;
+
+  const toggle = () => {
+    const collapsed = dock.classList.toggle('is-collapsed');
+    if (toggleIcon) toggleIcon.textContent = collapsed ? '+' : '−';
+    pill.setAttribute('aria-expanded', String(!collapsed));
+    card.style.maxHeight = collapsed ? '0px' : `${cardInner.scrollHeight}px`;
+  };
+
+  pill.addEventListener('click', toggle);
+  pill.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
+  });
+});
+
 // ─── NEXT PROJECT: pula automaticamente os "em breve" ──────
 // Única fonte de verdade da ordem/estado dos cases. Quando um projeto
 // sair do "em breve" (ou entrar), basta mudar `soon` aqui - o link de

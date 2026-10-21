@@ -80,7 +80,11 @@ function loopTyping() {
   setTimeout(loopTyping, speed);
 }
 
-loopTyping();
+// o texto do hero agora é estático ("Brand Designer" fixo com gradiente),
+// então só roda a animação de digitação se o #typing ainda existir na página
+if (typing) {
+  loopTyping();
+}
 
 const cards = document.querySelectorAll('.feed__cell');
 const lightbox = document.getElementById('lightbox');

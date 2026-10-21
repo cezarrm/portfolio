@@ -110,6 +110,205 @@
   border: 0;
 }
 
+/* ─── BANNER FLUTUANTE (glass effect) ─────────────────────────
+   Usado em cases mais editoriais (BEM-DE-FLOR, Positivo, Topzstone,
+   GPTW Veeam) - inspirado em dadada.work/great-work-happens-on-mac:
+   a pill compacta (título, categoria, ano) fica sempre visível, fixa
+   na parte inferior da tela, e um cartão de vidro separado some/
+   aparece ACIMA dela ao clicar - a pill nunca muda de forma, só o
+   cartão acima dela cresce e desaparece. */
+.case-float-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 60;
+  width: min(620px, calc(100% - 2rem));
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.case-float-card {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: rgba(70, 70, 72, 0.55);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  color: #fff;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+.case-float-dock:not(.is-collapsed) .case-float-card {
+  opacity: 1;
+}
+
+.case-float-card__inner {
+  padding: 1.75rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.case-float-card__inner::-webkit-scrollbar {
+  width: 5px;
+}
+
+.case-float-card__inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.case-float-card__inner::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+}
+
+.case-float-card__inner::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.case-float-pill {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 0.4rem 0.4rem 0.4rem 1.25rem;
+  background: rgba(70, 70, 72, 0.55);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  color: #fff;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+.case-float-pill__title {
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.case-float-pill__meta {
+  flex: 1;
+  text-align: center;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.case-float-pill__year {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+}
+
+.case-float-pill__toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background 0.2s ease;
+}
+
+.case-float-pill:hover .case-float-pill__toggle {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.case-float-card__title {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+.case-float-card__title .highlight {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.case-float-card .case-hero__eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.case-float-card .t-label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.case-float-card .case-hero__desc {
+  max-width: none;
+  margin-top: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.case-float-card .case-hero__desc strong {
+  color: #fff;
+}
+
+.case-float-card .case-meta {
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: none;
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+}
+
+.case-float-card .case-meta__item {
+  padding: 0 1rem 1rem 0;
+  border-left: none;
+}
+
+.case-float-card .case-meta__label {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.case-float-card .case-meta__value {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .case-float-dock {
+    bottom: 1rem;
+    width: calc(100% - 1.5rem);
+  }
+
+  .case-float-pill {
+    padding: 0.35rem 0.35rem 0.35rem 1rem;
+  }
+
+  .case-float-pill__meta {
+    display: none;
+  }
+
+  .case-float-card__inner {
+    padding: 1.25rem;
+  }
+
+  .case-float-card .case-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── COMPARE SLIDER (antes / depois) ────────────────────── */
 .compare-slider {
   position: relative;
@@ -368,7 +567,6 @@
   aspect-ratio: 16/10;
   width: 100%;
   background: var(--bg-subtle);
-  border: 1px solid var(--border);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -636,7 +834,6 @@
   aspect-ratio: 4/3;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var(--border);
   background: var(--bg-subtle);
 }
 
