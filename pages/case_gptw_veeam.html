@@ -31,15 +31,16 @@
       <li><a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
       <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
-    <div class="lang-switch">
-      <button type="button" data-lang="pt">PT</button>
-      <span class="lang-switch__divider">·</span>
-      <button type="button" data-lang="en">EN</button>
-    </div>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="lang-switch lang-switch--floating">
+    <button type="button" data-lang="en">EN</button>
+    <span class="lang-switch__divider">·</span>
+    <button type="button" data-lang="pt">PT</button>
+  </div>
 
   <div class="nav-mobile" id="mobileMenu">
     <a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
@@ -55,80 +56,92 @@
   <!-- ═══════════════════════════════════════════════════════
        1. TÍTULO E CONTEXTO
        ═══════════════════════════════════════════════════════ -->
-  <section class="case-hero reveal">
-    <div class="case-hero__eyebrow">
-      <span class="dot"></span>
-      <span class="t-label t-pt">Campanha Global</span>
-      <span class="t-label t-en">Global Campaign</span>
-    </div>
-
-    <h1 class="case-hero__title t-serif-xl">
-      GPTW Veeam<br>
-      <span class="t-pt highlight">campanha global de celebração da certificação Great Place To Work</span>
-      <span class="t-en highlight">global campaign celebrating the Great Place To Work certification</span>
-    </h1>
-
-    <div class="case-hero__desc t-pt">
-      <p>
-        A ideia é explorar a presença global da Veeam no GPTW: 25 selos conquistados ao
-        redor do mundo, cada um representando o reconhecimento da empresa como um ótimo
-        lugar para trabalhar em diferentes países.
-      </p>
-      <p>
-        A campanha transforma esses selos em um território visual e de comunicação,
-        destacando a escala global da conquista e, ao mesmo tempo, dando a cada país o
-        seu próprio momento de destaque. Além de uma peça global celebrando os 25 selos,
-        o conceito se desdobra em selos individuais para cada um dos 25 países, criando
-        uma expressão única para cada mercado enquanto mantém uma identidade de campanha
-        coesa.
-      </p>
-    </div>
-    <div class="case-hero__desc t-en">
-      <p>
-        The idea is to play with Veeam's global presence in GPTW: 25 badges earned
-        around the world, each representing the company's recognition as a Great Place
-        to Work in different countries.
-      </p>
-      <p>
-        The campaign turns these badges into a visual and communication territory,
-        highlighting the global scale of the achievement while also giving each country
-        its own moment in the spotlight. In addition to a global piece celebrating the
-        25 badges, the concept unfolds into individual badges for each of the 25
-        countries, creating a unique expression for every market while maintaining a
-        cohesive campaign identity.
-      </p>
-    </div>
-  </section>
-
-  <!-- Meta rápida: contexto do projeto -->
-  <div class="case-meta reveal">
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Cliente</span>
-      <span class="case-meta__label t-en">Client</span>
-      <span class="case-meta__value">Veeam Software</span>
-    </div>
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Escopo</span>
-      <span class="case-meta__label t-en">Scope</span>
-      <span class="case-meta__value t-pt">Campanha Global, Employer Branding</span>
-      <span class="case-meta__value t-en">Global Campaign, Employer Branding</span>
-    </div>
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Meu papel</span>
-      <span class="case-meta__label t-en">My role</span>
-      <span class="case-meta__value">Brand Designer</span>
-    </div>
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Ano</span>
-      <span class="case-meta__label t-en">Year</span>
-      <span class="case-meta__value">2026</span>
-    </div>
-  </div>
-
   <!-- Imagem de destaque do case -->
   <div class="case-hero-media reveal">
     <div class="case-media case-media--wide">
       <img src="../assets/img/gptw_01.jpg" alt="GPTW Veeam">
+    </div>
+  </div>
+
+  <!-- Banner flutuante (fixo, acompanha a rolagem, glass effect) -->
+  <div class="case-float-dock is-collapsed">
+    <div class="case-float-card">
+      <div class="case-float-card__inner">
+        <div class="case-hero__eyebrow">
+          <span class="dot"></span>
+          <span class="t-label t-pt">Campanha Global</span>
+          <span class="t-label t-en">Global Campaign</span>
+        </div>
+
+        <h1 class="case-float-card__title">
+          GPTW Veeam<br>
+          <span class="t-pt highlight">campanha global de celebração da certificação Great Place To Work</span>
+          <span class="t-en highlight">global campaign celebrating the Great Place To Work certification</span>
+        </h1>
+
+        <div class="case-hero__desc t-pt">
+          <p>
+            A ideia é explorar a presença global da Veeam no GPTW: 25 selos conquistados ao
+            redor do mundo, cada um representando o reconhecimento da empresa como um ótimo
+            lugar para trabalhar em diferentes países.
+          </p>
+          <p>
+            A campanha transforma esses selos em um território visual e de comunicação,
+            destacando a escala global da conquista e, ao mesmo tempo, dando a cada país o
+            seu próprio momento de destaque. Além de uma peça global celebrando os 25 selos,
+            o conceito se desdobra em selos individuais para cada um dos 25 países, criando
+            uma expressão única para cada mercado enquanto mantém uma identidade de campanha
+            coesa.
+          </p>
+        </div>
+        <div class="case-hero__desc t-en">
+          <p>
+            The idea is to play with Veeam's global presence in GPTW: 25 badges earned
+            around the world, each representing the company's recognition as a Great Place
+            to Work in different countries.
+          </p>
+          <p>
+            The campaign turns these badges into a visual and communication territory,
+            highlighting the global scale of the achievement while also giving each country
+            its own moment in the spotlight. In addition to a global piece celebrating the
+            25 badges, the concept unfolds into individual badges for each of the 25
+            countries, creating a unique expression for every market while maintaining a
+            cohesive campaign identity.
+          </p>
+        </div>
+
+        <div class="case-meta">
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Cliente</span>
+            <span class="case-meta__label t-en">Client</span>
+            <span class="case-meta__value">Veeam Software</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Escopo</span>
+            <span class="case-meta__label t-en">Scope</span>
+            <span class="case-meta__value t-pt">Campanha Global, Employer Branding</span>
+            <span class="case-meta__value t-en">Global Campaign, Employer Branding</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Meu papel</span>
+            <span class="case-meta__label t-en">My role</span>
+            <span class="case-meta__value">Brand Designer</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Ano</span>
+            <span class="case-meta__label t-en">Year</span>
+            <span class="case-meta__value">2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-float-pill" role="button" tabindex="0" aria-expanded="false">
+      <span class="case-float-pill__title">GPTW Veeam</span>
+      <span class="case-float-pill__meta t-pt">Campanha Global</span>
+      <span class="case-float-pill__meta t-en">Global Campaign</span>
+      <span class="case-float-pill__year">2026</span>
+      <span class="case-float-pill__toggle">+</span>
     </div>
   </div>
 
@@ -174,41 +187,6 @@
     </div>
 
   </section>
-
-  <!-- ─── CREDITS ───────────────────────────────────────── -->
-  <div class="case-credits reveal">
-    <div class="case-credits__group">
-      <h4 class="t-pt">Equipe</h4>
-      <h4 class="t-en">Team</h4>
-      <div class="case-credits__item">
-        <label><span class="t-pt">Cliente</span><span class="t-en">Client</span></label>
-        <span>Veeam Software</span>
-      </div>
-      <div class="case-credits__item">
-        <label><span class="t-pt">Ano</span><span class="t-en">Year</span></label>
-        <span>2026</span>
-      </div>
-    </div>
-    <div class="case-credits__group">
-      <h4 class="t-pt">Conteúdo</h4>
-      <h4 class="t-en">Content</h4>
-      <div class="case-credits__item">
-        <label>Designer</label>
-        <span>Cezar Miranda</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─── PRÓXIMO CASE ────────────────────────────────────── -->
-  <section class="case-next reveal">
-    <p class="case-next__label t-pt">Próximo projeto</p>
-    <p class="case-next__label t-en">Next project</p>
-    <a href="case_ferramentasgerais.html" class="case-next__link">
-      <h3 class="t-serif-lg t-pt">Ferramentas Gerais <span class="highlight">- E-commerce B2B</span></h3>
-      <h3 class="t-serif-lg t-en">Ferramentas Gerais <span class="highlight">- B2B E-commerce</span></h3>
-    </a>
-  </section>
-
   <!-- ─── FOOTER ────────────────────────────────────────── -->
   <footer class="footer reveal">
     <p class="t-pt">Conteúdo © Cezar Miranda - Todos os direitos reservados</p>

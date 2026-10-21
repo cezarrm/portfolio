@@ -31,15 +31,16 @@
       <li><a href="../about.html"><span class="t-pt">Sobre</span><span class="t-en">About</span></a></li>
       <li><a href="mailto:cezar611@gmail.com">Email</a></li>
     </ul>
-    <div class="lang-switch">
-      <button type="button" data-lang="pt">PT</button>
-      <span class="lang-switch__divider">·</span>
-      <button type="button" data-lang="en">EN</button>
-    </div>
     <button class="nav__hamburger" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
+
+  <div class="lang-switch lang-switch--floating">
+    <button type="button" data-lang="en">EN</button>
+    <span class="lang-switch__divider">·</span>
+    <button type="button" data-lang="pt">PT</button>
+  </div>
 
   <div class="nav-mobile" id="mobileMenu">
     <a href="../index.html"><span class="t-pt">Trabalhos</span><span class="t-en">Work</span></a>
@@ -55,86 +56,98 @@
   <!-- ═══════════════════════════════════════════════════════
        1. TÍTULO E CONTEXTO
        ═══════════════════════════════════════════════════════ -->
-  <section class="case-hero reveal">
-    <div class="case-hero__eyebrow">
-      <span class="dot"></span>
-      <span class="t-label t-pt">Branding e Embalagem</span>
-      <span class="t-label t-en">Branding and Packaging</span>
-    </div>
-
-    <h1 class="case-hero__title t-serif-xl">
-      BEM-DE-FLOR<br>
-      <span class="t-pt highlight">conceito de embalagem para uma nova linha de produtos</span>
-      <span class="t-en highlight">packaging concept for a new product line</span>
-    </h1>
-
-    <div class="case-hero__desc t-pt">
-      <p>
-        O conceito de embalagem foi criado a partir de uma interpretação simplificada do
-        formato característico da camomila. A ideia foi explorar o centro da flor de
-        forma mais expressiva: o núcleo amarelo "explode" para fora, se expandindo por
-        toda a embalagem e criando um contraste forte com as pétalas brancas.
-      </p>
-      <p>
-        Também desenvolvi um sistema de iconografia limpo e direto para os selos do
-        produto, tornando os principais benefícios fáceis de identificar e mantendo uma
-        linguagem visual simples e coesa.
-      </p>
-      <p>
-        O padrão foi desenvolvido posteriormente a partir do símbolo da linha, criando
-        uma extensão natural da identidade e reforçando a presença visual da marca ao
-        longo da embalagem.
-      </p>
-    </div>
-    <div class="case-hero__desc t-en">
-      <p>
-        The packaging concept was created around a simplified interpretation of
-        chamomile's distinctive shape. The idea was to explore the flower's center in a
-        more expressive way: the yellow core "explodes" outward, expanding across the
-        entire packaging and creating a bold contrast with the white petals.
-      </p>
-      <p>
-        I also developed a clean and straightforward iconography system for the product
-        seals, making the key benefits easy to identify while maintaining a simple and
-        cohesive visual language.
-      </p>
-      <p>
-        The pattern was later developed from the line's symbol, creating a natural
-        extension of the identity and reinforcing the brand's visual presence across the
-        packaging.
-      </p>
-    </div>
-  </section>
-
-  <!-- Meta rápida: contexto do projeto -->
-  <div class="case-meta reveal">
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Cliente</span>
-      <span class="case-meta__label t-en">Client</span>
-      <span class="case-meta__value">BEM-DE-FLOR</span>
-    </div>
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Escopo</span>
-      <span class="case-meta__label t-en">Scope</span>
-      <span class="case-meta__value t-pt">Branding e Design de Embalagem</span>
-      <span class="case-meta__value t-en">Branding and Packaging Design</span>
-    </div>
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Meu papel</span>
-      <span class="case-meta__label t-en">My role</span>
-      <span class="case-meta__value">Designer</span>
-    </div>
-    <div class="case-meta__item">
-      <span class="case-meta__label t-pt">Ano</span>
-      <span class="case-meta__label t-en">Year</span>
-      <span class="case-meta__value">2026</span>
-    </div>
-  </div>
-
   <!-- Imagem de destaque do case -->
   <div class="case-hero-media reveal">
     <div class="case-media case-media--wide">
       <img src="../assets/img/bem_01.jpg" alt="BEM-DE-FLOR">
+    </div>
+  </div>
+
+  <!-- Banner flutuante (fixo, acompanha a rolagem, glass effect) -->
+  <div class="case-float-dock is-collapsed">
+    <div class="case-float-card">
+      <div class="case-float-card__inner">
+        <div class="case-hero__eyebrow">
+          <span class="dot"></span>
+          <span class="t-label t-pt">Branding e Embalagem</span>
+          <span class="t-label t-en">Branding and Packaging</span>
+        </div>
+
+        <h1 class="case-float-card__title">
+          BEM-DE-FLOR<br>
+          <span class="t-pt highlight">conceito de embalagem para uma nova linha de produtos</span>
+          <span class="t-en highlight">packaging concept for a new product line</span>
+        </h1>
+
+        <div class="case-hero__desc t-pt">
+          <p>
+            O conceito de embalagem foi criado a partir de uma interpretação simplificada do
+            formato característico da camomila. A ideia foi explorar o centro da flor de
+            forma mais expressiva: o núcleo amarelo "explode" para fora, se expandindo por
+            toda a embalagem e criando um contraste forte com as pétalas brancas.
+          </p>
+          <p>
+            Também desenvolvi um sistema de iconografia limpo e direto para os selos do
+            produto, tornando os principais benefícios fáceis de identificar e mantendo uma
+            linguagem visual simples e coesa.
+          </p>
+          <p>
+            O padrão foi desenvolvido posteriormente a partir do símbolo da linha, criando
+            uma extensão natural da identidade e reforçando a presença visual da marca ao
+            longo da embalagem.
+          </p>
+        </div>
+        <div class="case-hero__desc t-en">
+          <p>
+            The packaging concept was created around a simplified interpretation of
+            chamomile's distinctive shape. The idea was to explore the flower's center in a
+            more expressive way: the yellow core "explodes" outward, expanding across the
+            entire packaging and creating a bold contrast with the white petals.
+          </p>
+          <p>
+            I also developed a clean and straightforward iconography system for the product
+            seals, making the key benefits easy to identify while maintaining a simple and
+            cohesive visual language.
+          </p>
+          <p>
+            The pattern was later developed from the line's symbol, creating a natural
+            extension of the identity and reinforcing the brand's visual presence across the
+            packaging.
+          </p>
+        </div>
+
+        <div class="case-meta">
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Cliente</span>
+            <span class="case-meta__label t-en">Client</span>
+            <span class="case-meta__value">BEM-DE-FLOR</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Escopo</span>
+            <span class="case-meta__label t-en">Scope</span>
+            <span class="case-meta__value t-pt">Branding e Design de Embalagem</span>
+            <span class="case-meta__value t-en">Branding and Packaging Design</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Meu papel</span>
+            <span class="case-meta__label t-en">My role</span>
+            <span class="case-meta__value">Designer</span>
+          </div>
+          <div class="case-meta__item">
+            <span class="case-meta__label t-pt">Ano</span>
+            <span class="case-meta__label t-en">Year</span>
+            <span class="case-meta__value">2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-float-pill" role="button" tabindex="0" aria-expanded="false">
+      <span class="case-float-pill__title">BEM-DE-FLOR</span>
+      <span class="case-float-pill__meta t-pt">Branding e Embalagem</span>
+      <span class="case-float-pill__meta t-en">Branding and Packaging</span>
+      <span class="case-float-pill__year">2026</span>
+      <span class="case-float-pill__toggle">+</span>
     </div>
   </div>
 
@@ -164,41 +177,6 @@
     </div>
 
   </section>
-
-  <!-- ─── CREDITS ───────────────────────────────────────── -->
-  <div class="case-credits reveal">
-    <div class="case-credits__group">
-      <h4 class="t-pt">Equipe</h4>
-      <h4 class="t-en">Team</h4>
-      <div class="case-credits__item">
-        <label><span class="t-pt">Cliente</span><span class="t-en">Client</span></label>
-        <span>BEM-DE-FLOR</span>
-      </div>
-      <div class="case-credits__item">
-        <label><span class="t-pt">Ano</span><span class="t-en">Year</span></label>
-        <span>2026</span>
-      </div>
-    </div>
-    <div class="case-credits__group">
-      <h4 class="t-pt">Conteúdo</h4>
-      <h4 class="t-en">Content</h4>
-      <div class="case-credits__item">
-        <label>Designer</label>
-        <span>Cezar Miranda</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ─── PRÓXIMO CASE ────────────────────────────────────── -->
-  <section class="case-next reveal">
-    <p class="case-next__label t-pt">Próximo projeto</p>
-    <p class="case-next__label t-en">Next project</p>
-    <a href="case_gptw_veeam.html" class="case-next__link">
-      <h3 class="t-serif-lg t-pt">GPTW Veeam <span class="highlight">- Campanha Global</span></h3>
-      <h3 class="t-serif-lg t-en">GPTW Veeam <span class="highlight">- Global Campaign</span></h3>
-    </a>
-  </section>
-
   <!-- ─── FOOTER ────────────────────────────────────────── -->
   <footer class="footer reveal">
     <p class="t-pt">Conteúdo © Cezar Miranda - Todos os direitos reservados</p>
