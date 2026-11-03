@@ -7,16 +7,24 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   padding: 0 var(--pad-x) 5rem;
   border: none;
 }
 
-
-
 .hero__title {
-  max-width: 860px;
+  max-width: none;
+  width: 100%;
+  margin: 0;
   color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: clamp(3.5rem, 15vw, 11.5rem);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
   opacity: 0;
   transform: translateY(18px);
   animation: fadeUp 0.7s ease 0.22s forwards;
@@ -170,7 +178,7 @@
 
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: 0;
 
   background: #FE8A25;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -192,7 +200,7 @@
 
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 999px;
+  border-radius: 0;
 
   background: #0559D3;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -637,7 +645,7 @@
   width: 110px;
   height: 110px;
 
-  border-radius: 999px;
+  border-radius: 0;
 
   background: #000;
   color: #fff;
