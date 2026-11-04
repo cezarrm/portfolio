@@ -5,10 +5,7 @@
 /* ─── PAGE HEADER ────────────────────────────────────────── */
 .about-header {
   padding: 9rem var(--pad-x) 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: end;
+  display: block;
   border-bottom: 1px solid var(--border);
 }
 
@@ -19,27 +16,15 @@
   margin-bottom: 0.75rem;
 }
 
-.about-header__photo {
-  width: 100%;
-  max-width: 360px;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  justify-self: end;
-}
-
 /* ─── ABOUT TEXT ─────────────────────────────────────────── */
 .about-cols {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   border-bottom: 1px solid var(--border);
 }
 
 .about-cols__col {
   padding: 4rem var(--pad-x);
-}
-
-.about-cols__col:first-child {
-  border-right: 1px solid var(--border);
 }
 
 .about-cols__col h2 {

@@ -19,7 +19,7 @@
   width: 6px;
   height: 6px;
   border-radius: 0;
-  background: var(--case-accent, #ff4b0f);
+  background: var(--case-accent, #00FFBC);
 }
 
 .case-hero__title {
@@ -48,14 +48,14 @@
 .case-meta {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: none;
+  border-bottom: none;
   margin: 3.5rem var(--pad-x) 0;
 }
 
 .case-meta__item {
   padding: 1.75rem;
-  border-left: 1px solid var(--border);
+  border-left: none;
 }
 
 .case-meta__item:first-child {
@@ -78,6 +78,7 @@
   width: 15px;
   height: 15px;
   flex-shrink: 0;
+  color: #00FFBC;
 }
 
 .case-meta__value {
@@ -88,7 +89,7 @@
 
 /* ─── HERO MEDIA ─────────────────────────────────────────── */
 .case-hero-media {
-  margin: 3.5rem var(--pad-x) 1.75rem;
+  margin: 3.5rem 0 0;
 }
 
 /* Imagem larga (21:9) usada no hero e em blocos de destaque dentro
@@ -446,6 +447,7 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  color: #00FFBC;
 }
 
 .case-section__title {
@@ -468,7 +470,7 @@
 }
 
 .case-problem__card {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 0;
   padding: 2.5rem;
   background: var(--bg-subtle);
@@ -501,7 +503,7 @@
 .case-problem__icon {
   width: 20px;
   height: 20px;
-  color: var(--case-accent, var(--text-ter));
+  color: var(--case-accent, #00FFBC);
   display: block;
 }
 
@@ -608,7 +610,7 @@
 .case-screen__icon {
   width: 20px;
   height: 20px;
-  color: var(--case-accent, #3D6D89);
+  color: var(--case-accent, #00FFBC);
 }
 
 .case-screen__content {
@@ -663,7 +665,7 @@
   flex-direction: column;
   border-radius: 0;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: none;
 }
 
 .case-colorband {
@@ -731,7 +733,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 0;
   padding: 0 2rem;
 }
@@ -747,11 +749,11 @@
   align-items: center;
   gap: 2rem;
   padding: 1.75rem 0;
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 .case-type-specimen:first-child {
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 .case-type-specimen__sample {
@@ -934,11 +936,11 @@
   grid-template-columns: 100px 1fr 1.1fr;
   gap: 2.25rem;
   padding: 2.75rem 0;
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 .case-process__step:first-child {
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 .case-process__num {
@@ -963,7 +965,7 @@
 .case-process__insight {
   margin-top: 1.1rem;
   padding: 1rem 1.25rem;
-  border-left: 2px solid var(--border);
+  border-left: none;
   font-size: 0.9rem;
   color: var(--text-ter);
   font-style: italic;
@@ -978,7 +980,7 @@
 }
 
 .case-stat {
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 0;
   padding: 2rem 1.75rem;
 }
@@ -1001,7 +1003,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
-  border: 1px solid var(--border);
+  border: none;
   border-radius: 0;
   padding: 2.75rem;
 }
@@ -1035,7 +1037,7 @@
 /* ─── NEXT CASE ───────────────────────────────────────────── */
 .case-next {
   padding: 6rem var(--pad-x);
-  border-top: 1px solid var(--border);
+  border-top: none;
   text-align: center;
 }
 
@@ -1060,16 +1062,18 @@
 
 /* ─── GALLERY CASE: conteúdo editorial (Positivo, Topzstone, TevaLabs) ─── */
 .case-content {
-  padding: 0 var(--pad-x) 4rem;
+  padding: 0 0 4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
+  gap: 0;
 }
 
+/* Imagens da galeria ficam coladas (sem espaçamento entre elas); só
+   os blocos de texto (.case-text) ganham respiro próprio, ver abaixo */
 .media-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.75rem;
+  gap: 0;
 }
 
 .media-row__cell {
@@ -1114,7 +1118,7 @@
 .media-thirds {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  gap: 0;
 }
 
 .media-thirds__cell {
@@ -1123,6 +1127,8 @@
 
 .case-text {
   max-width: 720px;
+  margin: 1.75rem 0;
+  padding: 0 var(--pad-x);
 }
 
 .case-text h2,
@@ -1147,7 +1153,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.75rem;
   padding: 4rem var(--pad-x) 6rem;
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 .case-credits__group h4 {
@@ -1163,7 +1169,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 0;
-  border-top: 1px solid var(--border);
+  border-top: none;
   font-size: 0.96rem;
 }
 
@@ -1217,12 +1223,12 @@
 
   .case-meta__item:nth-child(3),
   .case-meta__item:nth-child(4) {
-    border-top: 1px solid var(--border);
+    border-top: none;
     padding-top: 1.75rem;
   }
 
   .case-hero-media {
-    margin: 3rem var(--pad-x-md) 1.5rem;
+    margin: 3rem 0 0;
   }
 
   .compare-slider {
@@ -1231,6 +1237,10 @@
 
   .case-section {
     padding: 4.5rem var(--pad-x-md);
+  }
+
+  .case-text {
+    padding: 0 var(--pad-x-md);
   }
 
   .case-problem,
@@ -1274,7 +1284,7 @@
   }
 
   .case-content {
-    padding: 0 var(--pad-x-md) 3.5rem;
+    padding: 0 0 3.5rem;
   }
 
   .media-row,
@@ -1309,7 +1319,7 @@
   }
 
   .case-hero-media {
-    margin: 2.5rem var(--pad-x-sm) 1.25rem;
+    margin: 2.5rem 0 0;
   }
 
   .compare-slider,
@@ -1325,6 +1335,10 @@
 
   .case-section {
     padding: 4rem var(--pad-x-sm);
+  }
+
+  .case-text {
+    padding: 0 var(--pad-x-sm);
   }
 
   .case-section__head {
@@ -1376,7 +1390,7 @@
   }
 
   .case-content {
-    padding: 0 var(--pad-x-sm) 3rem;
+    padding: 0 0 3rem;
   }
 
   .media-row,
