@@ -455,12 +455,10 @@ video {
 /* Destaque com gradiente animado azul claro > azul escuro - usado em
    títulos/termos-chave que merecem mais ênfase que o .highlight padrão */
 .gradient-highlight {
-  background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.35 0'/></filter><rect width='150' height='150' filter='url(%23n)'/></svg>"),
-    linear-gradient(90deg, #7EC4FF, #0559D3, #7EC4FF);
-  background-size: 160px 160px, 200% 100%;
-  background-repeat: repeat, repeat;
-  background-blend-mode: overlay;
+  --mx: 50%;
+  --my: 50%;
+  background-image: linear-gradient(90deg, #7EC4FF, #0559D3, #7EC4FF);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -469,10 +467,53 @@ video {
 
 @keyframes gradientHighlightMove {
   0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Modificador com textura de ruído (grão) por cima do gradiente - só
+   usado em títulos grandes (ex.: home), onde o padrão não "lava" o
+   texto pequeno pra branco. Em textos pequenos (ex.: About) usar só
+   .gradient-highlight puro, sem este modificador. */
+.gradient-highlight--noise {
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/></filter><rect width='150' height='150' filter='url(%23n)'/></svg>"),
+    linear-gradient(90deg, #7EC4FF, #0559D3, #7EC4FF);
+  background-size: 160px 160px, 200% 100%;
+  background-repeat: repeat, repeat;
+  background-blend-mode: overlay;
+  animation-name: gradientHighlightMoveNoise;
+}
+
+@keyframes gradientHighlightMoveNoise {
+  0% {
     background-position: 0 0, 0% 50%;
   }
   100% {
     background-position: 0 0, 200% 50%;
+  }
+}
+
+/* Reage ao hover do mouse (só desktop/ponteiro fino): pausa a
+   animação automática e troca pra um gradiente radial - o azul
+   escuro "segue" o cursor (--mx/--my são atualizados via JS em
+   gradient-hover.js), esmaecendo pro azul claro nas bordas. */
+@media (hover: hover) and (pointer: fine) {
+  .gradient-highlight:hover {
+    animation-play-state: paused;
+    background-image: radial-gradient(circle at var(--mx) var(--my), #0559D3 0%, #7EC4FF 100%);
+  }
+
+  .gradient-highlight--noise:hover {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'/></filter><rect width='150' height='150' filter='url(%23n)'/></svg>"),
+      radial-gradient(circle at var(--mx) var(--my), #0559D3 0%, #7EC4FF 100%);
+    background-size: 160px 160px, 100% 100%;
+    background-repeat: repeat, no-repeat;
+    background-blend-mode: overlay;
   }
 }
 

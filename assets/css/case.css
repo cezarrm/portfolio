@@ -1313,7 +1313,9 @@
   }
 
   .compare-slider,
-  .case-media--wide {
+  .case-media--wide,
+  .media-full,
+  .media-full--wide {
     aspect-ratio: 1 / 1;
   }
 
