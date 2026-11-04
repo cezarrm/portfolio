@@ -2,6 +2,48 @@
    main.js - Scripts compartilhados entre todas as páginas
    ============================================================ */
 
+// ─── HERO: "CEZAR MIRANDA" numa linha só, ocupando 100% da
+// largura disponível em qualquer tela (mede o texto e ajusta o
+// font-size, em vez de depender só de um clamp() fixo) ────────
+function fitHeroTitle() {
+  const title = document.querySelector('.hero__title');
+  if (!title) return;
+
+  const container = title.parentElement;
+  if (!container) return;
+
+  const containerStyles = getComputedStyle(container);
+  const available = container.clientWidth
+    - parseFloat(containerStyles.paddingLeft || 0)
+    - parseFloat(containerStyles.paddingRight || 0);
+
+  // reseta pro tamanho base (clamp do CSS) antes de medir
+  title.style.fontSize = '';
+
+  const currentWidth = title.scrollWidth;
+  const currentFontSize = parseFloat(getComputedStyle(title).fontSize);
+
+  if (currentWidth > 0 && currentFontSize > 0) {
+    const newSize = currentFontSize * (available / currentWidth);
+    title.style.fontSize = newSize + 'px';
+  }
+}
+
+function debounce(fn, delay) {
+  let timer;
+  return function () {
+    clearTimeout(timer);
+    timer = setTimeout(fn, delay);
+  };
+}
+
+window.addEventListener('load', fitHeroTitle);
+window.addEventListener('resize', debounce(fitHeroTitle, 150));
+
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(fitHeroTitle);
+}
+
 // ─── NAV: hamburger menu ──────────────────────────────────
 const hamburger = document.querySelector('.nav__hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
