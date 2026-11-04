@@ -434,6 +434,13 @@ html.lang-en .t-pt { display: none !important; }
   overflow: hidden;
 }
 
+.case-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 .case-media video {
   width: 100%;
   height: auto;
