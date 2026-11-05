@@ -25,8 +25,8 @@
   --text-ter: #A9AFB5;
 
   /* Tipografia */
-  --serif: 'Raleway', sans-serif;
-  --sans: 'Raleway', system-ui, sans-serif;
+  --serif: 'Archivo', sans-serif;
+  --sans: 'Archivo', system-ui, sans-serif;
 
   /* Espaçamento base */
   --pad-x: 1.75rem;
@@ -414,6 +414,10 @@ html.lang-en .t-pt { display: none !important; }
   text-align: center;
   border-radius: 0;
   overflow: hidden;
+}
+
+.placeholder picture {
+  display: contents;
 }
 
 .placeholder img,

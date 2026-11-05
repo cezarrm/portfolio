@@ -18,7 +18,7 @@
   width: 100%;
   margin: 0;
   color: var(--text);
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
@@ -568,11 +568,31 @@
   }
 
   .projects {
-    padding: 0 var(--pad-x-sm);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    padding: 0;
+  }
+
+  .project-item .placeholder {
+    aspect-ratio: 1 / 1;
   }
 
   .project-item__meta {
-    padding: 1.1rem;
+    padding: 0.85rem;
+  }
+
+  .project-item__title {
+    font-size: 0.68rem;
+  }
+
+  .project-item .soon-badge,
+  .project-item .new-badge {
+    top: 0.6rem;
+    right: 0.6rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.55rem;
   }
 
   .feed {
