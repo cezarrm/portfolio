@@ -220,7 +220,7 @@
 
 .feed__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1px;
   background: var(--border);
   margin-top: 1.5rem;
@@ -289,7 +289,7 @@
 
 .feed__cell {
   background: var(--bg);
-  aspect-ratio: 1;
+  aspect-ratio: 21 / 9;
 
   display: flex;
   align-items: flex-end;
@@ -602,7 +602,7 @@
   }
 
   .feed__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -619,31 +619,11 @@
   }
 
   .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--border);
-    padding: 0;
-  }
-
-  .project-item .placeholder {
-    aspect-ratio: 1 / 1;
+    padding: 0 var(--pad-x-sm);
   }
 
   .project-item__meta {
-    padding: 0.85rem;
-  }
-
-  .project-item__title {
-    font-size: 0.68rem;
-  }
-
-  .project-item .soon-badge,
-  .project-item .new-badge {
-    top: 0.6rem;
-    right: 0.6rem;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.55rem;
+    padding: 1.1rem;
   }
 
   .feed {
@@ -651,14 +631,14 @@
   }
 
   .feed__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
 
   .feed__cell {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 21 / 9;
     min-height: 0;
   }
 
